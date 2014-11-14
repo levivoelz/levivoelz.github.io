@@ -1,0 +1,22 @@
+/* Include your usual CSS here. */
+
+@import url(/css/bootstrap.css);
+
+.wrapper {
+  width: 60%;
+  margin: 20px auto;
+}
+
+footer {
+  padding: 40px 0;
+}
+
+.date {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 80%;
+  }
+}

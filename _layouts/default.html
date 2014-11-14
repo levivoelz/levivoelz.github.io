@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Doing it the Hard Way | Levi Voelz – </title>
+		<title>{% if page.title %}{{ page.title }} – {% endif %}</title>
 		<meta charset="utf-8" />
 	  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
@@ -16,21 +16,7 @@
         </nav>
       </header>
     	<div class="content">
-    			<h1>Doing it the Hard Way</h1>
-	<small>Websites, Code, and Other Random Musings.</small>
-	<div class="posts">
-	  
-	    <article class="post">    
-
-	      <h2><a href="/2014/11/14/love-at-first-site.html">Love at First Site</a></h2>
-
-	      <div class="entry">
-	        <p>I built my first website nearly 12 years ago in 2003. Working at a restaurant in Sedona, AZ, I didn’t have very much money, was living at home with my folks, and didn’t really know what I wanted to do...
-	      </div>
-	    </article>
-	  
-	</div>
-
+    		{{ content }}
       </div>
       <footer>
         <small>© 2014 Levi Voelz</small>
