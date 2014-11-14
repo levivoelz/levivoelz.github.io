@@ -2,17 +2,17 @@
 layout: default
 title: Doing it the Hard Way | Levi Voelz
 ---
-	<h1>Doing it the Hard Way</h1>
-	<small>Websites, Code, and Other Random Musings.</small>
-	<div class="posts">
-	  {% for post in site.posts %}
-	    <article class="post">    
+<h1>Doing it the Hard Way</h1>
+<small>Websites, Code, and Other Random Musings.</small>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">    
 
-	      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
 
-	      <div class="entry">
-	        {{ post.content | truncatewords:40}}
-	      </div>
-	    </article>
-	  {% endfor %}
-	</div>
+      <div class="entry">
+        {{ post.content | truncatewords:40}}
+      </div>
+    </article>
+  {% endfor %}
+</div>
