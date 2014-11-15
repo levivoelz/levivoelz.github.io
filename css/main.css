@@ -5,12 +5,28 @@
   margin: 20px auto;
 }
 
+.content {
+  padding: 20px 0;
+}
+
 footer {
   padding: 40px 0;
 }
 
 .date {
   margin-bottom: 10px;
+}
+
+/* About section */
+.about-header h1 {
+  margin-bottom: 0;
+}
+
+.mugshot {
+  width: 100px;
+  border-radius: 50px;
+  float: left;
+  margin: 0 10px 10px 0;
 }
 
 @media screen and (max-width: 800px) {
