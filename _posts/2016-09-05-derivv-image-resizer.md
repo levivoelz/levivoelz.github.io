@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Resize an Image to Multiple Sizes with Derivv
+featured_image: /images/derivv-image-resizing-app-preview_1200_x_832.png
+description: Derivv makes it super easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop.
 ---
 
 I'm really excited to announce a new piece of software I wrote for people who need to [resize a single image to multiple sizes](http://derivv.com){:target="_blank"}. It's called [Derivv](http://derivv.com){:target="_blank"} and it's a niche tool that does it very easily and quickly. It's totally browser based, so no need to upload images to a server to be resized and sent back. And, It's really, really fast! Anyway, I'm going to go over in more detail who I built it for, what applications it is good for, and some exciting new features coming up in the coming months.

@@ -8,6 +8,12 @@
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://levivoelz.com{{ page.url }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} {% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }} {% endif %}">
+    <meta name="twitter:image" content="{% if page.featured_image %}http://levivoelz.com{{ page.featured_image }} {% endif %}">
     <link rel="stylesheet" href="/css/main.css">
   </head>
 
