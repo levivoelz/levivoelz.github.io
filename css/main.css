@@ -1,5 +1,16 @@
 @import url(/css/bootstrap.css);
 
+img {
+  max-width: 100%;
+}
+
+.entry img {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 25px 0;
+  border-radius: 2px;
+}
+
 .wrapper {
   width: 60%;
   margin: 20px auto;
@@ -27,11 +38,11 @@ footer {
 .video-container {
     position: relative;
     padding-bottom: 51.25%;
-    padding-top: 30px; 
-    height: 0; 
+    padding-top: 30px;
+    height: 0;
     overflow: hidden;
 }
- 
+
 .video-container iframe,
 .video-container object,
 .video-container embed {
