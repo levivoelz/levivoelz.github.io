@@ -3,13 +3,14 @@ layout: default
 title: Doing it the Hard Way
 ---
 <h1>Doing it the Hard Way</h1>
-<small>Websites, code, and other random musings.</small>
+<p>
+  <small>What <i>it</i> is, I don't know.</small>
+</p>
+<h2>Blog Posts</h2>
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
-
-      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <div class="entry">
         {{ post.content | truncatewords:40}}
       </div>
