@@ -17,16 +17,16 @@ There's only a little part of the [old website](http://www.sedonaofficerentals.c
 
 I considered this project successfull and continued to built shitty websites for several years. It wasn't until about 2005/2006 that I really felt like I was getting the hang of it. Poor bastards..
 
-###Project Rundown
+### Project Rundown
 
-####Brief
+#### Brief
 I used my handy dandy web design How To book to figure what I needed to ask my "client" and came up with a "creative brief". I didn't know what the heck I was doing, but fuck it, there was $500 on the table, and I wanted to be professional.
 
-####Comp
+#### Comp
 After practicing a few graphics on my Dad's business plan, my graphic design skills were perfectly honed. I created a spectacular layout utilizing the colors of Sedona's Red Rocks, big extra-embossed buttons, and a really small font size.
-	
-####Code
+
+#### Code
 Photoshop 7 was amazing at taking a comp and turning it into a "website"–`<tables>` and all. I remember having to muscle around the complex JavaScript in order to get the rollovers to work right. It all looked like Russian or something to me. I did it, and that was all that mattered. I could brag to my friends that I could write code.
 
-####Handoff
+#### Handoff
 She was really pleased with the site. It took a few weeks longer than I expected it would, but I proudly finished it.

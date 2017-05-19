@@ -14,12 +14,12 @@ When I set out to create [CurrentRoute](http://currentroute.com){:target="_blank
 
 So, after a few months of planning and developing, I have the first iteration of CurrentRoute. It’s simple, which is how I like it. I don’t use a lot of apps, but I do have goals. I take notes and have tasks, however, I try to make everything I do work in some way towards my goals. I think it will help me do that in a more organized fashion so I can stay on track.
 
-###What is CurrentRoute?
+### What is CurrentRoute?
 It’s an organized, yet simple way of setting goals. We all play different roles in our life and CurrentRoute has, by default, created four roles for you. Physical, Mental, Emotional, and Spiritual. Every goal in CurrentRoute is grouped by on of those roles. When you create a goal you have the option of adding strategy, due date, list of objectives—what you want to get out of accomplishing the goal, tactics—more specific on how you will accomplish it, tasks—things you need to do to accomplish it, and notes.
 
 Once you’ve created a goal, you can see a list of your goals in each one of the roles screens. If you ever need to go back to a goal to edit it or review it, you can easily do that by clicking on the goal.
 
-####Check out a demo:
+#### Check out a demo:
 <style type="text/css">
 .videoWrapper {
 	position: relative;
@@ -40,5 +40,5 @@ Once you’ve created a goal, you can see a list of your goals in each one of th
   <iframe width="560" height="315" src="https://www.youtube.com/embed/OcMPIhjJe1c" frameborder="0" allowfullscreen></iframe>
 </div>
 
-###What’s in Store for the Future?
+### What’s in Store for the Future?
 There are several features I’ll be adding in the near future to help people stay on track with their goals, like reminders, being able to add due dates to tasks, and an innovative way of holding you accountable. [Sign up to be a Beta Tester](http://currentroute.us15.list-manage.com/subscribe?u=225ece60e8f07e96c4ba72caa&id=b7a90b1351){:target="_blank"} and help shape the future of CurrentRoute by submitting feature requests and valuable feedback. If you want to learn more, feel free to hit me up at [levi@currentroute.com](mailto:levi@currentroute.com).
