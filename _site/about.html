@@ -14,88 +14,76 @@
     <meta name="twitter:title" content="About Me ">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-
   <body>
     <div class="wrapper">
       <header>
         <nav>
-          <a class="btn btn-default" href="/" aria-label="Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> <a class="btn btn-default" href="/about.html" aria-label="About"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+          <a class="btn btn-default" href="/" aria-label="Home">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          </a>
+          <a class="btn btn-default" href="/about.html" aria-label="About">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          </a>
         </nav>
       </header>
     	<div class="content clearfix">
-        <div class="clearfix about-header">
-  <a href="images/levivoelz.jpg"><img class="mugshot" src="images/levivoelz.jpg"></a>
-  <h1>Levi Voelz</h1>
-  <small>San Francisco, CA</small><br>
+        <div class='badge'>
+  <div class='badge--left'>
+    <img class="mugshot" src="images/levivoelz.jpg">
+    <div class='badge--contact'>
+      <a href="//github.com/levivoelz" target='_blank'><span class="fa fa-github"> </span></a>
+      <a href="//twitter.com/levivoelz" target='_blank'><span class="fa fa-twitter"> </span></a>
+      <a href="//facebook.com/levivoelz" target='_blank'><span class="fa fa-facebook"> </span></a>
+      <a href="mailto:levi@hatchmatter.com"><span class="fa fa-envelope-o"> </span></a>
+    </div>
+  </div>
+  <div class='badge--right'>
+    <div class='badge--name'>Levi Voelz</div>
+    <div class='badge--location'>San Francisco, CA</div>
+  </div>
 </div>
-<a class="btn btn-xs btn-primary" href="//facebook.com/levivoelz" target='_blank'>facebook</a>
-<a class="btn btn-xs btn-primary" href="//github.com/levivoelz" target='_blank'>github</a>
-<a class="btn btn-xs btn-primary" href="//soundcloud.com/levivoelz" target='_blank'>soundcloud</a>
-<a class="btn btn-xs btn-primary" href="mailto:levi@hatchmatter.com">email</a>
-<h3>Status</h3>
-<p>Making <a href='//soundcloud.com/levivoelz' target='_blank'>music</a> and building an iOS app called <a href="http://currentroute.com" target="_blank">CurrentRoute</a>!</p>
-<h3>About me</h3>
-<p>I'm a self-taught artist, inventor, and engineer. I'm currently working on an electronic music album called "Cycle of Fights", drafting a submission for a Burning Man art installation, and just finished some <a href="http://hatchmatter.com/whiskey-barrel-speakers" target="_blank">whiskey barrel speakers</a> for my sister and brother-in-law's <a href='http://alley6.com' target='_blank'>whiskey distillery</a> in Healdsburg, CA.</p>
-<h3>Album Preview</h3>
-<p>My first electronic music album called "Cycle of Fights" is underway and you can listen to some rough cuts below! If you have any feedback hit me up at <a href="mailto:levi@hatchmatter.com">levi@hatchmatter.com</a>. I'd love to hear your thoughts! The amazing and talented <a href='http://macvaughn.com/' target="_blank">Bruce Mac Vaughn</a> is helping produce it and we're making a lot of headway. I'm planning on having it finished in 2017.</p>
-<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/276694478%3Fsecret_token%3Ds-ebro5&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-<h3>Code Snippet</h3>
-<pre>
-  <code class="language-js">
-// taken from resizeImage.js of the derivv.com application.
 
-/**
- * Resizes image by setting either the width or the height, but not both.
- * @param {HTMLImageElement} image
- * @param {Object} dimensions
- * @return {Promise}
- * @resolves {Object} result
- * @resolves {Blob} result.blob
- * @resolves {Object} result.dimensions
- */
-const resizeProportionally = (image, dimensions) => {
-  return new Promise((resolve) => {
-    const mask = {
-      width: null,
-      height: null
-    }
-
-    if (dimensions.width) {
-      mask.width = dimensions.width
-      mask.height = image.height * dimensions.width / image.width
-    } else {
-      mask.width = image.width * dimensions.height / image.height
-      mask.height = dimensions.height
-    }
-
-    createImage(image, {x: 0, y: 0}, mask, dimensions).then(resolve)
-  })
-}
-  </code>
-</pre>
-<h3>Previous Projects</h3>
-<p>
-  <a class="btn btn-sm btn-info" href="http://derivv.com/" target="_blank">
-    <span class="glyphicon glyphicon-picture"></span> Derivv Image Processor
+<section>
+  <h3>Status</h3>
+  <p>
+    Working as a software engineering consultant, creating an iOS app called
+    <a href="http://currentroute.com" target="_blank">CurrentRoute</a>,
+    defragmenting my life, shifting gears.
+  </p>
+</section>
+<section>
+  <h3>About me</h3>
+  <p>
+    I'm a self-taught artist, inventor, and engineer who's been doing things
+    the hard way for as long as I can remember.
+  </p>
+</section>
+<section>
+  <h3>Projects</h3>
+  <p>
+    <a class="btn btn-sm btn-info" href="http://currentroute.com/" target="_blank">
+      CurrentRoute
+    </a>
+    <a class="btn btn-sm btn-info" href="http://derivv.com/" target="_blank">
+      <span class="glyphicon glyphicon-picture"></span> Derivv
+    </a>
+  </p>
+</section>
+<section>
+  <h3>Resume</h3>
+  <a href="https://docs.google.com/document/d/1X9KAhZ8IE344J9MiExXQuUPhKN3SDobYwGuprhhjOQ0/edit?usp=sharing" target='_blank'>
+    <span class="glyphicon glyphicon-file"></span> software_engineering_resume.googdoc
   </a>
-</p>
-<p>
-  <a class="btn btn-sm btn-info" href="https://goodmus.herokuapp.com/" target="_blank">
-    <span class="glyphicon glyphicon-stats"></span> GoodMus App (defunct)
-  </a>
-  <a href="/the-pitch-goodmus.html">GoodMus Pitch</a>
-</p>
-<h3>Resume</h3>
-<a href="https://docs.google.com/document/d/1X9KAhZ8IE344J9MiExXQuUPhKN3SDobYwGuprhhjOQ0/edit?usp=sharing" target='_blank'><span class="glyphicon glyphicon-file"></span> software_engineering_resume.googdoc</a>
+</section>
 
       </div>
       <footer>
-        <small>© 2016 Levi Voelz</small>
+        <small>© 2017 Levi Voelz</small>
       </footer>
     </div>
-    <script src='/prism.js'></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -104,7 +92,14 @@ const resizeProportionally = (image, dimensions) => {
 
       ga('create', 'UA-30387090-1', 'auto');
       ga('send', 'pageview');
+    </script>
 
+    <script>
+      (function() {
+        document
+          .querySelector("nav a[href='" + window.location.pathname + "']")
+          .setAttribute('disabled', true);
+      })();
     </script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Love at First Site
+category: journal
 ---
 
 I built my first website in 2003 while working at a low-end Italian restaurant in Sedona, AZ. I was 23 years old, broke, living with my folks, and didn't know what I wanted to do with the rest of my life. With the help of my Mom, I got a Macbook Pro, and was using it to write really awful house music in their garage during the day, and working in the restaurant, if I wasn't out drinking, at night.

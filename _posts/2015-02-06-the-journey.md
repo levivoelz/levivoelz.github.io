@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Journey
+category: journal
 ---
 
 When I started out designing websites, I didn’t really know what I was getting into. In fact, I didn’t even really like it that much. I was into music, and building websites was a way for me to make some extra cash while I worked on my projects. 12 or so years later, I’m still building websites and haven’t worked on a song for quite some time.
@@ -31,10 +32,3 @@ That being said, I am still learning a lot. I get to dig into the WM codebase, b
 Of course, this didn’t all happen overnight. When I was in high school, I spent a lot of time partying and not attending classes. I threw parties, went to parties, crashed parties, and DJ’ed at parties. That was my life. I didn’t care about going to college. In fact, I didn’t even think I would live long enough to see college. When I finally got real about what was happening, it was too late. I was short enough credits to have to do another year and wasn’t going to graduate—and I didn’t. I don’t have a high school diploma, nor do I have a college degree. I figured it all out on my own by reading books, taking online courses, going to Meetups, networking, and working my ass off on bigger and more complex projects.
 
 What’s next for me? I suppose I’ll finish taking apart this vacuum I’m working on. I think it will be a little while before I take out the last screw, so stay tuned.
-
-
-
-
-
-
-

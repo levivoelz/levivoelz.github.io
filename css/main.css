@@ -1,8 +1,38 @@
 @import url(/css/bootstrap.css);
-@import url(/css/prism.css);
+
+body {
+  font-size: 16px;
+  color: #555;
+  background-color: #F5FBFF;
+  line-height: 1.65;
+}
+
+header {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #7099B5;
+}
+
+a {
+  color: #7099B5;
+}
+
+a:hover {
+  color: #5A7B91;
+}
 
 img {
   max-width: 100%;
+}
+
+section {
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+  border-top: 1px solid #eee;
+}
+
+.entry {
+  margin-top: 2em;
 }
 
 .entry img {
@@ -14,7 +44,11 @@ img {
 
 .wrapper {
   width: 60%;
-  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  margin: 0 auto;
+  border-right: 1px solid #f9f9f9;
+  border-left: 1px solid #f9f9f9;
 }
 
 .content {
@@ -22,16 +56,76 @@ img {
 }
 
 footer {
-  padding: 40px 0;
+  margin-top: 1em;
+  border-top: 2px solid #7099B5;
+  padding: 0.5em 0;
 }
 
 .date {
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+/* Posts */
+.posts .entry {
+  margin-top: 1.2em;
+}
+
+.post {
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+.post--title {
+  margin-bottom: 3px;
+}
+
+.post--category {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: .8em;
+  color: #999;
 }
 
 /* About section */
-.about-header h1 {
-  margin-bottom: 0;
+.badge {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.badge--left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.badge--contact {
+  padding: 5px;
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.badge--right {
+  padding: 20px 0 0 10px;
+}
+
+.badge--name {
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.badge--location {
+  color: #999;
+  font-weight: 300;
+}
+
+.mugshot {
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid #999;
 }
 
 /* GoodMus */
@@ -52,13 +146,6 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.mugshot {
-  width: 100px;
-  border-radius: 50px;
-  float: left;
-  margin: 0 10px 10px 0;
 }
 
 @media screen and (max-width: 800px) {

@@ -2,6 +2,7 @@
 layout: post
 title: My Goal Setting Journey
 description: Learn how I manage goal setting with an app I built called CurrentRoute
+category: journal
 ---
 
 At the beginning of every year I go over all my big, long-term goals, and review how much progress I’ve made. This year was like any other in that regard, except that I found I had actually accomplished more than I thought. "Doing things the hard way" in the past had left me with about a 10% completion rate, so this had come as a nice surprise.
