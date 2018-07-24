@@ -8,6 +8,7 @@ title: Doing it the Hard Way
   {% for post in site.posts %}
     <article class="post">
       <h3 class='post--title'><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <div class='post--date'>{{ post.date | date: '%B %d, %Y' }}</div>
       <div class='post--category'>Category: <b>{{ post.category }}</b></div>
       <div class="entry">
         {{ post.content | truncatewords:40}}
