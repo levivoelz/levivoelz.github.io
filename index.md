@@ -1,6 +1,6 @@
 ---
 layout: default
-title: App developer
+title: App maker
 hero: /images/levi_voelz-hero-denver-bkgd.jpg
 color: "#A4CFEF"
 ---
