@@ -13,6 +13,8 @@
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} {% endif %}">
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }} {% endif %}">
     <meta name="twitter:image" content="{% if page.featured_image %}http://levivoelz.com{{ page.featured_image }} {% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz" />
+    <meta property="og:image" content="{% if page.hero %}{{ page.hero }} {% endif %}" />
     <link rel="stylesheet" href="/css/main.css?bust_it=2">
     <style>
       a {
@@ -34,7 +36,13 @@
       <header>
         <div class="hero">
           <div class="hero--inner">
-            <img class="circle" src="{{ page.hero }}" />
+            {% if page.url != '/' %}
+            <a href="/" style="line-height: 1">
+            {% endif %}
+              <img class="circle" src="{{ page.hero }}" />
+            {% if page.url != '/' %}
+            </a>
+            {% endif %}
             <div class="header-circles">
               <div class="circle circle--sm"></div>
               <div class="page-name">{{ page.display_name }}</div>
@@ -52,8 +60,8 @@
             <a href="/about">About</a>
             <a href="/services">Services</a>
             <a href="/skills">Skills</a>
-            <a href="/resume" target="_blank">Resumé</a>
             <a href="/contact">Contact</a>
+            <a href="/resume" target="_blank">Resumé</a>
           </nav>
           <div class='circles'>
             <div class='circle circle--md'></div>
