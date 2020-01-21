@@ -1,6 +1,6 @@
 ---
 layout: default
-title: North Bay freelance software developer
+title: Freelance software developer
 hero: /images/levi_voelz-hero-denver-bkgd.jpg
 color: "#A4CFEF"
 ---
