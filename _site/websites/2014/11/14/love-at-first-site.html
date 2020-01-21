@@ -6,29 +6,39 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="http://levivoelz.com/websites/2014/11/14/love-at-first-site.html">
     <meta name="twitter:title" content="Love at First Site ">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css?bust_it=2">
+    <style>
+      a {
+        color: 
+      }
+
+      .circle {
+        background-color: ;
+        border-color: ;
+      }
+
+      .page-name {
+        color: 
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <nav>
-          <a class="btn btn-default" href="/" aria-label="Home">
-            <i class="fa fa-home" aria-hidden="true"></i>
-          </a>
-          <a class="btn btn-default" href="/about.html" aria-label="About">
-            <i class="fa fa-user" aria-hidden="true"></i> About Me
-          </a>
-          <a class="btn btn-default" href="/ideas.html" aria-label="Ideas">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Ideas
-          </a>
-        </nav>
+        <div class="hero">
+          <div class="hero--inner">
+            <img class="circle" src="" />
+            <div class="header-circles">
+              <div class="circle circle--sm"></div>
+              <div class="page-name"></div>
+            </div>
+          </div>
+        </div>
       </header>
     	<div class="content clearfix">
         <article class="post">
@@ -70,7 +80,23 @@
 
       </div>
       <footer>
-        <small>© 2018 Levi Voelz</small>
+        <div id="footer--top">
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/skills">Skills</a>
+            <a href="/resume" target="_blank">Resumé</a>
+            <a href="/contact">Contact</a>
+          </nav>
+          <div class='circles'>
+            <div class='circle circle--md'></div>
+            <div class='circle circle--xs'></div>
+          </div>
+        </div>
+        <div id="copyright">
+          <small>© Levi Voelz - <a href="//twitter.com/levivoelz" target="_blank">@levivoelz</a></small>
+        </div>
       </footer>
     </div>
     <script>

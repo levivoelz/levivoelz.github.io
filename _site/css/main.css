@@ -1,44 +1,72 @@
-@import url(/css/bootstrap.css);
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('/css/normalize.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
 
-body {
-  font-size: 16px;
-  color: #555;
-  background-color: #222;
-  line-height: 1.65;
-  padding: 15px 0;
+/* variables */
+:root {
+  --bg-color: #FFFFFF;
+  --primary: #A4CFEF;
+  --secondary: #6B41A6;
+  --thirdary: #FDD78C;
+  --fourthary: #92735F;
+  --fifthary: #F24949;
+  --text-color: #91857C;
+}
+
+body, html {
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.4rem;
 }
 
 header {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 5px solid #7099B5;
+}
+
+#footer--top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0 4rem;
+}
+
+nav a {
+  display: block;
+  line-height: 1.2rem;
+}
+
+#copyright {
+  text-align: center;
 }
 
 a {
-  color: #7099B5;
+  font-weight: 300;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #5A7B91;
+  filter: brightness(65%);
 }
 
-body .btn {
-  border-radius: 0;
+a[disabled] {
+  filter: brightness(65%);
+  font-weight: 400;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
-section {
-  margin-top: 1em;
-  padding-bottom: 0.5em;
-  border-top: 1px solid #eee;
-}
-
-.entry {
-  margin-top: 2em;
+small {
+  font-size: 0.6rem;
 }
 
 .entry img {
@@ -50,92 +78,14 @@ section {
 
 .wrapper {
   width: 60%;
-  padding: 20px;
-  background-color: #fff;
+  max-width: 515px;
   margin: 0 auto;
-  border-right: 1px solid #f9f9f9;
-  border-left: 1px solid #f9f9f9;
 }
 
-.content {
-  padding: 20px 0;
-}
-
-footer {
-  margin-top: 1em;
-  border-top: 2px solid #7099B5;
-  padding: 0.5em 0;
-}
-
-.date {
-  text-transform: uppercase;
-  color: #999;
-}
-
-/* Posts */
-.posts .entry {
-  margin-top: 1.2em;
-}
-
-.post {
-  border-top: 1px solid #ccc;
-  margin-top: 40px;
-}
-.post--title {
-  margin-bottom: 3px;
-}
-
-.post--category {
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  font-size: .6em;
-  color: #999;
-}
-
-.post--date {
-  text-transform: uppercase;
-  font-size: .6em;
-  color: #999;
-}
-
-/* About section */
-.badge {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-.badge--left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.badge--contact {
-  padding: 5px;
-  margin-top: 10px;
-  font-size: 1.1em;
-}
-
-.badge--right {
-  padding: 20px 0 0;
-}
-
-.badge--name {
-  font-size: 2.5em;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.badge--location {
-  color: #999;
-  font-weight: 300;
-}
-
-.mugshot {
-  width: 100px;
-  border-radius: 50%;
-  border: 1px solid #999;
+.page-name {
+  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  margin-left: 0.5rem;
 }
 
 /* GoodMus */
@@ -165,8 +115,12 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
+  body, html {
+    font-size: 16px;
+  }
+
   .wrapper {
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -187,4 +141,66 @@ footer {
   font-family: 'Roboto Mono', monospace;
   letter-spacing: -3px;
   font-size: 0.9em;
+}
+
+.hero {
+  margin: 6rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--inner {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.circles {
+  display: flex;
+  padding: 1rem;
+}
+
+.circle {
+  overflow: hidden;
+  max-width: 12rem;
+  max-height: 12rem;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.circle--md {
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  max-width: 5rem;
+  max-height: 5rem;
+}
+
+.circle--sm {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.circle--xs {
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  align-self: flex-end;
+  max-width: 1rem;
+  max-height: 1rem;
+}
+
+.header-circles {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+
+@media (prefers-color-scheme: dark) {
+
 }
