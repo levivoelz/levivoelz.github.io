@@ -9,12 +9,12 @@
     {% endif %}
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="http://levivoelz.com{{ page.url }}">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} {% endif %}">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }} {% endif %}">
-    <meta name="twitter:image" content="{% if page.featured_image %}http://levivoelz.com{{ page.featured_image }} {% endif %}">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% endif %}">
+    <meta name="twitter:image" content="{% if page.hero %}{{ site.url }}{{ page.hero }}{% endif %}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz" />
-    <meta property="og:image" content="{% if page.hero %}{{ page.hero }} {% endif %}" />
+    <meta property="og:image" content="{% if page.hero %}{{ site.url }}{{ page.hero }}{% endif %}" />
     <link rel="stylesheet" href="/css/main.css?bust_it=2">
     <style>
       a {
