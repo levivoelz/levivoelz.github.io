@@ -22,7 +22,7 @@ Here's a full list of services I specialize in:
   - Background processessing and other browser leveraging strategies
   - RTC clients
   - Data syncing
-  - Cross-browser solutions
+  - Cross-browser compatibility issues debugging
   - Pixel perfect design translations
 - Functional and unit testing
 - Continuous integration pipelines
