@@ -8,7 +8,7 @@ color: "#6B41A6"
 I write Ruby, JavaScript, and Go for mobile apps and web apps. I do some preliminary UX design for very early stage projects, write specs and documentation. I’ve also tutored and mentored few people.
 
 Here's a full list of services I specialize in:
-- Backend development in Ruby, sometimes Go or Node.js. _Object Oriented_.
+- Backend development in Ruby, sometimes Go or Node.js. _Mostly Object Oriented_.
   - Stateless JSON REST API development
   - Relational data modeling and serialization
   - Third-party integrations using raw services or SDKs
@@ -16,7 +16,7 @@ Here's a full list of services I specialize in:
   - Distributed and monolithic application architecture design
   - DevOps: deployment scripts, tools, sysadmin
 - Frontend development using JavaScript, CSS, HTML, React, and React Native
-  - Complex interactions with heavy realiance on state
+  - Complex interactions with heavy reliance on state and state changes
   - Middleware and library development
   - Offline application development
   - Background processessing and other browser leveraging strategies
