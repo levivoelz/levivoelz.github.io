@@ -29,7 +29,7 @@ Here's a full list of services I specialize in:
 - Code reviews and mentoring
 - Complex reporting and data extraction
 - Comprehensive documentation
-- Implement and lead Agile methodologies
+- Implement and use Agile methodologies
 - No code apps using Zapier, AirTable, etc for rapid prototyping
 
 ### FAQ’s
