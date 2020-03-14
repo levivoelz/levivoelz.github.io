@@ -57,6 +57,10 @@ a[disabled] {
   font-weight: 400;
 }
 
+.content a {
+  border-bottom: 1px solid;
+}
+
 p {
   margin-bottom: 0;
 }
