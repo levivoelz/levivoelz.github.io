@@ -1,0 +1,296 @@
+work:1 [DOM] Found 7 elements with non-unique id #client_attribute: (More info: https://goo.gl/9p2vKq) <input value=​"bio" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"accomplishments" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"pitch" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"education" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"past_employers" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"testimonials" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​ <input value=​"personal_comments" type=​"hidden" name=​"client[attribute]​" id=​"client_attribute">​
+work:1 [DOM] Found 7 elements with non-unique id #edit_client_6354: (More info: https://goo.gl/9p2vKq) <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​ <form class=​"edit_client" id=​"edit_client_6354" action=​"/​clients/​6354" accept-charset=​"UTF-8" data-remote=​"true" method=​"post">​…​</form>​
+work:1 [DOM] Found 3 elements with non-unique id #edit_user_9679: (More info: https://goo.gl/9p2vKq) <form class=​"edit_user" id=​"edit_user_9679" enctype=​"multipart/​form-data" action=​"/​users/​9679" accept-charset=​"UTF-8" method=​"post">​…​</form>​ <form class=​"edit_user" id=​"edit_user_9679" action=​"/​users/​9679" accept-charset=​"UTF-8" method=​"post">​…​</form>​ <form class=​"edit_user" id=​"edit_user_9679" enctype=​"multipart/​form-data" action=​"/​users/​9679" accept-charset=​"UTF-8" method=​"post">​…​</form>​
+work:1 [DOM] Found 2 elements with non-unique id #user_client_attributes_id: (More info: https://goo.gl/9p2vKq) <input type=​"hidden" value=​"6354" name=​"user[client_attributes]​[id]​" id=​"user_client_attributes_id">​ <input type=​"hidden" value=​"6354" name=​"user[client_attributes]​[id]​" id=​"user_client_attributes_id">​
+DevTools failed to parse SourceMap: chrome-extension://cfhdojbkjhnklbpkdaibdccddilifddb/include.preload.js.map
+DevTools failed to parse SourceMap: chrome-extension://cfhdojbkjhnklbpkdaibdccddilifddb/include.postload.js.map
+DevTools failed to parse SourceMap: https://d19prxdgybdu56.cloudfront.net/assets/bootstrap-datepicker3.css.map
+arr.forEach((str) => {console.log(str.replace(/(\n|\r){1,}/g, " ").trim())})
+VM4336:1 Uncaught ReferenceError: arr is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM4336:1
+arr = []
+[]
+arr.forEach((str) => {console.log(str.replace(/(\n|\r){1,}/g, " ").trim())})
+undefined
+arr
+[]
+$('.skill').each(function() {
+    arr.push($(this).find('span').text());
+});
+jQuery.fn.init(76) [div#skill_48157.skill.ui-sortable-handle, div#skill_40858.skill.ui-sortable-handle, div#skill_40860.skill.ui-sortable-handle, div#skill_40856.skill.ui-sortable-handle, div#skill_40850.skill.ui-sortable-handle, div#skill_48142.skill.ui-sortable-handle, div#skill_40868.skill.ui-sortable-handle, div#skill_48164.skill.ui-sortable-handle, div#skill_48148.skill.ui-sortable-handle, div#skill_48138.skill.ui-sortable-handle, div#skill_40851.skill.ui-sortable-handle, div#skill_48156.skill.ui-sortable-handle, div#skill_40866.skill.ui-sortable-handle, div#skill_40863.skill.ui-sortable-handle, div#skill_48147.skill.ui-sortable-handle, div#skill_40867.skill.ui-sortable-handle, div#skill_40852.skill.ui-sortable-handle, div#skill_48160.skill.ui-sortable-handle, div#skill_48143.skill.ui-sortable-handle, div#skill_40859.skill.ui-sortable-handle, div#skill_48132.skill.ui-sortable-handle, div#skill_40861.skill.ui-sortable-handle, div#skill_40854.skill.ui-sortable-handle, div#skill_48141.skill.ui-sortable-handle, div#skill_40864.skill.ui-sortable-handle, div#skill_48134.skill.ui-sortable-handle, div#skill_48129.skill.ui-sortable-handle, div#skill_48165.skill.ui-sortable-handle, div#skill_40855.skill.ui-sortable-handle, div#skill_40849.skill.ui-sortable-handle, div#skill_48133.skill.ui-sortable-handle, div#skill_48162.skill.ui-sortable-handle, div#skill_48130.skill.ui-sortable-handle, div#skill_48136.skill.ui-sortable-handle, div#skill_40857.skill.ui-sortable-handle, div#skill_50361.skill.ui-sortable-handle, div#skill_51373.skill.ui-sortable-handle, div#skill_51374.skill.ui-sortable-handle, div#skill_51375.skill.ui-sortable-handle, div#skill_48161.skill.ui-sortable-handle, div#skill_40862.skill.ui-sortable-handle, div#skill_48137.skill.ui-sortable-handle, div#skill_48149.skill.ui-sortable-handle, div#skill_50353.skill.ui-sortable-handle, div#skill_50355.skill.ui-sortable-handle, div#skill_50360.skill.ui-sortable-handle, div#skill_48155.skill.ui-sortable-handle, div#skill_48146.skill.ui-sortable-handle, div#skill_48167.skill.ui-sortable-handle, div#skill_48166.skill.ui-sortable-handle, div#skill_48144.skill.ui-sortable-handle, div#skill_40869.skill.ui-sortable-handle, div#skill_48170.skill.ui-sortable-handle, div#skill_48128.skill.ui-sortable-handle, div#skill_48163.skill.ui-sortable-handle, div#skill_40865.skill.ui-sortable-handle, div#skill_48150.skill.ui-sortable-handle, div#skill_48152.skill.ui-sortable-handle, div#skill_48139.skill.ui-sortable-handle, div#skill_48145.skill.ui-sortable-handle, div#skill_48159.skill.ui-sortable-handle, div#skill_48171.skill.ui-sortable-handle, div#skill_48153.skill.ui-sortable-handle, div#skill_48158.skill.ui-sortable-handle, div#skill_48131.skill.ui-sortable-handle, div#skill_48140.skill.ui-sortable-handle, div#skill_48151.skill.ui-sortable-handle, div#skill_40870.skill.ui-sortable-handle, div#skill_50354.skill.ui-sortable-handle, div#skill_50362.skill.ui-sortable-handle, div#skill_48168.skill.ui-sortable-handle, div#skill_48169.skill.ui-sortable-handle, div#skill_48154.skill.ui-sortable-handle, div#skill_48172.skill.ui-sortable-handle, div#skill_48173.skill.ui-sortable-handle, div#skill_48135.skill.ui-sortable-handle, prevObject: jQuery.fn.init(1), context: document, selector: ".skill"]
+arr.forEach((str) => {console.log(str.replace(/(\n|\r){1,}/g, " ").trim())})
+VM4436:1 jQuery 7 2
+VM4436:1 Node.js 7 10
+VM4436:1 REST API Design 8 10
+VM4436:1 PostgreSQL 7 10
+VM4436:1 Ruby 8 10
+VM4436:1 API Integration 8 7
+VM4436:1 Design UI/UX  7 9
+VM4436:1 Twitter Bootstrap 8 4
+VM4436:1 Coffeescript 7 5
+VM4436:1 Git 8 10
+VM4436:1 Ruby on Rails 8 10
+VM4436:1 JSON 10 10
+VM4436:1 Heroku 7 10
+VM4436:1 Bash 7 10
+VM4436:1 Code review 8 10
+VM4436:1 Rspec 7 8
+VM4436:1 S3 8 8
+VM4436:1 Grunt.js 7 2
+VM4436:1 Linux/Unix 8 10
+VM4436:1 Application Architecture 8 10
+VM4436:1 WebRTC 7 10
+VM4436:1 Microservices 7 10
+VM4436:1 React.js 9 10
+VM4436:1 Stripe 8 8
+VM4436:1 SaaS Platform Development 8 10
+VM4436:1 ExpressJS 7 8
+VM4436:1 React Native 8 10
+VM4436:1 LESS/SASS 8 4
+VM4436:1 Redux 9 10
+VM4436:1 Backend web (Ruby) 8 10
+VM4436:1 REST and RESTful Services 8 10
+VM4436:1 Trello 10 8
+VM4436:1 react-router 8 10
+VM4436:1 Jest 7 9
+VM4436:1 Postman 8 7
+VM4436:1 Web Application Security 7 10
+VM4436:1 JavaScript  9 8
+VM4436:1 CSS 9 8
+VM4436:1 HTML 9 8
+VM4436:1 Backbone.js 6 2
+VM4436:1 TDD 6 10
+VM4436:1 JIRA 6 5
+VM4436:1 PHP  6 1
+VM4436:1 Crawling / Scraping 5 5
+VM4436:1 Image Processing 6 8
+VM4436:1 Auth0 5 4
+VM4436:1 Xcode 6 5
+VM4436:1 pair programming 6 8
+VM4436:1 Apache 6 4
+VM4436:1 Nginx 6 8
+VM4436:1 RabbitMQ 5 10
+VM4436:1 socket.io 6 10
+VM4436:1 Raspberry Pi 4 8
+VM4436:1 Go Language 5 7
+VM4436:1 Twilio 4 7
+VM4436:1 Amazon AWS 6 8
+VM4436:1 D3.js & Data Visualizations 6 10
+VM4436:1 Offline web applications (application cache) 6 10
+VM4436:1 Travis CI 4 10
+VM4436:1 Redis 6 8
+VM4436:1 GraphQL 4 8
+VM4436:1 Arduino 4 8
+VM4436:1 Python 4 6
+VM4436:1 MySQL 6 5
+VM4436:1 MongoDB 6 7
+VM4436:1 Gitlab Ci 4 5
+VM4436:1 Cucumber 6 8
+VM4436:1 Google Cloud Platform 4 9
+VM4436:1 C, Objective C iOS 3 3
+VM4436:1 Security (encryption) 3 8
+VM4436:1 NLP 3 8
+VM4436:1 Speech recognition 3 8
+VM4436:1 Machine Learning 3 8
+VM4436:1 C++ 3 5
+VM4436:1 C 3 6
+VM4436:1 Java 3 4
+undefined
+arr.map((str) => str.replace(/(\n|\r){1,}/g, " ").trim())
+(76) ["jQuery 7 2", "Node.js 7 10", "REST API Design 8 10", "PostgreSQL 7 10", "Ruby 8 10", "API Integration 8 7", "Design UI/UX  7 9", "Twitter Bootstrap 8 4", "Coffeescript 7 5", "Git 8 10", "Ruby on Rails 8 10", "JSON 10 10", "Heroku 7 10", "Bash 7 10", "Code review 8 10", "Rspec 7 8", "S3 8 8", "Grunt.js 7 2", "Linux/Unix 8 10", "Application Architecture 8 10", "WebRTC 7 10", "Microservices 7 10", "React.js 9 10", "Stripe 8 8", "SaaS Platform Development 8 10", "ExpressJS 7 8", "React Native 8 10", "LESS/SASS 8 4", "Redux 9 10", "Backend web (Ruby) 8 10", "REST and RESTful Services 8 10", "Trello 10 8", "react-router 8 10", "Jest 7 9", "Postman 8 7", "Web Application Security 7 10", "JavaScript  9 8", "CSS 9 8", "HTML 9 8", "Backbone.js 6 2", "TDD 6 10", "JIRA 6 5", "PHP  6 1", "Crawling / Scraping 5 5", "Image Processing 6 8", "Auth0 5 4", "Xcode 6 5", "pair programming 6 8", "Apache 6 4", "Nginx 6 8", "RabbitMQ 5 10", "socket.io 6 10", "Raspberry Pi 4 8", "Go Language 5 7", "Twilio 4 7", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "Offline web applications (application cache) 6 10", "Travis CI 4 10", "Redis 6 8", "GraphQL 4 8", "Arduino 4 8", "Python 4 6", "MySQL 6 5", "MongoDB 6 7", "Gitlab Ci 4 5", "Cucumber 6 8", "Google Cloud Platform 4 9", "C, Objective C iOS 3 3", "Security (encryption) 3 8", "NLP 3 8", "Speech recognition 3 8", "Machine Learning 3 8", "C++ 3 5", "C 3 6", "Java 3 4"]
+arr.map((str) => str.replace(/(\n|\r){1,}/g, " ").trim()).sort((a, b) => a.split(' ')[1] > b.split(' ')[1])
+(76) ["jQuery 7 2", "Node.js 7 10", "REST API Design 8 10", "PostgreSQL 7 10", "Ruby 8 10", "API Integration 8 7", "Design UI/UX  7 9", "Twitter Bootstrap 8 4", "Coffeescript 7 5", "Git 8 10", "Ruby on Rails 8 10", "JSON 10 10", "Heroku 7 10", "Bash 7 10", "Code review 8 10", "Rspec 7 8", "S3 8 8", "Grunt.js 7 2", "Linux/Unix 8 10", "Application Architecture 8 10", "WebRTC 7 10", "Microservices 7 10", "React.js 9 10", "Stripe 8 8", "SaaS Platform Development 8 10", "ExpressJS 7 8", "React Native 8 10", "LESS/SASS 8 4", "Redux 9 10", "Backend web (Ruby) 8 10", "REST and RESTful Services 8 10", "Trello 10 8", "react-router 8 10", "Jest 7 9", "Postman 8 7", "Web Application Security 7 10", "JavaScript  9 8", "CSS 9 8", "HTML 9 8", "Backbone.js 6 2", "TDD 6 10", "JIRA 6 5", "PHP  6 1", "Crawling / Scraping 5 5", "Image Processing 6 8", "Auth0 5 4", "Xcode 6 5", "pair programming 6 8", "Apache 6 4", "Nginx 6 8", "RabbitMQ 5 10", "socket.io 6 10", "Raspberry Pi 4 8", "Go Language 5 7", "Twilio 4 7", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "Offline web applications (application cache) 6 10", "Travis CI 4 10", "Redis 6 8", "GraphQL 4 8", "Arduino 4 8", "Python 4 6", "MySQL 6 5", "MongoDB 6 7", "Gitlab Ci 4 5", "Cucumber 6 8", "Google Cloud Platform 4 9", "C, Objective C iOS 3 3", "Security (encryption) 3 8", "NLP 3 8", "Speech recognition 3 8", "Machine Learning 3 8", "C++ 3 5", "C 3 6", "Java 3 4"]
+arr.map((str) => str.replace(/(\n|\r){1,}/g, " ").trim()).sort((a, b) => Number(a.split(' ')[1]) > Number(b.split(' ')[1]))
+(76) ["jQuery 7 2", "Node.js 7 10", "REST API Design 8 10", "PostgreSQL 7 10", "Ruby 8 10", "API Integration 8 7", "Design UI/UX  7 9", "Twitter Bootstrap 8 4", "Coffeescript 7 5", "Git 8 10", "Ruby on Rails 8 10", "JSON 10 10", "Heroku 7 10", "Bash 7 10", "Code review 8 10", "Rspec 7 8", "S3 8 8", "Grunt.js 7 2", "Linux/Unix 8 10", "Application Architecture 8 10", "WebRTC 7 10", "Microservices 7 10", "React.js 9 10", "Stripe 8 8", "SaaS Platform Development 8 10", "ExpressJS 7 8", "React Native 8 10", "LESS/SASS 8 4", "Redux 9 10", "Backend web (Ruby) 8 10", "REST and RESTful Services 8 10", "Trello 10 8", "react-router 8 10", "Jest 7 9", "Postman 8 7", "Web Application Security 7 10", "JavaScript  9 8", "CSS 9 8", "HTML 9 8", "Backbone.js 6 2", "TDD 6 10", "JIRA 6 5", "PHP  6 1", "Crawling / Scraping 5 5", "Image Processing 6 8", "Auth0 5 4", "Xcode 6 5", "pair programming 6 8", "Apache 6 4", "Nginx 6 8", "RabbitMQ 5 10", "socket.io 6 10", "Raspberry Pi 4 8", "Go Language 5 7", "Twilio 4 7", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "Offline web applications (application cache) 6 10", "Travis CI 4 10", "Redis 6 8", "GraphQL 4 8", "Arduino 4 8", "Python 4 6", "MySQL 6 5", "MongoDB 6 7", "Gitlab Ci 4 5", "Cucumber 6 8", "Google Cloud Platform 4 9", "C, Objective C iOS 3 3", "Security (encryption) 3 8", "NLP 3 8", "Speech recognition 3 8", "Machine Learning 3 8", "C++ 3 5", "C 3 6", "Java 3 4"]
+console.log(arr.map((str) => str.replace(/(\n|\r){1,}/g, " ").trim()).sort((a, b) => Number(a.split(' ')[1]) > Number(b.split(' ')[1])))
+VM4870:1 (76) ["jQuery 7 2", "Node.js 7 10", "REST API Design 8 10", "PostgreSQL 7 10", "Ruby 8 10", "API Integration 8 7", "Design UI/UX  7 9", "Twitter Bootstrap 8 4", "Coffeescript 7 5", "Git 8 10", "Ruby on Rails 8 10", "JSON 10 10", "Heroku 7 10", "Bash 7 10", "Code review 8 10", "Rspec 7 8", "S3 8 8", "Grunt.js 7 2", "Linux/Unix 8 10", "Application Architecture 8 10", "WebRTC 7 10", "Microservices 7 10", "React.js 9 10", "Stripe 8 8", "SaaS Platform Development 8 10", "ExpressJS 7 8", "React Native 8 10", "LESS/SASS 8 4", "Redux 9 10", "Backend web (Ruby) 8 10", "REST and RESTful Services 8 10", "Trello 10 8", "react-router 8 10", "Jest 7 9", "Postman 8 7", "Web Application Security 7 10", "JavaScript  9 8", "CSS 9 8", "HTML 9 8", "Backbone.js 6 2", "TDD 6 10", "JIRA 6 5", "PHP  6 1", "Crawling / Scraping 5 5", "Image Processing 6 8", "Auth0 5 4", "Xcode 6 5", "pair programming 6 8", "Apache 6 4", "Nginx 6 8", "RabbitMQ 5 10", "socket.io 6 10", "Raspberry Pi 4 8", "Go Language 5 7", "Twilio 4 7", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "Offline web applications (application cache) 6 10", "Travis CI 4 10", "Redis 6 8", "GraphQL 4 8", "Arduino 4 8", "Python 4 6", "MySQL 6 5", "MongoDB 6 7", "Gitlab Ci 4 5", "Cucumber 6 8", "Google Cloud Platform 4 9", "C, Objective C iOS 3 3", "Security (encryption) 3 8", "NLP 3 8", "Speech recognition 3 8", "Machine Learning 3 8", "C++ 3 5", "C 3 6", "Java 3 4"]
+undefined
+arr = arr.map((str) => str.replace(/(\n|\r){1,}/g, " ").trim())
+(76) ["jQuery 7 2", "Node.js 7 10", "REST API Design 8 10", "PostgreSQL 7 10", "Ruby 8 10", "API Integration 8 7", "Design UI/UX  7 9", "Twitter Bootstrap 8 4", "Coffeescript 7 5", "Git 8 10", "Ruby on Rails 8 10", "JSON 10 10", "Heroku 7 10", "Bash 7 10", "Code review 8 10", "Rspec 7 8", "S3 8 8", "Grunt.js 7 2", "Linux/Unix 8 10", "Application Architecture 8 10", "WebRTC 7 10", "Microservices 7 10", "React.js 9 10", "Stripe 8 8", "SaaS Platform Development 8 10", "ExpressJS 7 8", "React Native 8 10", "LESS/SASS 8 4", "Redux 9 10", "Backend web (Ruby) 8 10", "REST and RESTful Services 8 10", "Trello 10 8", "react-router 8 10", "Jest 7 9", "Postman 8 7", "Web Application Security 7 10", "JavaScript  9 8", "CSS 9 8", "HTML 9 8", "Backbone.js 6 2", "TDD 6 10", "JIRA 6 5", "PHP  6 1", "Crawling / Scraping 5 5", "Image Processing 6 8", "Auth0 5 4", "Xcode 6 5", "pair programming 6 8", "Apache 6 4", "Nginx 6 8", "RabbitMQ 5 10", "socket.io 6 10", "Raspberry Pi 4 8", "Go Language 5 7", "Twilio 4 7", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "Offline web applications (application cache) 6 10", "Travis CI 4 10", "Redis 6 8", "GraphQL 4 8", "Arduino 4 8", "Python 4 6", "MySQL 6 5", "MongoDB 6 7", "Gitlab Ci 4 5", "Cucumber 6 8", "Google Cloud Platform 4 9", "C, Objective C iOS 3 3", "Security (encryption) 3 8", "NLP 3 8", "Speech recognition 3 8", "Machine Learning 3 8", "C++ 3 5", "C 3 6", "Java 3 4"]
+arr.sort()
+(76) ["API Integration 8 7", "Amazon AWS 6 8", "Apache 6 4", "Application Architecture 8 10", "Arduino 4 8", "Auth0 5 4", "Backbone.js 6 2", "Backend web (Ruby) 8 10", "Bash 7 10", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "CSS 9 8", "Code review 8 10", "Coffeescript 7 5", "Crawling / Scraping 5 5", "Cucumber 6 8", "D3.js & Data Visualizations 6 10", "Design UI/UX  7 9", "ExpressJS 7 8", "Git 8 10", "Gitlab Ci 4 5", "Go Language 5 7", "Google Cloud Platform 4 9", "GraphQL 4 8", "Grunt.js 7 2", "HTML 9 8", "Heroku 7 10", "Image Processing 6 8", "JIRA 6 5", "JSON 10 10", "Java 3 4", "JavaScript  9 8", "Jest 7 9", "LESS/SASS 8 4", "Linux/Unix 8 10", "Machine Learning 3 8", "Microservices 7 10", "MongoDB 6 7", "MySQL 6 5", "NLP 3 8", "Nginx 6 8", "Node.js 7 10", "Offline web applications (application cache) 6 10", "PHP  6 1", "PostgreSQL 7 10", "Postman 8 7", "Python 4 6", "REST API Design 8 10", "REST and RESTful Services 8 10", "RabbitMQ 5 10", "Raspberry Pi 4 8", "React Native 8 10", "React.js 9 10", "Redis 6 8", "Redux 9 10", "Rspec 7 8", "Ruby 8 10", "Ruby on Rails 8 10", "S3 8 8", "SaaS Platform Development 8 10", "Security (encryption) 3 8", "Speech recognition 3 8", "Stripe 8 8", "TDD 6 10", "Travis CI 4 10", "Trello 10 8", "Twilio 4 7", "Twitter Bootstrap 8 4", "Web Application Security 7 10", "WebRTC 7 10", "Xcode 6 5", "jQuery 7 2", "pair programming 6 8", "react-router 8 10", "socket.io 6 10"]
+arr.sort((a, b) => Number(a.split(' ')[1]) > Number(b.split(' ')[1])))
+VM4989:1 Uncaught SyntaxError: Unexpected token ')'
+arr.sort((a, b) => Number(a.split(' ')[1]) > Number(b.split(' ')[1]))
+(76) ["API Integration 8 7", "Amazon AWS 6 8", "Apache 6 4", "Application Architecture 8 10", "Arduino 4 8", "Auth0 5 4", "Backbone.js 6 2", "Backend web (Ruby) 8 10", "Bash 7 10", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "CSS 9 8", "Code review 8 10", "Coffeescript 7 5", "Crawling / Scraping 5 5", "Cucumber 6 8", "D3.js & Data Visualizations 6 10", "Design UI/UX  7 9", "ExpressJS 7 8", "Git 8 10", "Gitlab Ci 4 5", "Go Language 5 7", "Google Cloud Platform 4 9", "GraphQL 4 8", "Grunt.js 7 2", "HTML 9 8", "Heroku 7 10", "Image Processing 6 8", "JIRA 6 5", "JSON 10 10", "Java 3 4", "JavaScript  9 8", "Jest 7 9", "LESS/SASS 8 4", "Linux/Unix 8 10", "Machine Learning 3 8", "Microservices 7 10", "MongoDB 6 7", "MySQL 6 5", "NLP 3 8", "Nginx 6 8", "Node.js 7 10", "Offline web applications (application cache) 6 10", "PHP  6 1", "PostgreSQL 7 10", "Postman 8 7", "Python 4 6", "REST API Design 8 10", "REST and RESTful Services 8 10", "RabbitMQ 5 10", "Raspberry Pi 4 8", "React Native 8 10", "React.js 9 10", "Redis 6 8", "Redux 9 10", "Rspec 7 8", "Ruby 8 10", "Ruby on Rails 8 10", "S3 8 8", "SaaS Platform Development 8 10", "Security (encryption) 3 8", "Speech recognition 3 8", "Stripe 8 8", "TDD 6 10", "Travis CI 4 10", "Trello 10 8", "Twilio 4 7", "Twitter Bootstrap 8 4", "Web Application Security 7 10", "WebRTC 7 10", "Xcode 6 5", "jQuery 7 2", "pair programming 6 8", "react-router 8 10", "socket.io 6 10"]
+arr.sort((a, b) => Number(a.split(' ')[1]) > Number(b.split(' ')[1]))
+(76) ["API Integration 8 7", "Amazon AWS 6 8", "Apache 6 4", "Application Architecture 8 10", "Arduino 4 8", "Auth0 5 4", "Backbone.js 6 2", "Backend web (Ruby) 8 10", "Bash 7 10", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "CSS 9 8", "Code review 8 10", "Coffeescript 7 5", "Crawling / Scraping 5 5", "Cucumber 6 8", "D3.js & Data Visualizations 6 10", "Design UI/UX  7 9", "ExpressJS 7 8", "Git 8 10", "Gitlab Ci 4 5", "Go Language 5 7", "Google Cloud Platform 4 9", "GraphQL 4 8", "Grunt.js 7 2", "HTML 9 8", "Heroku 7 10", "Image Processing 6 8", "JIRA 6 5", "JSON 10 10", "Java 3 4", "JavaScript  9 8", "Jest 7 9", "LESS/SASS 8 4", "Linux/Unix 8 10", "Machine Learning 3 8", "Microservices 7 10", "MongoDB 6 7", "MySQL 6 5", "NLP 3 8", "Nginx 6 8", "Node.js 7 10", "Offline web applications (application cache) 6 10", "PHP  6 1", "PostgreSQL 7 10", "Postman 8 7", "Python 4 6", "REST API Design 8 10", "REST and RESTful Services 8 10", "RabbitMQ 5 10", "Raspberry Pi 4 8", "React Native 8 10", "React.js 9 10", "Redis 6 8", "Redux 9 10", "Rspec 7 8", "Ruby 8 10", "Ruby on Rails 8 10", "S3 8 8", "SaaS Platform Development 8 10", "Security (encryption) 3 8", "Speech recognition 3 8", "Stripe 8 8", "TDD 6 10", "Travis CI 4 10", "Trello 10 8", "Twilio 4 7", "Twitter Bootstrap 8 4", "Web Application Security 7 10", "WebRTC 7 10", "Xcode 6 5", "jQuery 7 2", "pair programming 6 8", "react-router 8 10", "socket.io 6 10"]
+arr[0].split(/\d/)
+(3) ["API Integration ", " ", ""]
+arr
+(76) ["API Integration 8 7", "Amazon AWS 6 8", "Apache 6 4", "Application Architecture 8 10", "Arduino 4 8", "Auth0 5 4", "Backbone.js 6 2", "Backend web (Ruby) 8 10", "Bash 7 10", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "CSS 9 8", "Code review 8 10", "Coffeescript 7 5", "Crawling / Scraping 5 5", "Cucumber 6 8", "D3.js & Data Visualizations 6 10", "Design UI/UX  7 9", "ExpressJS 7 8", "Git 8 10", "Gitlab Ci 4 5", "Go Language 5 7", "Google Cloud Platform 4 9", "GraphQL 4 8", "Grunt.js 7 2", "HTML 9 8", "Heroku 7 10", "Image Processing 6 8", "JIRA 6 5", "JSON 10 10", "Java 3 4", "JavaScript  9 8", "Jest 7 9", "LESS/SASS 8 4", "Linux/Unix 8 10", "Machine Learning 3 8", "Microservices 7 10", "MongoDB 6 7", "MySQL 6 5", "NLP 3 8", "Nginx 6 8", "Node.js 7 10", "Offline web applications (application cache) 6 10", "PHP  6 1", "PostgreSQL 7 10", "Postman 8 7", "Python 4 6", "REST API Design 8 10", "REST and RESTful Services 8 10", "RabbitMQ 5 10", "Raspberry Pi 4 8", "React Native 8 10", "React.js 9 10", "Redis 6 8", "Redux 9 10", "Rspec 7 8", "Ruby 8 10", "Ruby on Rails 8 10", "S3 8 8", "SaaS Platform Development 8 10", "Security (encryption) 3 8", "Speech recognition 3 8", "Stripe 8 8", "TDD 6 10", "Travis CI 4 10", "Trello 10 8", "Twilio 4 7", "Twitter Bootstrap 8 4", "Web Application Security 7 10", "WebRTC 7 10", "Xcode 6 5", "jQuery 7 2", "pair programming 6 8", "react-router 8 10", "socket.io 6 10"]
+arr[0].match(/\d/)
+["8", index: 16, input: "API Integration 8 7", groups: undefined]
+arr[0].match(/\d/)
+["8", index: 16, input: "API Integration 8 7", groups: undefined]
+arr[0].match(/\d/)[0]
+"8"
+Number(arr[0].match(/\d/)[0])
+8
+arr.sort((a, b) => Number(a.match(/\d/)[0]) > Number(b.match(/\d/)[0]))
+(76) ["API Integration 8 7", "Amazon AWS 6 8", "Apache 6 4", "Application Architecture 8 10", "Arduino 4 8", "Auth0 5 4", "Backbone.js 6 2", "Backend web (Ruby) 8 10", "Bash 7 10", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "CSS 9 8", "Code review 8 10", "Coffeescript 7 5", "Crawling / Scraping 5 5", "Cucumber 6 8", "D3.js & Data Visualizations 6 10", "Design UI/UX  7 9", "ExpressJS 7 8", "Git 8 10", "Gitlab Ci 4 5", "Go Language 5 7", "Google Cloud Platform 4 9", "GraphQL 4 8", "Grunt.js 7 2", "HTML 9 8", "Heroku 7 10", "Image Processing 6 8", "JIRA 6 5", "JSON 10 10", "Java 3 4", "JavaScript  9 8", "Jest 7 9", "LESS/SASS 8 4", "Linux/Unix 8 10", "Machine Learning 3 8", "Microservices 7 10", "MongoDB 6 7", "MySQL 6 5", "NLP 3 8", "Nginx 6 8", "Node.js 7 10", "Offline web applications (application cache) 6 10", "PHP  6 1", "PostgreSQL 7 10", "Postman 8 7", "Python 4 6", "REST API Design 8 10", "REST and RESTful Services 8 10", "RabbitMQ 5 10", "Raspberry Pi 4 8", "React Native 8 10", "React.js 9 10", "Redis 6 8", "Redux 9 10", "Rspec 7 8", "Ruby 8 10", "Ruby on Rails 8 10", "S3 8 8", "SaaS Platform Development 8 10", "Security (encryption) 3 8", "Speech recognition 3 8", "Stripe 8 8", "TDD 6 10", "Travis CI 4 10", "Trello 10 8", "Twilio 4 7", "Twitter Bootstrap 8 4", "Web Application Security 7 10", "WebRTC 7 10", "Xcode 6 5", "jQuery 7 2", "pair programming 6 8", "react-router 8 10", "socket.io 6 10"]
+arr.sort((a, b) => Number(a.match(/\d/)[0]) - Number(b.match(/\d/)[0]))
+(76) ["Auth0 5 4", "JSON 10 10", "Trello 10 8", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "D3.js & Data Visualizations 6 10", "Java 3 4", "Machine Learning 3 8", "NLP 3 8", "S3 8 8", "Security (encryption) 3 8", "Speech recognition 3 8", "Arduino 4 8", "Gitlab Ci 4 5", "Google Cloud Platform 4 9", "GraphQL 4 8", "Python 4 6", "Raspberry Pi 4 8", "Travis CI 4 10", "Twilio 4 7", "Crawling / Scraping 5 5", "Go Language 5 7", "RabbitMQ 5 10", "Amazon AWS 6 8", "Apache 6 4", "Backbone.js 6 2", "Cucumber 6 8", "Image Processing 6 8", "JIRA 6 5", "MongoDB 6 7", "MySQL 6 5", "Nginx 6 8", "Offline web applications (application cache) 6 10", "PHP  6 1", "Redis 6 8", "TDD 6 10", "Xcode 6 5", "pair programming 6 8", "socket.io 6 10", "Bash 7 10", "Coffeescript 7 5", "Design UI/UX  7 9", "ExpressJS 7 8", "Grunt.js 7 2", "Heroku 7 10", "Jest 7 9", "Microservices 7 10", "Node.js 7 10", "PostgreSQL 7 10", "Rspec 7 8", "Web Application Security 7 10", "WebRTC 7 10", "jQuery 7 2", "API Integration 8 7", "Application Architecture 8 10", "Backend web (Ruby) 8 10", "Code review 8 10", "Git 8 10", "LESS/SASS 8 4", "Linux/Unix 8 10", "Postman 8 7", "REST API Design 8 10", "REST and RESTful Services 8 10", "React Native 8 10", "Ruby 8 10", "Ruby on Rails 8 10", "SaaS Platform Development 8 10", "Stripe 8 8", "Twitter Bootstrap 8 4", "react-router 8 10", "CSS 9 8", "HTML 9 8", "JavaScript  9 8", "React.js 9 10", "Redux 9 10"]0: "Auth0 5 4"1: "JSON 10 10"2: "Trello 10 8"3: "C 3 6"4: "C++ 3 5"5: "C, Objective C iOS 3 3"6: "D3.js & Data Visualizations 6 10"7: "Java 3 4"8: "Machine Learning 3 8"9: "NLP 3 8"10: "S3 8 8"11: "Security (encryption) 3 8"12: "Speech recognition 3 8"13: "Arduino 4 8"14: "Gitlab Ci 4 5"15: "Google Cloud Platform 4 9"16: "GraphQL 4 8"17: "Python 4 6"18: "Raspberry Pi 4 8"19: "Travis CI 4 10"20: "Twilio 4 7"21: "Crawling / Scraping 5 5"22: "Go Language 5 7"23: "RabbitMQ 5 10"24: "Amazon AWS 6 8"25: "Apache 6 4"26: "Backbone.js 6 2"27: "Cucumber 6 8"28: "Image Processing 6 8"29: "JIRA 6 5"30: "MongoDB 6 7"31: "MySQL 6 5"32: "Nginx 6 8"33: "Offline web applications (application cache) 6 10"34: "PHP  6 1"35: "Redis 6 8"36: "TDD 6 10"37: "Xcode 6 5"38: "pair programming 6 8"39: "socket.io 6 10"40: "Bash 7 10"41: "Coffeescript 7 5"42: "Design UI/UX  7 9"43: "ExpressJS 7 8"44: "Grunt.js 7 2"45: "Heroku 7 10"46: "Jest 7 9"47: "Microservices 7 10"48: "Node.js 7 10"49: "PostgreSQL 7 10"50: "Rspec 7 8"51: "Web Application Security 7 10"52: "WebRTC 7 10"53: "jQuery 7 2"54: "API Integration 8 7"55: "Application Architecture 8 10"56: "Backend web (Ruby) 8 10"57: "Code review 8 10"58: "Git 8 10"59: "LESS/SASS 8 4"60: "Linux/Unix 8 10"61: "Postman 8 7"62: "REST API Design 8 10"63: "REST and RESTful Services 8 10"64: "React Native 8 10"65: "Ruby 8 10"66: "Ruby on Rails 8 10"67: "SaaS Platform Development 8 10"68: "Stripe 8 8"69: "Twitter Bootstrap 8 4"70: "react-router 8 10"71: "CSS 9 8"72: "HTML 9 8"73: "JavaScript  9 8"74: "React.js 9 10"75: "Redux 9 10"length: 76__proto__: Array(0)
+arr.sort((a, b) => Number(a.match(/ \d/)[0]) - Number(b.match(/ \d/)[0]))
+(76) ["JSON 10 10", "Trello 10 8", "C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "Java 3 4", "Machine Learning 3 8", "NLP 3 8", "Security (encryption) 3 8", "Speech recognition 3 8", "Arduino 4 8", "Gitlab Ci 4 5", "Google Cloud Platform 4 9", "GraphQL 4 8", "Python 4 6", "Raspberry Pi 4 8", "Travis CI 4 10", "Twilio 4 7", "Auth0 5 4", "Crawling / Scraping 5 5", "Go Language 5 7", "RabbitMQ 5 10", "D3.js & Data Visualizations 6 10", "Amazon AWS 6 8", "Apache 6 4", "Backbone.js 6 2", "Cucumber 6 8", "Image Processing 6 8", "JIRA 6 5", "MongoDB 6 7", "MySQL 6 5", "Nginx 6 8", "Offline web applications (application cache) 6 10", "PHP  6 1", "Redis 6 8", "TDD 6 10", "Xcode 6 5", "pair programming 6 8", "socket.io 6 10", "Bash 7 10", "Coffeescript 7 5", "Design UI/UX  7 9", "ExpressJS 7 8", "Grunt.js 7 2", "Heroku 7 10", "Jest 7 9", "Microservices 7 10", "Node.js 7 10", "PostgreSQL 7 10", "Rspec 7 8", "Web Application Security 7 10", "WebRTC 7 10", "jQuery 7 2", "S3 8 8", "API Integration 8 7", "Application Architecture 8 10", "Backend web (Ruby) 8 10", "Code review 8 10", "Git 8 10", "LESS/SASS 8 4", "Linux/Unix 8 10", "Postman 8 7", "REST API Design 8 10", "REST and RESTful Services 8 10", "React Native 8 10", "Ruby 8 10", "Ruby on Rails 8 10", "SaaS Platform Development 8 10", "Stripe 8 8", "Twitter Bootstrap 8 4", "react-router 8 10", "CSS 9 8", "HTML 9 8", "JavaScript  9 8", "React.js 9 10", "Redux 9 10"]
+arr.sort((a, b) => Number(a.match(/ \d+/)[0]) - Number(b.match(/ \d+/)[0]))
+(76) ["C 3 6", "C++ 3 5", "C, Objective C iOS 3 3", "Java 3 4", "Machine Learning 3 8", "NLP 3 8", "Security (encryption) 3 8", "Speech recognition 3 8", "Arduino 4 8", "Gitlab Ci 4 5", "Google Cloud Platform 4 9", "GraphQL 4 8", "Python 4 6", "Raspberry Pi 4 8", "Travis CI 4 10", "Twilio 4 7", "Auth0 5 4", "Crawling / Scraping 5 5", "Go Language 5 7", "RabbitMQ 5 10", "D3.js & Data Visualizations 6 10", "Amazon AWS 6 8", "Apache 6 4", "Backbone.js 6 2", "Cucumber 6 8", "Image Processing 6 8", "JIRA 6 5", "MongoDB 6 7", "MySQL 6 5", "Nginx 6 8", "Offline web applications (application cache) 6 10", "PHP  6 1", "Redis 6 8", "TDD 6 10", "Xcode 6 5", "pair programming 6 8", "socket.io 6 10", "Bash 7 10", "Coffeescript 7 5", "Design UI/UX  7 9", "ExpressJS 7 8", "Grunt.js 7 2", "Heroku 7 10", "Jest 7 9", "Microservices 7 10", "Node.js 7 10", "PostgreSQL 7 10", "Rspec 7 8", "Web Application Security 7 10", "WebRTC 7 10", "jQuery 7 2", "S3 8 8", "API Integration 8 7", "Application Architecture 8 10", "Backend web (Ruby) 8 10", "Code review 8 10", "Git 8 10", "LESS/SASS 8 4", "Linux/Unix 8 10", "Postman 8 7", "REST API Design 8 10", "REST and RESTful Services 8 10", "React Native 8 10", "Ruby 8 10", "Ruby on Rails 8 10", "SaaS Platform Development 8 10", "Stripe 8 8", "Twitter Bootstrap 8 4", "react-router 8 10", "CSS 9 8", "HTML 9 8", "JavaScript  9 8", "React.js 9 10", "Redux 9 10", "JSON 10 10", "Trello 10 8"]
+arr.sort((a, b) => Number(a.match(/ \d+/)[0]) - Number(b.match(/ \d+/)[0])).reverse()
+(76) ["Trello 10 8", "JSON 10 10", "Redux 9 10", "React.js 9 10", "JavaScript  9 8", "HTML 9 8", "CSS 9 8", "react-router 8 10", "Twitter Bootstrap 8 4", "Stripe 8 8", "SaaS Platform Development 8 10", "Ruby on Rails 8 10", "Ruby 8 10", "React Native 8 10", "REST and RESTful Services 8 10", "REST API Design 8 10", "Postman 8 7", "Linux/Unix 8 10", "LESS/SASS 8 4", "Git 8 10", "Code review 8 10", "Backend web (Ruby) 8 10", "Application Architecture 8 10", "API Integration 8 7", "S3 8 8", "jQuery 7 2", "WebRTC 7 10", "Web Application Security 7 10", "Rspec 7 8", "PostgreSQL 7 10", "Node.js 7 10", "Microservices 7 10", "Jest 7 9", "Heroku 7 10", "Grunt.js 7 2", "ExpressJS 7 8", "Design UI/UX  7 9", "Coffeescript 7 5", "Bash 7 10", "socket.io 6 10", "pair programming 6 8", "Xcode 6 5", "TDD 6 10", "Redis 6 8", "PHP  6 1", "Offline web applications (application cache) 6 10", "Nginx 6 8", "MySQL 6 5", "MongoDB 6 7", "JIRA 6 5", "Image Processing 6 8", "Cucumber 6 8", "Backbone.js 6 2", "Apache 6 4", "Amazon AWS 6 8", "D3.js & Data Visualizations 6 10", "RabbitMQ 5 10", "Go Language 5 7", "Crawling / Scraping 5 5", "Auth0 5 4", "Twilio 4 7", "Travis CI 4 10", "Raspberry Pi 4 8", "Python 4 6", "GraphQL 4 8", "Google Cloud Platform 4 9", "Gitlab Ci 4 5", "Arduino 4 8", "Speech recognition 3 8", "Security (encryption) 3 8", "NLP 3 8", "Machine Learning 3 8", "Java 3 4", "C, Objective C iOS 3 3", "C++ 3 5", "C 3 6"]
+arr.sort((a, b) => Number(a.match(/ \d+/)[0]) - Number(b.match(/ \d+/)[0])).reverse().forEach(it => console.log(it));
+VM5638:1 JSON 10 10
+VM5638:1 Trello 10 8
+VM5638:1 CSS 9 8
+VM5638:1 HTML 9 8
+VM5638:1 JavaScript  9 8
+VM5638:1 React.js 9 10
+VM5638:1 Redux 9 10
+VM5638:1 S3 8 8
+VM5638:1 API Integration 8 7
+VM5638:1 Application Architecture 8 10
+VM5638:1 Backend web (Ruby) 8 10
+VM5638:1 Code review 8 10
+VM5638:1 Git 8 10
+VM5638:1 LESS/SASS 8 4
+VM5638:1 Linux/Unix 8 10
+VM5638:1 Postman 8 7
+VM5638:1 REST API Design 8 10
+VM5638:1 REST and RESTful Services 8 10
+VM5638:1 React Native 8 10
+VM5638:1 Ruby 8 10
+VM5638:1 Ruby on Rails 8 10
+VM5638:1 SaaS Platform Development 8 10
+VM5638:1 Stripe 8 8
+VM5638:1 Twitter Bootstrap 8 4
+VM5638:1 react-router 8 10
+VM5638:1 Bash 7 10
+VM5638:1 Coffeescript 7 5
+VM5638:1 Design UI/UX  7 9
+VM5638:1 ExpressJS 7 8
+VM5638:1 Grunt.js 7 2
+VM5638:1 Heroku 7 10
+VM5638:1 Jest 7 9
+VM5638:1 Microservices 7 10
+VM5638:1 Node.js 7 10
+VM5638:1 PostgreSQL 7 10
+VM5638:1 Rspec 7 8
+VM5638:1 Web Application Security 7 10
+VM5638:1 WebRTC 7 10
+VM5638:1 jQuery 7 2
+VM5638:1 D3.js & Data Visualizations 6 10
+VM5638:1 Amazon AWS 6 8
+VM5638:1 Apache 6 4
+VM5638:1 Backbone.js 6 2
+VM5638:1 Cucumber 6 8
+VM5638:1 Image Processing 6 8
+VM5638:1 JIRA 6 5
+VM5638:1 MongoDB 6 7
+VM5638:1 MySQL 6 5
+VM5638:1 Nginx 6 8
+VM5638:1 Offline web applications (application cache) 6 10
+VM5638:1 PHP  6 1
+VM5638:1 Redis 6 8
+VM5638:1 TDD 6 10
+VM5638:1 Xcode 6 5
+VM5638:1 pair programming 6 8
+VM5638:1 socket.io 6 10
+VM5638:1 Auth0 5 4
+VM5638:1 Crawling / Scraping 5 5
+VM5638:1 Go Language 5 7
+VM5638:1 RabbitMQ 5 10
+VM5638:1 Arduino 4 8
+VM5638:1 Gitlab Ci 4 5
+VM5638:1 Google Cloud Platform 4 9
+VM5638:1 GraphQL 4 8
+VM5638:1 Python 4 6
+VM5638:1 Raspberry Pi 4 8
+VM5638:1 Travis CI 4 10
+VM5638:1 Twilio 4 7
+VM5638:1 C 3 6
+VM5638:1 C++ 3 5
+VM5638:1 C, Objective C iOS 3 3
+VM5638:1 Java 3 4
+VM5638:1 Machine Learning 3 8
+VM5638:1 NLP 3 8
+VM5638:1 Security (encryption) 3 8
+VM5638:1 Speech recognition 3 8
+undefined
+arr.sort((a, b) => Number(a.match(/ \d+/)[0]) - Number(b.match(/ \d+/)[0])).reverse().forEach(it => console.log(it + '<br />'));
+VM5661:1 Trello 10 8<br />
+VM5661:1 JSON 10 10<br />
+VM5661:1 Redux 9 10<br />
+VM5661:1 React.js 9 10<br />
+VM5661:1 JavaScript  9 8<br />
+VM5661:1 HTML 9 8<br />
+VM5661:1 CSS 9 8<br />
+VM5661:1 react-router 8 10<br />
+VM5661:1 Twitter Bootstrap 8 4<br />
+VM5661:1 Stripe 8 8<br />
+VM5661:1 SaaS Platform Development 8 10<br />
+VM5661:1 Ruby on Rails 8 10<br />
+VM5661:1 Ruby 8 10<br />
+VM5661:1 React Native 8 10<br />
+VM5661:1 REST and RESTful Services 8 10<br />
+VM5661:1 REST API Design 8 10<br />
+VM5661:1 Postman 8 7<br />
+VM5661:1 Linux/Unix 8 10<br />
+VM5661:1 LESS/SASS 8 4<br />
+VM5661:1 Git 8 10<br />
+VM5661:1 Code review 8 10<br />
+VM5661:1 Backend web (Ruby) 8 10<br />
+VM5661:1 Application Architecture 8 10<br />
+VM5661:1 API Integration 8 7<br />
+VM5661:1 S3 8 8<br />
+VM5661:1 jQuery 7 2<br />
+VM5661:1 WebRTC 7 10<br />
+VM5661:1 Web Application Security 7 10<br />
+VM5661:1 Rspec 7 8<br />
+VM5661:1 PostgreSQL 7 10<br />
+VM5661:1 Node.js 7 10<br />
+VM5661:1 Microservices 7 10<br />
+VM5661:1 Jest 7 9<br />
+VM5661:1 Heroku 7 10<br />
+VM5661:1 Grunt.js 7 2<br />
+VM5661:1 ExpressJS 7 8<br />
+VM5661:1 Design UI/UX  7 9<br />
+VM5661:1 Coffeescript 7 5<br />
+VM5661:1 Bash 7 10<br />
+VM5661:1 socket.io 6 10<br />
+VM5661:1 pair programming 6 8<br />
+VM5661:1 Xcode 6 5<br />
+VM5661:1 TDD 6 10<br />
+VM5661:1 Redis 6 8<br />
+VM5661:1 PHP  6 1<br />
+VM5661:1 Offline web applications (application cache) 6 10<br />
+VM5661:1 Nginx 6 8<br />
+VM5661:1 MySQL 6 5<br />
+VM5661:1 MongoDB 6 7<br />
+VM5661:1 JIRA 6 5<br />
+VM5661:1 Image Processing 6 8<br />
+VM5661:1 Cucumber 6 8<br />
+VM5661:1 Backbone.js 6 2<br />
+VM5661:1 Apache 6 4<br />
+VM5661:1 Amazon AWS 6 8<br />
+VM5661:1 D3.js & Data Visualizations 6 10<br />
+VM5661:1 RabbitMQ 5 10<br />
+VM5661:1 Go Language 5 7<br />
+VM5661:1 Crawling / Scraping 5 5<br />
+VM5661:1 Auth0 5 4<br />
+VM5661:1 Twilio 4 7<br />
+VM5661:1 Travis CI 4 10<br />
+VM5661:1 Raspberry Pi 4 8<br />
+VM5661:1 Python 4 6<br />
+VM5661:1 GraphQL 4 8<br />
+VM5661:1 Google Cloud Platform 4 9<br />
+VM5661:1 Gitlab Ci 4 5<br />
+VM5661:1 Arduino 4 8<br />
+VM5661:1 Speech recognition 3 8<br />
+VM5661:1 Security (encryption) 3 8<br />
+VM5661:1 NLP 3 8<br />
+VM5661:1 Machine Learning 3 8<br />
+VM5661:1 Java 3 4<br />
+VM5661:1 C, Objective C iOS 3 3<br />
+VM5661:1 C++ 3 5<br />
+VM5661:1 C 3 6<br />
+undefined
