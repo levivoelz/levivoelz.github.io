@@ -1,13 +1,13 @@
 ---
 layout: default
 display_name: About
-title: I'm a software|web developer/programmer, app maker and UX designer.
+title: I'm a software|web developer/programmer, app maker–designer and builder.
 nofollow: true
 hero: /images/levi_voelz-hero-side-dark.jpg
 color: "#92735F"
 ---
 
-_**TL;DR** -> I build web and mobile applications, I care about great design—visual and functional, and great user experience._
+_**TL;DR** -> I design and build web and mobile applications, I care about timeless design—both visual and functional, and positive and engaging user experiences–whether users are other developers or end users. Denver, CO transplant in the San Francisco Bay Area (Sonoma County)._
 
 ### What I do
 In a nutshell, I design, build, and maintain web and mobile applications. I design in a couple ways and at what level really depends on the stage at which I join a project. If I'm in at the conceptual phase, I contribute with feedback and sometimes [wireframes](/images/patronish-wires.png){:target="_blank"}. Most of the time, I land during the development phase, once design is complete and it's time to create the application architecture. I specialize in building SaaS applications and have come up with a great [formula]() for getting projects off the ground quickly. Since I'm usually working alone or on small teams, I tend to lean heavily on frameworks, libraries, and third-party services. This doesn't mean I won't "roll my own" when needed, but my formula generally works really well for most projects. For more info, check out my full list of [services](/services).
