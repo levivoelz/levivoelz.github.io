@@ -26,7 +26,6 @@ Here's a full list of services I specialize in:
   - RTC clients
   - Eager and lazy data syncing strategies
   - Cross-browser compatibility issues debugging
-  - Pixel perfect design translations
 - Functional and unit testing
 - Continuous integration pipelines
 - Code reviews and mentoring
