@@ -5,7 +5,7 @@ title: List of skills
 nofollow: true
 color: "#FDD78C"
 ---
-The first number is skill level. Some items are trivial but I figured I'd include them anyway. The second number is my desire to use. All based on scale of 1-10, 1 being don't know or don't care, and 10 being expert (level) or in love with it (desire). I know this page sucks, but who really comes here? Ordered by skill level.
+The first number is skill level. Some items are trivial but I figured I'd include them anyway. The second number is my desire to use. All based on scale of 1-10, 1 being don't know or don't care, and 10 being expert (level) or in love with it (desire). I know this UX sucks, but who really comes here? Ordered by skill level.
 
 
 Trello 10 8<br />
