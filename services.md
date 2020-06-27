@@ -5,9 +5,9 @@ title: App development, software development, web development, UX design
 hero: /images/levi_voelz-hero-train-bkgd.jpg
 color: "#6B41A6"
 ---
-I write Ruby, JavaScript, and Go for mobile apps and web apps. I do some preliminary UX design for very early stage projects, write specs and documentation.
+I write Ruby, JavaScript, and Go for mobile apps and web apps. I do some preliminary UX design for very early stage projects and I write specs and documentation.
 
-Here are some things I'm good at:
+Here's where I'm a badass:
 - Server-side and client-side Architecture and planning
 - Development in Ruby, Go and Node.js.
   - REST API development
@@ -24,6 +24,8 @@ Here are some things I'm good at:
   - Cross-browser compatibility issues debugging
 - Preliminary UX design and wireframes
 - Rapid prototyping, no code apps using Zapier, AirTable, Sheets, etc
+
+Don't ask me where I'm not a badass.
 
 ### FAQ’s
 

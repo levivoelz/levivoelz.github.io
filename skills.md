@@ -7,7 +7,7 @@ hero: /images/levi_voelz-hero-at-home.jpg
 color: "#FDD78C"
 ---
 
-I prefer to work on a team, have/make clear project specs, create automated tests, code in Ruby, build the UI first, and work on projects early in the design or development process.
+I prefer to work on a team, have/make clear project specs, create automated tests, code in Ruby, work on the the UI first, and join projects early in the design or development process.
 
 I primarily write code in Ruby and JavaScript but sometimes in Go.
 
@@ -17,11 +17,11 @@ I’m down with static types. Just don’t get all dogmatic with me about it. Fl
 
 Some developers don’t like Clean Code. Dirty hippies.
 
-I’m a luddite IRL.
+I’m a luddite IRL. _Probably not surprising._
 
 Please don’t use “The Cloud” in your marketing copy.
 
-Once, I wasn’t able to write a fib sequence during a code interview in under 3 minutes. I’m sure that’s not the case now…
+Once, I wasn’t able to write a fib sequence during a code interview in under 3 minutes.
 
 Why doesn’t the “tech” industry do stages like fine dining restaurants do?
 
