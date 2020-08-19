@@ -12,30 +12,22 @@ color: "#6B41A6"
   <p>
     These scanners have been most useful in terms of tracking where firefighters have been concentrating their efforts, which could be interpereted as the area of highest risk.
   </p>
-  <p>
-    - <a href="https://m.broadcastify.com/listen/feed/31847" target="_blank">
-      Sonoma CAL FIRE
-    </a><br />
-    - <a href='https://m.broadcastify.com/listen/ctid/231' target='_blank'>All Sonoma County Scanners</a>
-  </p>
+  - <a href="https://m.broadcastify.com/listen/feed/31847" target="_blank">
+    Sonoma CAL FIRE
+  </a><br />
+  - <a href='https://m.broadcastify.com/listen/ctid/231' target='_blank'>All Sonoma County Scanners</a>
 </section>
 <section>
   <h3>Maps</h3>
-  <p>
-    - <a href="https://www.flightradar24.com/N470DF/2542f4bc">Aerial traffic, including tankers</a><br />
-    - <a href="https://experience.arcgis.com/experience/8ca8296b14384a468c72e63fd6de766a" target="_blank">Sonoma County Incident Map</a> (includes evacuation zones)<br />
-    - <a href="https://www.windy.com/?38.537,-122.916,12" target="_blank">Wind speed and direction map</a><br />
-    <!-- - <a href="https://www.sfchronicle.com/projects/california-fire-map/" target='_blank'>SF Chronicle Fire Map</a> -->
-  </p>
+  - <a href="https://experience.arcgis.com/experience/8ca8296b14384a468c72e63fd6de766a" target="_blank">Sonoma County Incident Map</a> (includes evacuation zones)<br />
+  - <a href="https://www.flightradar24.com/N470DF/2542f4bc">Aerial traffic, including tankers</a><br />
+  - <a href="https://www.windy.com/?38.537,-122.916,12" target="_blank">Wind speed and direction map</a><br />
+  <!-- - <a href="https://www.sfchronicle.com/projects/california-fire-map/" target='_blank'>SF Chronicle Fire Map</a> -->
 </section>
 <section>
   <h3>Webcams</h3>
-  <p>
-    <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>Mt Jackson (full view)</a>
-  </p>
-  <p>
-    <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>Mt Jackson (alt)</a>
-  </p>
+  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>Mt Jackson (full view)</a><br />
+  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>Mt Jackson (alt)</a>
 </section>
 <section>
   <h3>Timelapse</h3>
@@ -44,12 +36,10 @@ color: "#6B41A6"
 </section>
 <section>
   <h3>Twitter Accounts</h3>
-  <p>
-    - <a href="https://twitter.com/sonomasheriff" target="_blank">Sonoma Sheriff</a><br />
-    - <a href="https://twitter.com/CountyofSonoma" target="_blank">Official County of Sonoma</a><br />
-    - <a href="https://twitter.com/SonomaScanner" target="_blank">Sonoma County Scanner Updates</a><br />
-    - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a>
-  </p>
+  - <a href="https://twitter.com/sonomasheriff" target="_blank">Sonoma Sheriff</a><br />
+  - <a href="https://twitter.com/CountyofSonoma" target="_blank">Official County of Sonoma</a><br />
+  - <a href="https://twitter.com/SonomaScanner" target="_blank">Sonoma County Scanner Updates</a><br />
+  - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a>
 </section>
 <section>
   <h3>Alerts</h3>
