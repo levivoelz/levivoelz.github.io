@@ -10,6 +10,9 @@ color: "#6B41A6"
 <section>
   <h3>Scanners</h3>
   <p>
+    This scanner has been most useful in terms of tracking where firefighters are concentrating their efforts, which could be interpereted as where the most risk is.
+  </p>
+  <p>
     <a href="https://m.broadcastify.com/listen/feed/31847" target="_blank">
       Sonoma CAL FIRE
     </a>
