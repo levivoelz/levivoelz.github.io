@@ -1,11 +1,11 @@
 ---
 layout: naked
-title: 2020 fire season online fire tracking resources
+title: Fire tracking resources for the 2020 Wallbridge fire
 nofollow: false
 color: "#6B41A6"
 ---
 
-<h1>2020 fire season online fire tracking resources</h1>
+<h1>Fire tracking resources for the 2020 Wallbridge fire.</h1>
 <p>This is a list of resources for tracking the Sonoma County fires, specifically the Wallbridge fire.
 <section>
   <h3>Scanners</h3>
