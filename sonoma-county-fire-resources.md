@@ -30,7 +30,7 @@ color: "#6B41A6"
 <section>
   <h3>Webcams</h3>
   <p>
-    Looking north from <a href="https://www.google.com/maps/place/Mt+Jackson,+CA+95448/@38.5132443,-122.9137711,15z/data=!3m1!4b1!4m5!3m4!1s0x808422b6858cc9e5:0x474c9e19c3c8c242!8m2!3d38.5132468!4d-122.9049969!5m1!1e4" target='_blank'>Mt Jackson</a>. Wallbridge fire is on the left:
+    Looking north from <a href="https://www.google.com/maps/place/Mt+Jackson,+CA+95448/@38.5132443,-122.9137711,15z/data=!3m1!4b1!4m5!3m4!1s0x808422b6858cc9e5:0x474c9e19c3c8c242!8m2!3d38.5132468!4d-122.9049969!5m1!1e4" target='_blank'>Mt Jackson</a>. You can see part of the Wallbridge fire is on the left:
     <a href='http://api.nvseismolab.org/camera/Axis-Jackson2' target="_blank">http://api.nvseismolab.org/camera/Axis-Jackson2</a>
   </p>
 </section>
