@@ -27,6 +27,10 @@ header {
   padding-bottom: 10px;
 }
 
+h1 {
+  line-height: 1.2em;
+}
+
 #footer--top {
   display: flex;
   align-items: center;
