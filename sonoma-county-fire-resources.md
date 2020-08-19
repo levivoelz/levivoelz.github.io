@@ -45,3 +45,7 @@ color: "#6B41A6"
     <a href="https://nixle.us/sonoma-county-sheriffs-office/" target="_blank">Sonoma Sheriff via Nixle</a>
   </p>
 </section>
+<section>
+  <h3>Misc</h3>
+  <p>Information Phone #: (707) 967-4207</p>
+</section>
