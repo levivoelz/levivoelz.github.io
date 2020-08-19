@@ -31,14 +31,16 @@ color: "#6B41A6"
 <section>
   <h3>Webcams</h3>
   <p>
-    Looking north from <a href="https://www.google.com/maps/place/Mt+Jackson,+CA+95448/@38.5132443,-122.9137711,15z/data=!3m1!4b1!4m5!3m4!1s0x808422b6858cc9e5:0x474c9e19c3c8c242!8m2!3d38.5132468!4d-122.9049969!5m1!1e4" target='_blank'>Mt Jackson</a>. You can see part of the Wallbridge fire is on the left:
-    <a href='http://api.nvseismolab.org/camera/Axis-Jackson2' target="_blank">http://api.nvseismolab.org/camera/Axis-Jackson2</a>
+    <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>Mt Jackson (full view)</a>
+  </p>
+  <p>
+    <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>Mt Jackson (alt)</a>
   </p>
 </section>
 <section>
   <h3>Timelapse</h3>
   <style>.embedtool {position: relative;height: 0;padding-top: 56%;overflow: hidden;max-width: 100%;} .embedtool iframe, .embedtool object, .embedtool embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .embedtool .fluid-vids {position: initial !important}</style><div class="embedtool"><iframe src="https://www.youtube.com/embed/KIVbtWUH208" frameborder="0" allowfullscreen></iframe></div>
-  12pm to 2:30pm 8/19/20
+  12pm to 2:30pm 8/19/20 from Mt Jackson
 </section>
 <section>
   <h3>Twitter Accounts</h3>
