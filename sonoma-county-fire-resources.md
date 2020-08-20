@@ -31,6 +31,7 @@ color: "#6B41A6"
   - <a href='https://sartopo.com/map.html#ll=38.5895,-123.02198&z=12&b=hyb&a=c%2Cmodis_mp%2Cwxd_wspd-01' target='_blank'>Location, intensity, wind, and more options</a><br />
   - <a href="https://www.flightradar24.com/N470DF/2542f4bc">Aerial traffic, including tankers.</a> Click on planes to see flight path<br />
   - <a href="https://www.windy.com/?38.537,-122.916,12" target="_blank">Detailed wind speed and direction</a><br />
+  - <a href="https://www.purpleair.com/map?opt=1/mAQI/a10/cC0#11.04/38.5358/-122.939" target='_blank'>Air Quality</a><br />
   - <a href="https://sonomacounty.maps.arcgis.com/apps/webappviewer/index.html?id=69a0e54e9e2b48c086d122027b21c961" target="_blank">Sonoma County Incident Map.</a> Includes evacuation zones<br />
 </section>
 <section>
