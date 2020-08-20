@@ -6,11 +6,11 @@ color: "#6B41A6"
 ---
 
 <h1>Tracking resources for the 2020 Wallbridge(13-4) fire.</h1>
-<p>This is a list of resources for tracking the Sonoma County fires, specifically the Wallbridge fire.
+<p>This is a list of resources for tracking the Wallbridge fire.</p>
 <section>
   <h3>Scanners</h3>
   <p>
-    These scanners have been most useful in terms of tracking where firefighters have been concentrating their efforts, which could be interpereted as the area of highest risk.
+    These scanners have been most useful in terms of tracking where firefighters have been concentrating their efforts.
   </p>
   - <a href="https://m.broadcastify.com/listen/feed/31847" target="_blank">
     Sonoma CAL FIRE
