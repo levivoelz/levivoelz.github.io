@@ -212,3 +212,12 @@ small {
 @media (prefers-color-scheme: dark) {
 
 }
+
+.social-share {
+  display: flex;
+  align-items: center;
+}
+
+.social-share > div {
+  margin-right: 5px;
+}

@@ -7,6 +7,16 @@ color: "#6B41A6"
 
 <h1>Tracking resources for the 2020 Walbridge(13-4) fire.</h1>
 <section>
+  <div class='social-share'>
+    <div>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </div>
+    <div>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.levivoelz.com%2Fsonoma-county-fire-resources&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+</section>
+<section>
   <h3>Scanners</h3>
   <p>
     These scanners have been most useful in terms of tracking where firefighters have been concentrating their efforts.
@@ -49,7 +59,9 @@ color: "#6B41A6"
   <h3>Misc</h3>
   <p>Information Phone #: (707) 967-4207</p>
   <p>Aerial view on 4/19</p>
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This view is looking over Guerneville, the fire looks to be moving more East than south. <a href="https://t.co/QMLW3aSmmL">pic.twitter.com/QMLW3aSmmL</a></p>&mdash; Ian Brooke (@k2pilot) <a href="https://twitter.com/k2pilot/status/1296240744722620416?ref_src=twsrc%5Etfw">August 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet">
+    <p lang="en" dir="ltr">This view is looking over Guerneville, the fire looks to be moving more East than south. <a href="https://t.co/QMLW3aSmmL">pic.twitter.com/QMLW3aSmmL</a></p>&mdash; Ian Brooke (@k2pilot) <a href="https://twitter.com/k2pilot/status/1296240744722620416?ref_src=twsrc%5Etfw">August 20, 2020</a>
+  </blockquote>
   <p>Timelapse: 12pm to 2:30pm 8/19/20 from Mt Jackson</p>
   <style>.embedtool {position: relative;height: 0;padding-top: 56%;overflow: hidden;max-width: 100%;} .embedtool iframe, .embedtool object, .embedtool embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .embedtool .fluid-vids {position: initial !important}</style><div class="embedtool"><iframe src="https://www.youtube.com/embed/KIVbtWUH208" frameborder="0" allowfullscreen></iframe></div>
 </section>
