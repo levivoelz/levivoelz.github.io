@@ -48,7 +48,8 @@ color: "#6B41A6"
   - <a href="https://twitter.com/SonomaScanner" target="_blank">Sonoma County Scanner Updates</a><br />
   - <a href="https://twitter.com/sonomasheriff" target="_blank">Sonoma Sheriff</a><br />
   - <a href="https://twitter.com/CountyofSonoma" target="_blank">Official County of Sonoma</a><br />
-  - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a>
+  - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a><br />
+  - <a href='https://twitter.com/Sarah_Stierch' target='_blank'>Sarah Stierch, Rogue Journalist</a>
 </section>
 <section>
   <h3>Alerts</h3>
