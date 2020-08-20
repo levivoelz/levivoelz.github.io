@@ -45,7 +45,7 @@ color: "#6B41A6"
 <section>
   <h3>Alerts</h3>
   <p>
-    - <a href="https://nixle.us/sonoma-county-sheriffs-office/" target="_blank">Sonoma Sheriff via Nixle</a>
+    - <a href="https://nixle.us/sonoma-county-sheriffs-office/" target="_blank">Evacuation Orders via Nixle</a>
   </p>
 </section>
 <section>
