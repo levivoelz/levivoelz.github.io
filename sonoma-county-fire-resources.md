@@ -25,9 +25,11 @@ color: "#6B41A6"
 </section>
 <section>
   <h3>Webcams</h3>
-  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>Mt Jackson (north, north-west facing view)</a><br />
-  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>Mt Jackson (north, north-east facing view)</a><br />
-  - <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' target='_blank'>Rockpile (south facing view)</a>
+  <b>Mt Jackson</b> (<a href='https://www.google.com/maps/place/Mount+Jackson+Resort+Rd,+Guerneville,+CA+95446/@38.539931,-122.9595623,228m/data=!3m2!1e3!4b1!4m5!3m4!1s0x808418ef68c7121f:0x5471e5b6e9a98aa9!8m2!3d38.5397986!4d-122.9589661!5m1!1e4' target='_blank'>approximate camera location</a>)<br />
+  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>North, north-west facing view</a><br />
+  - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>North, north-east facing view</a><br />
+  <b>Rockpile</b> (camera location unknown)<br />
+  - <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' target='_blank'>South facing view</a>
 </section>
 <section>
   <h3>Twitter</h3>
