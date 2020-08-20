@@ -1,11 +1,11 @@
 ---
 layout: naked
-title: Tracking resources for the 2020 Wallbridge(13-4) fire
+title: Tracking resources for the 2020 Walbridge(13-4) fire
 nofollow: false
 color: "#6B41A6"
 ---
 
-<h1>Tracking resources for the 2020 Wallbridge(13-4) fire.</h1>
+<h1>Tracking resources for the 2020 Walbridge(13-4) fire.</h1>
 <section>
   <h3>Scanners</h3>
   <p>
@@ -39,7 +39,8 @@ color: "#6B41A6"
   - <a href="https://twitter.com/sonomasheriff" target="_blank">Sonoma Sheriff</a><br />
   - <a href="https://twitter.com/CountyofSonoma" target="_blank">Official County of Sonoma</a><br />
   - <a href="https://twitter.com/SonomaScanner" target="_blank">Sonoma County Scanner Updates</a><br />
-  - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a>
+  - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a><br />
+  - <a href='https://twitter.com/search?q=%23walbridgefire&src=typed_query' target='_blank'>#WalbridgeFire</a>
 </section>
 <section>
   <h3>Alerts</h3>
