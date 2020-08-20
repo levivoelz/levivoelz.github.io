@@ -9,7 +9,7 @@ color: "#6B41A6"
 <section>
   <div class='social-share'>
     <div>
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Tracking resources for the 2020 Walbridge(13-4) fire." data-hashtags="WalbridgeFire" data-dnt="true" data-show-count="false">Tweet</a>
     </div>
     <div>
       <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.levivoelz.com%2Fsonoma-county-fire-resources&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
