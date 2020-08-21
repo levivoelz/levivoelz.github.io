@@ -38,24 +38,24 @@ color: "#6B41A6"
   <h3>Webcams</h3>
   <b>Mt Jackson</b>
   <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson' class='webcam' target='_blank'>
-    <img data-src='http://api.nvseismolab.org/camera/Axis-Jackson' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' /><br />
+    <img data-src='//api.nvseismolab.org/camera/Axis-Jackson' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' /><br />
     Camera 1
   </a>
   <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2' class='webcam' target='_blank'>
-    <img data-src='http://api.nvseismolab.org/camera/Axis-Jackson2' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' /><br />
+    <img data-src='//api.nvseismolab.org/camera/Axis-Jackson2' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' /><br />
     Camera 2
   </a>
   <b>Geyser Peak</b>
   <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Geyser2' class='webcam' target='_blank'>
-    <img data-src='http://api.nvseismolab.org/camera/Axis-Geyser2' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
+    <img data-src='//api.nvseismolab.org/camera/Axis-Geyser2' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
   </a>
   <b>Rockpile</b>
   <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' class='webcam' target='_blank'>
-    <img data-src='http://api.nvseismolab.org/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
+    <img data-src='//api.nvseismolab.org/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
   </a>
   <b>Mohrhardt Ridge</b>
   <a href='http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge' class='webcam' target='_blank'>
-    <img data-src='http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
+    <img data-src='//api.nvseismolab.org/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
   </a>
 </section>
 <section>
