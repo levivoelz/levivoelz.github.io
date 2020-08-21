@@ -42,6 +42,10 @@ color: "#6B41A6"
     - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>East facing view</a>
   </p>
   <p>
+    <b>Geyser Peak</b><br />
+    - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Geyser2&v=81e002f' target='_blank'>West, facing Dry Creek</a>
+  </p>
+  <p>
     <b>Rockpile</b><br />
     - <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' target='_blank'>South facing view</a><br />
   </p>
