@@ -104,7 +104,7 @@ color: "#6B41A6"
       image.src = img.src;
 
       setInterval(function() {
-        image.src = image.src.split('?')[0] + "?t=" + new Date().getTime();
+        image.src = image.src.split('?')[0] + "?" + new Date().getTime();
       }, INTERVAL_SECONDS * 1000);
     }
 
