@@ -214,9 +214,22 @@ small {
 @media (prefers-color-scheme: dark) {
 
 }
+.webcams {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.webcams > div {
+  flex: 1 1 300px;
+}
+
+.webcams a {
+  text-decoration: none;
+}
 
 .webcam {
   margin-bottom: 1rem;
+  padding: 0 1rem;
   display: block;
 }
 
