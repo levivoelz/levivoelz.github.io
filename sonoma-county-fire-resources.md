@@ -50,7 +50,7 @@ color: "#6B41A6"
       </a>
     </div>
     <div>
-      <a href='http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge' class='webcam' target='_blank'>
+      <a href='http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1' class='webcam' target='_blank'>
         <h4>Mohrhardt Ridge</h4>
         <img data-src='http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' class='webcam--img' width='600' height='337' />
       </a>
