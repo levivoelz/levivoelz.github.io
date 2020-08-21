@@ -108,6 +108,6 @@ color: "#6B41A6"
       }, INTERVAL_SECONDS * 1000);
     }
 
-    img.src = image.dataset.src;
+    img.src = image.dataset.src + "?" + new Date().getTime();
   });
 </script>
