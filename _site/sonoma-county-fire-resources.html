@@ -69,27 +69,24 @@
   <h3>Webcams</h3>
   <b>Mt Jackson</b>
   <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson" class="webcam" target="_blank">
-    <img src="http://api.nvseismolab.org/camera/Axis-Jackson" class="webcam--img" width="600" height="337" /><br />
+    <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson" src="/images/img-placeholder.gif" class="webcam--img" width="600" height="337" /><br />
     Camera 1
   </a>
   <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2" class="webcam" target="_blank">
-    <img src="http://api.nvseismolab.org/camera/Axis-Jackson2" class="webcam--img" width="600" height="337" /><br />
+    <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson2" src="/images/img-placeholder.gif" class="webcam--img" width="600" height="337" /><br />
     Camera 2
   </a>
   <b>Geyser Peak</b>
   <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Geyser2" class="webcam" target="_blank">
-    <img src="http://api.nvseismolab.org/camera/Axis-Geyser2" class="webcam--img" width="600" height="337" /><br />
-    West, facing Dry Creek
+    <img data-src="http://api.nvseismolab.org/camera/Axis-Geyser2" src="/images/img-placeholder.gif" class="webcam--img" width="600" height="337" />
   </a>
   <b>Rockpile</b>
   <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile" class="webcam" target="_blank">
-    <img src="http://api.nvseismolab.org/camera/Axis-Rockpile" class="webcam--img" width="600" height="337" /><br />
-    Southwest facing view
+    <img data-src="http://api.nvseismolab.org/camera/Axis-Rockpile" src="/images/img-placeholder.gif" class="webcam--img" width="600" height="337" />
   </a>
   <b>Mohrhardt Ridge</b>
   <a href="http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge" class="webcam" target="_blank">
-    <img src="http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1" class="webcam--img" width="600" height="337" /><br />
-    East facing view
+    <img data-src="http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1" src="/images/img-placeholder.gif" class="webcam--img" width="600" height="337" />
   </a>
 </section>
 <section>
@@ -119,12 +116,19 @@
 </section>
 
 <script>
-  Array.from(document.getElementsByClassName('webcam--img')).forEach((image, i) => {
-    setInterval(() => {
-      if (image.src) {
+  var INTERVAL_SECONDS = 30;
+
+  Array.from(document.getElementsByClassName('webcam--img')).forEach(function(image, i) {
+    var img = new Image();
+    img.onload = function() {
+      image.src = img.src;
+
+      setInterval(function() {
         image.src = image.src.split('?')[0] + "?t=" + new Date().getTime();
-      }
-    }, 20000);
+      }, INTERVAL_SECONDS * 1000);
+    }
+
+    img.src = image.dataset.src;
   });
 </script>
 
