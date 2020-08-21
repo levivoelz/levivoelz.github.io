@@ -38,8 +38,8 @@ color: "#6B41A6"
   <h3>Webcams</h3>
   <p>
     <b>Mt Jackson</b><br />
-    - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>West, northwest facing view</a><br />
-    - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>North, northeast facing view</a>
+    - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&v=81e002f' target='_blank'>South facing view</a><br />
+    - <a href='http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&v=81e002f' target='_blank'>East facing view</a>
   </p>
   <p>
     <b>Rockpile</b><br />
