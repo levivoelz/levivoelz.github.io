@@ -13,7 +13,7 @@
     <meta name="twitter:image" content="">
     <meta property="og:title" content="Tracking resources for the 2020 Walbridge(13-4) fire | Levi Voelz" />
     <meta property="og:image" content="" />
-    <link rel="stylesheet" href="/css/main.css?bust_it=3">
+    <link rel="stylesheet" href="/css/main.css?bust_it=4">
     <style>
       .wrapper {
         max-width: 600px;
@@ -65,25 +65,32 @@
   - <a href="https://www.purpleair.com/map?opt=1/mAQI/a10/cC0#11.04/38.5358/-122.939" target="_blank">Air Quality</a><br />
   - <a href="https://sonomacounty.maps.arcgis.com/apps/webappviewer/index.html?id=69a0e54e9e2b48c086d122027b21c961" target="_blank">Sonoma County Incident Map.</a> Includes evacuation zones<br />
 </section>
-<section>
+<section class="webcams">
   <h3>Webcams</h3>
-  <p>
-    <b>Mt Jackson</b><br />
-    - <a href="http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson&amp;v=81e002f" target="_blank">South facing view</a><br />
-    - <a href="http://www.alertwildfire.org/northbay/index.html?camera=Axis-Jackson2&amp;v=81e002f" target="_blank">East facing view</a>
-  </p>
-  <p>
-    <b>Geyser Peak</b><br />
-    - <a href="http://www.alertwildfire.org/northbay/index.html?camera=Axis-Geyser2&amp;v=81e002f" target="_blank">West, facing Dry Creek</a>
-  </p>
-  <p>
-    <b>Rockpile</b><br />
-    - <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile" target="_blank">South facing view</a><br />
-  </p>
-  <p>
-    <b>Mohrhardt Ridge</b><br />
-    - <a href="http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1" target="_blank">East facing view</a>
-  </p>
+  <b>Mt Jackson</b>
+  <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson" class="webcam" target="_blank">
+    <img src="http://api.nvseismolab.org/camera/Axis-Jackson" class="webcam--img" width="600" height="337" /><br />
+    Camera 1
+  </a>
+  <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2" class="webcam" target="_blank">
+    <img src="http://api.nvseismolab.org/camera/Axis-Jackson2" class="webcam--img" width="600" height="337" /><br />
+    Camera 2
+  </a>
+  <b>Geyser Peak</b>
+  <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Geyser2" class="webcam" target="_blank">
+    <img src="http://api.nvseismolab.org/camera/Axis-Geyser2" class="webcam--img" width="600" height="337" /><br />
+    West, facing Dry Creek
+  </a>
+  <b>Rockpile</b>
+  <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile" class="webcam" target="_blank">
+    <img src="http://api.nvseismolab.org/camera/Axis-Rockpile" class="webcam--img" width="600" height="337" /><br />
+    Southwest facing view
+  </a>
+  <b>Mohrhardt Ridge</b>
+  <a href="http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge" class="webcam" target="_blank">
+    <img src="http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1" class="webcam--img" width="600" height="337" /><br />
+    East facing view
+  </a>
 </section>
 <section>
   <h3>Twitter</h3>
@@ -110,6 +117,17 @@
   <p>Timelapse: 12pm to 2:30pm 8/19/20 from Mt Jackson</p>
   <style>.embedtool {position: relative;height: 0;padding-top: 56%;overflow: hidden;max-width: 100%;} .embedtool iframe, .embedtool object, .embedtool embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .embedtool .fluid-vids {position: initial !important}</style><div class="embedtool"><iframe src="https://www.youtube.com/embed/KIVbtWUH208" frameborder="0" allowfullscreen=""></iframe></div>
 </section>
+
+<script>
+  Array.from(document.getElementsByClassName('webcam--img')).forEach((image, i) => {
+    setInterval(() => {
+      if (image.src) {
+        image.src = image.src.split('?')[0] + "?t=" + new Date().getTime();
+      }
+    }, 20000);
+  });
+</script>
+
 
       </div>
       <footer>
