@@ -71,31 +71,31 @@
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson" class="webcam" target="_blank">
         <h4>Mt Jackson 1</h4>
-        <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson" src="/images/img-placeholder.gif?b=t" class="webcam--img" width="600" height="337" /><br />
+        <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2" class="webcam" target="_blank">
         <h4>Mt Jackson 2</h4>
-        <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson2" src="/images/img-placeholder.gif?b=t" class="webcam--img" width="600" height="337" /><br />
+        <img data-src="http://api.nvseismolab.org/camera/Axis-Jackson2" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1" class="webcam" target="_blank">
         <h4>Mohrhardt Ridge</h4>
-        <img data-src="http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1" src="/images/img-placeholder.gif?b=t" class="webcam--img" width="600" height="337" />
+        <img data-src="http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile" class="webcam" target="_blank">
         <h4>Rockpile</h4>
-        <img data-src="http://api.nvseismolab.org/camera/Axis-Rockpile" src="/images/img-placeholder.gif?b=t" class="webcam--img" width="600" height="337" />
+        <img data-src="http://api.nvseismolab.org/camera/Axis-Rockpile" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Geyser2" class="webcam" target="_blank">
         <h4>Geyser Peak</h4>
-        <img data-src="http://api.nvseismolab.org/camera/Axis-Geyser2" src="/images/img-placeholder.gif?b=t" class="webcam--img" width="600" height="337" />
+        <img data-src="http://api.nvseismolab.org/camera/Axis-Geyser2" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
   </div>
@@ -111,9 +111,7 @@
 </section>
 <section>
   <h3>Alerts</h3>
-  <p>
-    - <a href="https://nixle.us/sonoma-county-sheriffs-office/" target="_blank">Evacuation Orders via Nixle</a>
-  </p>
+  - <a href="https://nixle.us/sonoma-county-sheriffs-office/" target="_blank">Evacuation Orders via Nixle</a>
 </section>
 <section>
   <h3>Misc</h3>
@@ -127,20 +125,27 @@
 </section>
 
 <script>
-  var INTERVAL_SECONDS = 30;
+  var INTERVAL_SECONDS = 15;
+  var images = Array.from(document.getElementsByClassName('webcam--img'));
 
-  Array.from(document.getElementsByClassName('webcam--img')).forEach(function(image, i) {
+  images.forEach(function(image) {
     var img = new Image();
+
     img.onload = function() {
-      image.src = img.src;
+      image.src = img.src; // lazy-ish load the image
 
       setInterval(function() {
-        image.src = image.src.split('?')[0] + "?" + new Date().getTime();
+        image.src = image.dataset.src + timeParam();
       }, INTERVAL_SECONDS * 1000);
     }
 
-    img.src = image.dataset.src + "?" + new Date().getTime();
+    img.src = image.dataset.src + timeParam();
   });
+
+  // busts browser cache
+  function timeParam() {
+    return "?" + new Date().getTime();
+  }
 </script>
 
 
