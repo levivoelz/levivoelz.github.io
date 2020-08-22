@@ -2,9 +2,16 @@
 layout: naked
 title: Tracking resources for the 2020 Walbridge(13-4) fire
 nofollow: false
-color: "#6B41A6"
+color: "#233d4f"
 ---
-
+<div class='wind'>
+  <div
+  data-windywidget="forecast"
+  data-spotid="646754"
+  data-appid="1b7e2b252fd722a36177fd24e80ea163">
+  </div>
+  <script async="true" data-cfasync="false" type="text/javascript" src="https://windy.app/widget/windy_forecast_async.js"></script>
+</div>
 <h1>Tracking resources for the 2020 Walbridge(13-4) fire.</h1>
 <section>
   <div class='social-share'>

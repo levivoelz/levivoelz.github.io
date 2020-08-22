@@ -241,3 +241,14 @@ small {
 .social-share > div {
   margin-right: 5px;
 }
+
+.wind {
+  overflow: hidden;
+  height: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  .wind {
+    display: none;
+  }
+}
