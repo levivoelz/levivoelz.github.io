@@ -47,31 +47,31 @@ color: "#233d4f"
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson' class='webcam' target='_blank'>
         <h4>Mt Jackson 1</h4>
-        <img data-src='http://api.nvseismolab.org/camera/Axis-Jackson' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
+        <img data-src='https://1a53fdf510e9.ngrok.io/images/jackson.jpg' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2' class='webcam' target='_blank'>
         <h4>Mt Jackson 2</h4>
-        <img data-src='http://api.nvseismolab.org/camera/Axis-Jackson2' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
+        <img data-src='https://1a53fdf510e9.ngrok.io/images/jackson2.jpg' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1' class='webcam' target='_blank'>
         <h4>Mohrhardt Ridge</h4>
-        <img data-src='http://api.nvseismolab.org/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://1a53fdf510e9.ngrok.io/images/mohrhardtridge1.jpg' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' class='webcam' target='_blank'>
         <h4>Rockpile</h4>
-        <img data-src='http://api.nvseismolab.org/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://1a53fdf510e9.ngrok.io/images/rockpile.jpg' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Geyser2' class='webcam' target='_blank'>
         <h4>Geyser Peak</h4>
-        <img data-src='http://api.nvseismolab.org/camera/Axis-Geyser2' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://1a53fdf510e9.ngrok.io/images/geyser2.jpg' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
   </div>
@@ -101,7 +101,7 @@ color: "#233d4f"
 </section>
 
 <script>
-  var INTERVAL_SECONDS = 15;
+  var INTERVAL_SECONDS = 10;
   var images = Array.from(document.getElementsByClassName('webcam--img'));
 
   images.forEach(function(image) {

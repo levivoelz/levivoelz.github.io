@@ -13,7 +13,6 @@ gem 'shotgun'
 gem 'json'
 gem 'rake'
 gem 'wannabe_bool'
-gem 'nokogiri'
 
 # Development
 group :development, :test do
