@@ -50,31 +50,31 @@ color: "#233d4f"
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson' class='webcam' target='_blank'>
         <h4>Mt Jackson 1</h4>
-        <img data-src='https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Jackson' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-Jackson' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2' class='webcam' target='_blank'>
         <h4>Mt Jackson 2</h4>
-        <img data-src='https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Jackson2' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-Jackson2' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' /><br />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1' class='webcam' target='_blank'>
         <h4>Mohrhardt Ridge</h4>
-        <img data-src='https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-MohrhardtRidge1' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile' class='webcam' target='_blank'>
         <h4>Rockpile</h4>
-        <img data-src='https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
     <div>
       <a href='http://www.alertwildfire.org/northbay/?camera=Axis-PoleMt' class='webcam' target='_blank'>
         <h4>Pole Mt</h4>
-        <img data-src='https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-PoleMt' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-PoleMt' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
   </div>
@@ -108,7 +108,6 @@ color: "#233d4f"
 </section>
 
 <script>
-  window.focus();
   var INTERVAL_SECONDS = 10;
   var images = Array.from(document.getElementsByClassName('webcam--img'));
   var timers = [];
@@ -127,17 +126,17 @@ color: "#233d4f"
     img.src = image.dataset.src + timeParam();
   });
 
-  window.addEventListener("focus", function() {
-    timers.forEach(function(t) {
-      t.resume();
-    });
-  });
-
-  window.addEventListener("blur", function() {
-    timers.forEach(function(t) {
-      t.pause();
-    });
-  });
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      timers.forEach(function(t) {
+        t.pause();
+      });
+    } else {
+      timers.forEach(function(t) {
+        t.resume();
+      });
+    }
+  }, false);
 
   // busts browser cache
   function timeParam() {
