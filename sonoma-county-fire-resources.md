@@ -22,6 +22,9 @@ color: "#233d4f"
       <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.levivoelz.com%2Fsonoma-county-fire-resources&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </div>
   </div>
+  <div style='padding-top: 10px'>
+    <a href='http://www.sonomawest.com/sonoma_west_times_and_news/news/monday-evening-update-repopulation-of-lower-river-may-still-be-a-few-days-away/article_3f52655e-e678-11ea-9513-df0c7f4fef5b.html' target='_blank'>(Aug, 24) -> Monday evening update</a>
+  </div>
 </section>
 <section>
   <h3>Scanners</h3>
@@ -68,6 +71,12 @@ color: "#233d4f"
         <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-Rockpile' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
       </a>
     </div>
+    <div>
+      <a href='http://www.alertwildfire.org/northbay/?camera=Axis-PoleMt' class='webcam' target='_blank'>
+        <h4>Pole Mt</h4>
+        <img data-src='https://sonoma-fire-api.herokuapp.com/camera/Axis-PoleMt' src='/images/img-placeholder.gif?b=t' onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class='webcam--img' width='600' height='337' />
+      </a>
+    </div>
   </div>
 </section>
 <section>
@@ -77,7 +86,7 @@ color: "#233d4f"
   - <a href="https://twitter.com/sonomasheriff" target="_blank">Sonoma Sheriff</a><br />
   - <a href="https://twitter.com/CountyofSonoma" target="_blank">Official County of Sonoma</a><br />
   - <a href="https://twitter.com/CAL_FIRE" target="_blank">CAL FIRE</a><br />
-    - <a href='https://twitter.com/Sarah_Stierch' target='_blank'>Sarah Stierch, Rogue Journalist</a><br />
+  - <a href='https://twitter.com/Sarah_Stierch' target='_blank'>Sarah Stierch, Rogue Journalist</a><br />
   - <a href='https://twitter.com/jachristian' target='_blank'>Jessica Christian</a>
 </section>
 <section>
@@ -89,7 +98,10 @@ color: "#233d4f"
   <p>Information Phone #: (707) 967-4207</p>
   <p>Aerial view on 4/19</p>
   <blockquote class="twitter-tweet">
-    <p lang="en" dir="ltr">This view is looking over Guerneville, the fire looks to be moving more East than south. <a href="https://t.co/QMLW3aSmmL">pic.twitter.com/QMLW3aSmmL</a></p>&mdash; Ian Brooke (@k2pilot) <a href="https://twitter.com/k2pilot/status/1296240744722620416?ref_src=twsrc%5Etfw">August 20, 2020</a>
+    <p lang="en" dir="ltr">
+      This view is looking over Guerneville, the fire looks to be moving more East than south. <a href="https://t.co/QMLW3aSmmL">pic.twitter.com/QMLW3aSmmL</a>
+    </p>
+    &mdash; Ian Brooke (@k2pilot) <a href="https://twitter.com/k2pilot/status/1296240744722620416?ref_src=twsrc%5Etfw">August 20, 2020</a>
   </blockquote>
   <p>Timelapse: 12pm to 2:30pm 8/19/20 from Mt Jackson</p>
   <style>.embedtool {position: relative;height: 0;padding-top: 56%;overflow: hidden;max-width: 100%;} .embedtool iframe, .embedtool object, .embedtool embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .embedtool .fluid-vids {position: initial !important}</style><div class="embedtool"><iframe src="https://www.youtube.com/embed/KIVbtWUH208" frameborder="0" allowfullscreen></iframe></div>
