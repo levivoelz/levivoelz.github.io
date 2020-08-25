@@ -79,31 +79,31 @@
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson" class="webcam" target="_blank">
         <h4>Mt Jackson 1</h4>
-        <img data-src="https://sonoma-fire-api.herokuapp.com/camera/Axis-Jackson" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
+        <img data-src="https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Jackson" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Jackson2" class="webcam" target="_blank">
         <h4>Mt Jackson 2</h4>
-        <img data-src="https://sonoma-fire-api.herokuapp.com/camera/Axis-Jackson2" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
+        <img data-src="https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Jackson2" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" /><br />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-MohrhardtRidge1" class="webcam" target="_blank">
         <h4>Mohrhardt Ridge</h4>
-        <img data-src="https://sonoma-fire-api.herokuapp.com/camera/Axis-MohrhardtRidge1" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
+        <img data-src="https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-MohrhardtRidge1" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-Rockpile" class="webcam" target="_blank">
         <h4>Rockpile</h4>
-        <img data-src="https://sonoma-fire-api.herokuapp.com/camera/Axis-Rockpile" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
+        <img data-src="https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-Rockpile" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
     <div>
       <a href="http://www.alertwildfire.org/northbay/?camera=Axis-PoleMt" class="webcam" target="_blank">
         <h4>Pole Mt</h4>
-        <img data-src="https://sonoma-fire-api.herokuapp.com/camera/Axis-PoleMt" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
+        <img data-src="https://sonoma-fire-api-staging.herokuapp.com/camera/Axis-PoleMt" src="/images/img-placeholder.gif?b=t" onerror="this.onerror=null;this.src='/images/img-placeholder.gif';" class="webcam--img" width="600" height="337" />
       </a>
     </div>
   </div>
@@ -137,8 +137,10 @@
 </section>
 
 <script>
+  window.focus();
   var INTERVAL_SECONDS = 10;
   var images = Array.from(document.getElementsByClassName('webcam--img'));
+  var timers = [];
 
   images.forEach(function(image) {
     var img = new Image();
@@ -146,17 +148,67 @@
     img.onload = function() {
       image.src = img.src; // lazy-ish load the image
 
-      setInterval(function() {
+      timers.push(new IntervalTimer(function() {
+        console.log(image.src)
         image.src = image.dataset.src + timeParam();
-      }, INTERVAL_SECONDS * 1000);
+      }, INTERVAL_SECONDS * 1000, image));
     }
 
     img.src = image.dataset.src + timeParam();
   });
 
+  window.addEventListener("focus", function() {
+    timers.forEach(function(t) {
+      console.log('resuming')
+      t.resume();
+    });
+  });
+
+  window.addEventListener("blur", function() {
+    timers.forEach(function(t) {
+      console.log('pausing')
+      t.pause();
+    });
+  });
+
   // busts browser cache
   function timeParam() {
     return "?" + new Date().getTime();
+  }
+
+  // from https://stackoverflow.com/questions/24724852/pause-and-resume-setinterval
+  function IntervalTimer(callback, interval) {
+    var timerId, startTime, remaining = 0;
+    var state = 0; //  0 = idle, 1 = running, 2 = paused, 3= resumed
+
+    this.pause = function () {
+      if (state != 1) return;
+
+      remaining = interval - (new Date() - startTime);
+      window.clearInterval(timerId);
+      state = 2;
+    };
+
+    this.resume = function () {
+      if (state != 2) return;
+
+      state = 3;
+      window.setTimeout(this.timeoutCallback, remaining);
+    };
+
+    this.timeoutCallback = function () {
+      if (state != 3) return;
+
+      callback();
+
+      startTime = new Date();
+      timerId = window.setInterval(callback, interval);
+      state = 1;
+    };
+
+    startTime = new Date();
+    timerId = window.setInterval(callback, interval);
+    state = 1;
   }
 </script>
 
