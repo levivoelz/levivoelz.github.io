@@ -120,7 +120,6 @@ color: "#233d4f"
       image.src = img.src; // lazy-ish load the image
 
       timers.push(new IntervalTimer(function() {
-        console.log(image.src)
         image.src = image.dataset.src + timeParam();
       }, INTERVAL_SECONDS * 1000, image));
     }
@@ -130,14 +129,12 @@ color: "#233d4f"
 
   window.addEventListener("focus", function() {
     timers.forEach(function(t) {
-      console.log('resuming')
       t.resume();
     });
   });
 
   window.addEventListener("blur", function() {
     timers.forEach(function(t) {
-      console.log('pausing')
       t.pause();
     });
   });
