@@ -108,7 +108,7 @@ color: "#233d4f"
 </section>
 
 <script>
-  var INTERVAL_SECONDS = 2;
+  var INTERVAL_SECONDS = 10;
   var images = Array.from(document.getElementsByClassName('webcam--img'));
   var timers = [];
 
@@ -140,7 +140,7 @@ color: "#233d4f"
 
   // busts browser cache
   function timeParam() {
-    return "?" + new Date().getTime();
+    return "?time=" + new Date().getTime();
   }
 
   // from https://stackoverflow.com/questions/24724852/pause-and-resume-setinterval

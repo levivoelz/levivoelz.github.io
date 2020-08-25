@@ -7,7 +7,7 @@
     
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://www.levivoelz.com/sonoma-county-fire-resources.html">
+    <meta name="twitter:url" content="http://localhost:4000/sonoma-county-fire-resources.html">
     <meta name="twitter:title" content="Tracking resources for the 2020 Walbridge(13-4) fire |  Levi Voelz">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
@@ -137,7 +137,7 @@
 </section>
 
 <script>
-  var INTERVAL_SECONDS = 2;
+  var INTERVAL_SECONDS = 10;
   var images = Array.from(document.getElementsByClassName('webcam--img'));
   var timers = [];
 
@@ -169,7 +169,7 @@
 
   // busts browser cache
   function timeParam() {
-    return "?" + new Date().getTime();
+    return "?time=" + new Date().getTime();
   }
 
   // from https://stackoverflow.com/questions/24724852/pause-and-resume-setinterval
