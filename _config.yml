@@ -2,4 +2,3 @@ url: https://www.levivoelz.com
 highlighter: rouge
 plugins:
   - jekyll-redirect-from
-source: ./src
