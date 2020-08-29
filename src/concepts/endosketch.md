@@ -1,6 +1,6 @@
 ---
 layout: plain
-title: pitch
+title: EndoSketch
 nofollow: true
 background_color: '#000'
 ---
