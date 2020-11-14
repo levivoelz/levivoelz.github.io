@@ -2,3 +2,7 @@ url: https://www.levivoelz.com
 highlighter: rouge
 plugins:
   - jekyll-redirect-from
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name

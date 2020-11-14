@@ -5,7 +5,9 @@ color: "#A4CFEF"
 ---
 ## Projects
 
- - [Derivv](/projects/derivv) – Resize one image to multiple sizes
+{% for project in site.projects %}
+ - [{{ project.name }}]({{ project.url }}) — {{ project.short_description }}
+{% endfor %}
  - Current Route — Advanced goal setting mobile app
  - OctaCone – Active truncated octaghedron speakers
  - BigGulp – Bulk image resizing done right
@@ -15,4 +17,4 @@ color: "#A4CFEF"
  - Bargod — Drink recipes in your POS terminal
  - Jetson — AI powered meeting minutes
  - Patronish — Ask questions and get answers via video
- - Bench — Weeding bench for the masses
+ - Bench — Weeding bench for the masses -->
