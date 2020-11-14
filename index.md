@@ -1,10 +1,7 @@
 ---
 layout: default
-title: App maker
-description: Hi there! My name is Levi. I make apps, and if you are nice I’ll help with your email.
-hero: /images/levi_voelz-hero-denver-bkgd.jpg
+title:
+description: Hi there! My name is Levi. Thanks for visiting.
 color: "#A4CFEF"
 ---
-Hi there! My name is Levi and I make apps.
-
-[---> next](/about)
+Hi there! My name is Levi. Thanks for visiting. Check out some of my [projects](/projects).

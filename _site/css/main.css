@@ -18,7 +18,7 @@ body, html {
   font-weight: 400;
   color: var(--text-color);
   background-color: var(--bg-color);
-  line-height: 1.4rem;
+  line-height: 1.5rem;
   height: 100%;
 }
 
@@ -35,7 +35,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 0 4rem;
+  padding: 2rem 0;
+  background-color: hsl(206 70% 96% / 1);
+  margin-top: 4rem;
 }
 
 nav a {
@@ -45,12 +47,11 @@ nav a {
 
 #copyright {
   text-align: center;
+  padding: 0.5rem 0;
 }
 
 a {
   font-weight: 300;
-  /* text-decoration: none; */
-
 }
 
 a:hover {
@@ -60,10 +61,6 @@ a:hover {
 a[disabled] {
   filter: brightness(65%);
   font-weight: 400;
-}
-
-.content a {
-  /* border-bottom: 1px solid; */
 }
 
 p {
@@ -76,7 +73,7 @@ img {
 }
 
 small {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 .entry img {
@@ -88,7 +85,7 @@ small {
 
 .wrapper {
   width: 60%;
-  max-width: 515px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -163,7 +160,6 @@ small {
 .hero--inner {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .circles {
@@ -173,8 +169,8 @@ small {
 
 .circle {
   overflow: hidden;
-  max-width: 12rem;
-  max-height: 12rem;
+  width: 12rem;
+  height: 12rem;
   border: 1px solid var(--primary);
   background-color: var(--primary);
   border-radius: 50%;
@@ -211,9 +207,6 @@ small {
   align-self: flex-end;
 }
 
-@media (prefers-color-scheme: dark) {
-
-}
 .webcams {
   display: flex;
   flex-wrap: wrap;
