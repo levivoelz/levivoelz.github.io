@@ -8,4 +8,4 @@ I’m a programmer, designer, and maker. I like taking things apart to figure ou
 Contact me:
 - [Twitter](https://twitter.com/levivoelz){:target='_blank'}
 <!-- - [LinkedIn](https://linkedin.com/in/levivoelz){:target='_blank'} -->
-- [email](mailto:levivoelz+info@gmail.com)
+- [Email](mailto:levivoelz+info@gmail.com)

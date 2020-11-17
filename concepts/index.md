@@ -19,3 +19,4 @@ Some concepts in the pipeline.
 - Handjob.js — Browser based background job library
 - CronPom — Pomodoro based invoicing
 - BrainTree — The tree that echos your brain
+- Euclid Audio - Pretty speakers for a pretty world
