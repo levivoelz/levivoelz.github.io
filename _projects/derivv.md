@@ -1,4 +1,4 @@
-https://di5s3fmhtycis.cloudfront.net/---
+---
 layout: post
 name: Derivv
 short_description: Resize one image to multiple sizes
