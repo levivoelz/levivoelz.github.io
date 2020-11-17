@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Projects
-color: "#A4CFEF"
 ---
 ## Projects
 
