@@ -9,7 +9,7 @@
   --thirdary: #FDD78C;
   --fourthary: #92735F;
   --fifthary: #F24949;
-  --text-color: #91857C;
+  --text-color: rgb(51, 51, 51);
 }
 
 body, html {
