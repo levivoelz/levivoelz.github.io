@@ -1,21 +1,22 @@
 @import url('/css/normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
 
 /* variables */
 :root {
   --bg-color: #FFFFFF;
-  --primary: #A4CFEF;
-  --secondary: #6B41A6;
-  --thirdary: #FDD78C;
-  --fourthary: #92735F;
-  --fifthary: #F24949;
-  --text-color: #91857C;
+  --primary: hsla(212, 30%, 70%, 1);
+  --primary-dark: hsla(212, 30%, 50%, 1);
+  --primary-light: hsl(206 70% 96% / 1);
+  --text-color: rgb(51, 51, 51);
+  --font-body: 'Noto Serif JP', serif;
+  --font-accent: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
 body, html {
   font-size: 20px;
-  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
   font-weight: 400;
+  font-family: var(--font-body);
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.5rem;
@@ -27,6 +28,11 @@ header {
   padding-bottom: 10px;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-accent);
+  font-weight: 600;
+}
+
 h1 {
   line-height: 1.2em;
 }
@@ -36,8 +42,12 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-  background-color: hsl(206 70% 96% / 1);
+  background-color: var(--primary-light);
   margin-top: 4rem;
+}
+
+nav {
+  font-family: var(--font-accent);
 }
 
 nav a {
@@ -77,11 +87,46 @@ small {
   font-size: 0.8rem;
 }
 
+blockquote {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 3px;
+}
+
+blockquote p {
+  padding: 0;
+  margin: 0;
+}
+
+figure {
+  /* padding: 2rem 0; */
+  font-family: var(--font-accent);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  font-family:
+}
+
+.date {
+  font-family: var(--font-accent);
+  margin-top: -1.4rem;
+}
+
 .entry img {
   padding: 5px;
   border: 1px solid #ccc;
   margin: 25px 0;
   border-radius: 2px;
+}
+
+.entry figure img {
+  margin: 0;
 }
 
 .wrapper {
