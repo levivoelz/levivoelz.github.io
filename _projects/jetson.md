@@ -14,7 +14,7 @@ There's a lot of hype about AI and machine learning (ML) but there aren't many p
 
 As we worked on it the challenges expanded until we reached the seemingly insurmountable obstacle of speaker/voice separation, which, to my knowledge, still (2 years later as of this writing) hasn't been fully overcome. It's an interesting part of the story, but not integral to the main point—show a real-world example of how AI cloud services can be applied.
 
-> _**Hack Fact**: Jetson started under another name—Meetbot. If you heard it rather than read it you might think we were making a meatloaf printer._ [MEATPRINTER IMG]
+> _**Hack Fact**: Jetson started under another name—Meetbot. If you heard it rather than read it you might think we were making a meatloaf printer._
 
 My friend Zaki and I worked together on another project at a company called Influitive and we often lamented how awful meetings could be. A year or so after we both left that company he reached out to me about a concept he had been tossing around with a few other people. It was pretty straightforward—make meetings better by transcribing what people said and provide a way for them to take notes on the transcription. I like building tools and it seemed like it could be really useful for a lot of people who know how painful some meetings can be. Originally, the concept was super simple but it quickly morphed into something more sophisticated—a meeting _assistant_ capable of not only helping you take notes, but it would make suggestions, capture next steps, and book future meetings. It evolved because we learned more about what services and libraries were available, because we had a better understanding of what we could do with them, and because of the amazing people who gave us feedback.
 
