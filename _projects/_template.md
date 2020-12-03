@@ -5,7 +5,7 @@ short_description: Problem and solution article
 title: The best problem to have
 featured_image: /images/img-placeholder.gif
 description: Oh man, this is a really great problem and solution article. I hope it helps a lot of people.
-date: 9/5/2016
+date: 19/5/2016
 ---
 
 # [Problem]

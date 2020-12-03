@@ -3,7 +3,7 @@ layout: post
 name: Derivv
 short_description: Resize one image to multiple sizes
 title: Resize an Image to Multiple Sizes with Derivv
-featured_image: /images/derivv-image-resizing-app-preview_1200_x_832.png
+featured_image: /images/projects/derivv-image-resizing-app-preview_1200_x_832.png
 description: Derivv makes it super easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop.
 category: software
 date: 9/5/2016
@@ -17,7 +17,7 @@ I'm really excited to announce a new piece of software I wrote for people who ne
 
 >It’s really, really fast!
 
-[![Derivv image resizing app preview](/images/derivv-image-resizing-app-preview_1200_x_832.png "Derivv image resizing app preview")](https://di5s3fmhtycis.cloudfront.net/){:target="_blank"}
+[![Derivv image resizing app preview](/images/projects/derivv-image-resizing-app-preview_1200_x_832.png "Derivv image resizing app preview")](https://di5s3fmhtycis.cloudfront.net/){:target="_blank"}
 
 ## Who it's for
 
@@ -56,7 +56,7 @@ I have a few features in mind that I'll implement over the next few months. A bi
 Here is a list of features on my TODO list:
 
 - Multiple image/batch image support
-- Ability to fine tune cropping
+- ~~Ability to fine tune cropping~~
 - Crop gravity from left/right/top/bottom/etc
 - Downsizing by percentage
 - Third party plugins for Wordpress, Squarespace, etc

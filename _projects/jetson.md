@@ -3,7 +3,6 @@ layout: post
 name: Jetson
 short_description: A Practical Application of Cloud AI Services
 title: "Jetson: A Practical Application of Cloud AI Services"
-featured_image: /images/img-placeholder.gif
 description: Jetson–A practical application of speech recognition, speaker recognition, and natural language processing services to make meetings better.
 date: 17/11/2020
 ---
@@ -25,7 +24,7 @@ As with most new projects, the first thing we needed to do was figure out exactl
 Now that we had a solid use case it was time to figure out how to build it. We tossed around a lot of ideas and we landed on a visual UI that was split up into two sections; you had the ability to take notes on the left and read the transcript of the meeting on the right. The app would transcribe the meeting in near real-time and display the transcription on the screen in a Slack-like chat log, which you would use as a starting point for your notes.
 
 <figure>
-  <a href='/images/jetson-diagram-1.png'><img src='/images/jetson-diagram-1.png' /></a>
+  <a href='/images/projects/jetson-diagram-1.png'><img src='/images/projects/jetson-diagram-1.png' /></a>
   <figcaption>Information Flow</figcaption>
 </figure>
 
@@ -33,7 +32,7 @@ Before we started building the UI we needed to make sure we could actually make 
 
 Naïvely, we thought were smart people and could sidestep the issue. We pretty much spent most of our time on it. Some of the options we mulled over were: giving participants lapel mics, setting mics at each position around the table, using array mics, and lastly, a pure software technique called speaker diarisation. The last item was the most alluring because it transcribed and identified the user _at the same time_; it was literally plug-and-play. The downside was that the best diarisation solution we found was totally proprietary and we had a really hard time getting access to test it out. After a megaton of research, alternately, we found a nice array microphone dev kit and considered it to be a good enough solution so we pursued it alongside third-party transcription and identification services.
 
-> _For those who don't know, an array microphone is an array of many tiny microphones spread out around a circuit board with some digital signal processing(DSP) capabilities meant to capture sound coming from 360 degrees around the board._ <a href='/images/respeaker.jpeg'><img src='/images/respeaker.jpeg' /></a>
+> _For those who don't know, an array microphone is an array of many tiny microphones spread out around a circuit board with some digital signal processing(DSP) capabilities meant to capture sound coming from 360 degrees around the board._ <a href='/images/projects/respeaker.jpeg'><img src='/images/projects/respeaker.jpeg' /></a>
 
 With modifications, we were able to reasonably separate voices in a room using the array microphone. We sent each person's recording to Google's Speech-to-Text cloud service but realized we couldn't identify a user with it, so we had to find another service that did speaker recognition. Of course, speaker diarisation could handle both speech and speaker recognition at the same time, but we were still getting the runaround from the guy we met. Luckily, Microsoft had been developing their own AI/Cognitive services and they had a [Speaker Recognition API](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/){:target="_blank"} available. The downsides were that you had to train it with each user's voice so it could recognize you, and you had to send it to a speech recognition service for the transcript after identification. This additional step added some complexity to the app but it was our only viable option.
 
@@ -42,14 +41,14 @@ Ok, so we had separated source signals (voices) with our array mic board and had
 Once we had a good-enough-transcript, making it useful was the next challenge. Although there were a lot of really complex things going on under the hood, the user interface needed to be simple and straightforward, yet very useful in order for us to feel comfortable with demoing it. We spoke with a lot of professionals who were in meetings every day and gathered feedback that led to some really interesting features being considered and developed. We knew we wanted to show a transcript of the meeting in a chat window, kind of like Slack, and we also wanted to have the ability to take notes on the transcript. How that shaped up is interesting and we had some help from a friend who was a UX researcher and designer at Evernote. The idea ended up being that you had a chat window on the right that was scrolling by as people were talking and on the left was a notepad. You could easily quote parts of the conversation by dragging it over from the chat window and use that as a starting point for notes. Anything in the note section was editable. We were able to mock this up fairly easily and get a working prototype but it felt like it was missing something.
 
 <figure>
-  <a href='/images/jetson-prototype.png'><img src='/images/jetson-prototype.png' /></a>
+  <a href='/images/projects/jetson-prototype.png'><img src='/images/projects/jetson-prototype.png' /></a>
   <figcaption>Initial Prototype</figcaption>
 </figure>
 
-Meeting notes are very useful, but wouldn't it be more helpful if you could get suggestions based on what was being said in the meeting? For example, if someone says, "Ok, so I think the **next steps** are to _make a list of all the features_ and _draw up some wireframes_", then you could extract those steps and add it to the notes section. We learned a little bit about Natural Language Processing (NLP) from conversations we had with people who had worked on Alex and Siri, so we knew it was the foundation for how those virtual assistants were able to understand what you were asking and formulate a response. Google had and has a great NLP service that you can train with your own data to extract meaning from domain-specific information such as _next steps_ in a meeting.
+Meeting notes are very useful, but wouldn't it be more helpful if you could get suggestions based on what was being said in the meeting? For example, if someone says, "Ok, so I think the **next steps** are to _make a list of all the features_ and _draw up some wireframes_", then you could extract those steps and add it to the notes section. We learned a little bit about Natural Language Processing (NLP) from conversations we had with people who had worked on Alexa and Siri, so we knew it was the foundation for how those virtual assistants were able to understand what you were asking and formulate a response. Google had and has a great NLP service that you can train with your own data to extract meaning from domain-specific information such as _next steps_ in a meeting.
 
 <figure>
-  <a href='/images/jetson-chatbot.png'><img src='/images/jetson-chatbot.png' /></a>
+  <a href='/images/projects/jetson-chatbot.png'><img src='/images/projects/jetson-chatbot.png' /></a>
   <figcaption>Jetson the chatbot</figcaption>
 </figure>
 

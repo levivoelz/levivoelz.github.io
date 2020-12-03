@@ -19,7 +19,7 @@ body, html {
   font-family: var(--font-body);
   color: var(--text-color);
   background-color: var(--bg-color);
-  line-height: 1.5rem;
+  line-height: 1.5em;
   height: 100%;
 }
 
@@ -52,7 +52,7 @@ nav {
 
 nav a {
   display: block;
-  line-height: 1.2rem;
+  line-height: 1.2em;
 }
 
 #copyright {
@@ -110,6 +110,7 @@ figure {
 
 figcaption {
   font-size: 0.8rem;
+  line-height: 1.5em;
   font-family:
 }
 
