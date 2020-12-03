@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz</title>
-    <meta charset="utf-8" />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    {% if page.nofollow %}
-    <meta name="robots" content="noindex, nofollow">
-    {% endif %}
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %} Levi Voelz">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% endif %}">
-    <meta name="twitter:image" content="{% if page.hero %}{{ site.url }}{{ page.hero }}{% endif %}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz" />
-    <meta property="og:image" content="{% if page.hero %}{{ site.url }}{{ page.hero }}{% endif %}" />
-    <link rel="stylesheet" href="/css/main.css?bust_it=5">
-    <style>
-      a {
-        color: {{ page.color }}
-      }
-
-      .circle {
-        background-color: {{ page.color }};
-        border-color: {{ page.color }};
-      }
-
-      .page-name {
-        color: {{ page.color }}
-      }
-    </style>
-  </head>
+  {% include head.html %}
   <body>
     <div class="wrapper">
       <header>
