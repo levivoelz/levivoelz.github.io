@@ -1,8 +1,8 @@
 ---
 layout: post
 name: BarGod
-short_description: Drink Recipes in your POS Terminal-ish
-title: "BarGod: Drink Recipes in your POS Terminal-ish"
+short_description: Drink Recipes in Your POS Terminal-ish
+title: "BarGod: Drink Recipes in Your POS Terminal-ish"
 featured_image: /images/projects/bargod-terminal-ui.png
 hero: /images/projects/bargod-logo.png
 description: BarGod – Get drink recipes right in your terminal. Sorta... When a good idea isn\'t good enough to merit moving mountains.
