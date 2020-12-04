@@ -3,6 +3,7 @@ layout: post
 name: Jetson
 short_description: A Practical Application of Cloud AI Services
 title: "Jetson: A Practical Application of Cloud AI Services"
+featured_image: /images/projects/jetson-chatbot.png
 description: Jetson–A practical application of speech recognition, speaker recognition, and natural language processing services to make meetings better.
 date: 17/11/2020
 ---

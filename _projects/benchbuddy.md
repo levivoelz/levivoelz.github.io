@@ -3,6 +3,7 @@ layout: post
 name: BenchBuddy
 short_description: Take Your Seat with You
 title: "BenchBuddy: Take Your Seat with You"
+featured_image: /images/projects/benchbuddy-design.png
 description: BenchBuddy – Take your seat with you everywhere you go so you never have to sit on the ground again.
 date: 13/7/2020
 ---

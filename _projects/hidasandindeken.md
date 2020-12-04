@@ -3,6 +3,7 @@ layout: post
 name: Hidasandindeken
 short_description: Hide your Sandbox in Your Deck
 title: "Hidasandindeken: Hide your Sandbox in Your Deck"
+featured_image: /images/projects/hidasandindeken-hidden-sandbox-render.png
 description: When you are short on space, use your design mind to combine spaces and functionality like hiding your sandbox in your deck
 date: 8/9/2020
 ---
