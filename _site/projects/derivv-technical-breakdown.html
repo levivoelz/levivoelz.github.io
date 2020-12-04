@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Derivv Technical Breakdown: What Makes it so Fast? | Levi Voelz</title>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.levivoelz.com/projects/derivv-technical-breakdown">
+  <meta name="twitter:title" content="Derivv Technical Breakdown: What Makes it so Fast? |  Levi Voelz">
+  <meta name="twitter:description" content="A lot of people use Derivv, the best way to resize a single image to multiple sizes, and they use it because it's not only simple, but it's fast.">
+  <meta name="twitter:image" content="https://www.levivoelz.com/images/img-placeholder.gif">
+  <meta property="og:title" content="Derivv Technical Breakdown: What Makes it so Fast? | Levi Voelz" />
+  <meta property="og:image" content="https://www.levivoelz.com/images/img-placeholder.gif" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css?bust_it=5">
+  <style>
+    a {
+      color: 
+    }
+
+    .circle {
+      background-color: ;
+      border-color: ;
+    }
+
+    .page-name {
+      color: 
+    }
+  </style>
+</head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="hero">
+          <div class="hero--inner">
+            
+            <a href="/" style="line-height: 1">
+            
+              <img class="circle" src="" />
+            
+            </a>
+            
+            <div class="header-circles">
+              <div class="circle circle--sm"></div>
+              <div class="page-name"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+    	<div class="content clearfix">
+        <article class="post">
+  <h1>Derivv Technical Breakdown: What Makes it so Fast?</h1>
+	<div class="date">
+	  <small>December  4, 2020</small>
+	</div>
+  <div class="entry">
+    <p>A lot of image processing tools, like Photoshop, are slow. The fastest ones are command line utilities like ImageMagick, but they require some technical knowhow to operate. While working at one of the largest online retailers, I helped build a really useful tool for creatives to resize and crop product images according to a config file. All they had to do was upload the images via a web interface or drag and drop them into a folder on their machine, the images would process in the background, and they’d get a notification when it was all done. Depending on how many images needed to be processed, it could take a while. I was using a Sinatra Web Server with ImageMagick to handle image uploads and processing tasks, which was great. Two problems always bothered me though. It felt slow and you couldn’t change the configuration. If you wanted to change the image sizes and crops you’d have to hit me up to write a new config for you.</p>
+
+<p>After leaving that job, I joined another company and forgot about the image processor for a while. It wasn’t until a few years later that I had time to work on my dream image processing app, <a href="https://di5s3fmhtycis.cloudfront.net/" target="_blank">Derivv</a>. I wrote down the problems I wanted to solve and had some ideas of how to address them, but I didn’t know how amazing it could be until I started working on it. One of the most impactful things I realized was that I could do 100% of the processing in the browser. I didn’t need to send the image to the server because I could do everything client-side. This realization was really important and I probably wouldn’t have launched Derivv if it wasn’t for that because not only did it make processing images so much faster, but it made it more accessible. You could process images offline. Very cool.</p>
+
+<p>There are several key technical aspects to Derivv that make it different from anything out there that I want to share. Over a series of articles I will outline in detail how Derivv works under the hood and what makes it so fast. The most important and exiting things are how downsizing impacts image quality and why it’s an important step, cropping methods and the cropping interface, processing images concurrently and in the background, and packaging files before downloading.</p>
+
+<hr />
+<h3 id="article-series">Article Series</h3>
+<p><em>I’ll be writing articles over the next few weeks that go into detail about each of these topics. Check back in a week or sign up to get a notification when the next one comes out.</em></p>
+<ul>
+  <li>High Quality Image Processing in the Browser</li>
+  <li>Making it fast with Web Workers</li>
+  <li>What Makes the Interface so Unique?</li>
+  <li>Packaging Files for Delivery in the Browser</li>
+  <li>Offline Processing via a Progressive Web App (PWA)</li>
+</ul>
+
+  </div>
+</article>
+<div class='subscribe'>
+  <h3>Wowza! Nice work.</h3>
+  <p>
+    I didn't know if anyone was picking up what I was putting down, but you know that you've read this much and I know you know that, which makes me feel good.</p>
+    <p>
+    <b>Get notified when I deploy another article</b>. I'll shoot you an email when it's live. No spam. Just a simple notification that says, <i>"Hey {{contact.first_name}}, here's my new article about {{project.title}}"</i>. ;-)
+  </p>
+  <p>
+  <a class="typeform-share button" href="https://form.typeform.com/to/ECx7bSsR?typeform-medium=embed-snippet" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#9CB1C9;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-size="70" target="_blank">Enable Notifications</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+  </p>
+</div>
+
+      </div>
+      <footer>
+        <div id="footer--top">
+          <nav>
+            <a href="/projects">Projects</a>
+            <!-- <a href="/concepts/">Concepts</a> -->
+            <a href="/about">About</a>
+          </nav>
+          <div class='circles'>
+            
+            <a href="/" style="line-height: 1">
+            
+              <div class='circle circle--md'></div>
+            
+            </a>
+            
+            <div class='circle circle--xs'></div>
+          </div>
+        </div>
+        <nav id="copyright">
+          <small><a href="//twitter.com/levivoelz" target="_blank">@levivoelz</a></small>
+        </nav>
+      </footer>
+    </div>
+    
+    <script>
+      (function() {
+        try {
+          document
+            .querySelector("nav a[href='" + window.location.pathname + "']")
+            .setAttribute('disabled', true);
+        } catch(e) {}
+
+      })();
+    </script>
+  </body>
+</html>
