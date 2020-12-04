@@ -3,7 +3,8 @@ layout: post
 name: Derivv Technical Breakdown
 short_description: What Makes it so Fast?
 title: "Derivv Technical Breakdown: What Makes it so Fast?"
-featured_image: /images/img-placeholder.gif
+featured_image: /images/projects/derivv-downscale-code.png
+hero: /images/projects/derivv-downscale-code.png
 description: A lot of people use Derivv, the best way to resize a single image to multiple sizes, and they use it because it's not only simple, but it's fast.
 date: 04/12/2020
 ---
