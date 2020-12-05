@@ -18,6 +18,6 @@ Have you ever been frustrated by not having anywhere to sit except the ground? M
 </figure>
 {% for i in (1..9) %}
 <figure>
-  <a href='/images/projects/benchbuddy-{{i}}.jpg'><img src='/images/projects/benchbuddy-{{i}}.jpg' /></a>
+  <a href='/images/projects/benchbuddy-{{i}}.JPG'><img src='/images/projects/benchbuddy-{{i}}.JPG' /></a>
 </figure>
 {% endfor %}
