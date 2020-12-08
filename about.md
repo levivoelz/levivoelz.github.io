@@ -8,6 +8,6 @@ I’m a programmer, designer, and maker. I like taking things apart to figure ou
 _If you have ideas you are wanting to explore or collaborate on, hit me up. I'd love to chat._
 
 <div id='contact'>
-  <a href='https://twitter.com/levivoelz' target='_blank'><img src='/images/twitter-icon.svg' /></a>
-  <a href='mailto:levivoelz+info@gmail.com'><img src='/images/email-icon.svg' /></a>
+  <a href='https://twitter.com/levivoelz' title='@levivoelz' target='_blank'><img src='/images/twitter-icon.svg' /></a>
+  <a href='mailto:levivoelz+web@gmail.com' title='levivoelz+web@gmail.com'><img src='/images/email-icon.svg' /></a>
 </div>
