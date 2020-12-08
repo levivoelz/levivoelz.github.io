@@ -11,3 +11,8 @@ _I like working on really unusual and challenging projects. Some see the light o
  - GreenZome — 3d printed model greenhouse skeleton
  - Current Route — Advanced goal setting mobile app
  - CLVR TV — Interactive video e-commerce
+
+<div id='contribute'>
+  <p><i>If like what you've seen, take a moment to help keep the lights on. All contributions go towards expenses like hosting, domains, and third-party services.</i></p>
+  <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', 'hsla(212, 30%, 70%, 1)', 'P5P121G7T');kofiwidget2.draw();</script>
+</div>

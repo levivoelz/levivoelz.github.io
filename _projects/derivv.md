@@ -13,11 +13,11 @@ redirect_from:
   - /software/2016/09/05/derivv-image-resizer.html
 ---
 
-I'm really excited to announce a new piece of software I wrote for people who need to [resize a single image to multiple sizes](https://di5s3fmhtycis.cloudfront.net/){:target="_blank"}. It's called [Derivv](https://di5s3fmhtycis.cloudfront.net/){:target="_blank"} and it's a niche tool that does it very easily and quickly. It's totally browser based, so no need to upload images to a server to be resized and sent back. And, It's really, really fast! Anyway, I'm going to go over in more detail who I built it for, what applications it is good for, and some exciting new features coming up in the coming months.
+I'm really excited to announce a new piece of software I wrote for people who need to [resize a single image to multiple sizes](https://derivv.com){:target="_blank"}. It's called [Derivv](https://derivv.com){:target="_blank"} and it's a niche tool that does it very easily and quickly. It's totally browser based, so no need to upload images to a server to be resized and sent back. And, It's really, really fast! Anyway, I'm going to go over in more detail who I built it for, what applications it is good for, and some exciting new features coming up in the coming months.
 
 >It’s really, really fast!
 
-[![Derivv image resizing app preview](/images/projects/derivv-image-resizing-app-preview_1200_x_832.png "Derivv image resizing app preview")](https://di5s3fmhtycis.cloudfront.net/){:target="_blank"}
+[![Derivv image resizing app preview](/images/projects/derivv-image-resizing-app-preview_1200_x_832.png "Derivv image resizing app preview")](https://derivv.com){:target="_blank"}
 
 ## Who it's for
 

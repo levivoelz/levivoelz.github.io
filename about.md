@@ -7,6 +7,7 @@ I’m a programmer, designer, and maker. I like taking things apart to figure ou
 
 _If you have ideas you are wanting to explore or collaborate on, hit me up. I'd love to chat._
 
-- [Twitter](https://twitter.com/levivoelz){:target='_blank'}
-<!-- - [LinkedIn](https://linkedin.com/in/levivoelz){:target='_blank'} -->
-- [Email](mailto:levivoelz+info@gmail.com)
+<div id='contact'>
+  <a href='https://twitter.com/levivoelz' target='_blank'><img src='/images/twitter-icon.svg' /></a>
+  <a href='mailto:levivoelz+info@gmail.com'><img src='/images/email-icon.svg' /></a>
+</div>
