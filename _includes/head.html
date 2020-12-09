@@ -1,10 +1,9 @@
 <head>
   <title>{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz</title>
+  {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  {% if page.nofollow %}
-  <meta name="robots" content="noindex, nofollow">
-  {% endif %}
+  {% if page.nofollow %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
@@ -13,6 +12,9 @@
   <meta name="twitter:image" content="{% if page.featured_image %}{{ site.url }}{{ page.featured_image }}{% endif %}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}Levi Voelz" />
   <meta property="og:image" content="{% if page.featured_image %}{{ site.url }}{{ page.featured_image }}{% endif %}" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
@@ -28,11 +30,9 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
   {% assign cacheBust = site.time | date:'?v=%s' %}
   <link rel="stylesheet" href="{{ "/css/main.css" | relative_url | append: cacheBust }}">
+  {% if page.color %}
   <style>
     a {
       color: {{ page.color }}
@@ -47,4 +47,5 @@
       color: {{ page.color }}
     }
   </style>
+  {% endif %}
 </head>
