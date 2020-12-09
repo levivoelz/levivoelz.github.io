@@ -2,7 +2,14 @@ url: https://www.levivoelz.com
 highlighter: rouge
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
 collections:
   projects:
     output: true
     permalink: /:collection/:name
+defaults:
+  -
+    scope:
+      path: "slides/*"
+    values:
+      sitemap: false
