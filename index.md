@@ -1,7 +1,6 @@
 ---
 layout: default
-title:
-description: Hi there! My name is Levi. Thanks for visiting.
+title: All the things
 redirect_from:
   - /concepts
   - /concepts/

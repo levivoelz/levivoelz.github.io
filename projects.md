@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Projects
+title: My Projects
+description: Here are few projects I've created or worked on.
 ---
 
 _I like working on really unusual and challenging projects. Some see the light of day and others don’t, but that’s not the point. If I can make something new that's useful and learn something while doing it — that’s what’s important to me._
