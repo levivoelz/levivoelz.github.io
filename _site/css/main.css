@@ -1,4 +1,5 @@
-@import url('/css/normalize.css');
+@import "normalize.css";
+@import "highlight-trac.css";
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
 
@@ -117,16 +118,20 @@ figcaption {
   font-family:
 }
 
+canvas {
+  margin-top: 2rem;
+}
+
 .date {
   font-family: var(--font-accent);
   margin-top: -1.4rem;
 }
 
 .entry img {
-  padding: 5px;
-  border: 1px solid #ccc;
+  /* padding: 5px; */
+  /* border: 1px solid #ccc; */
   margin: 25px 0;
-  border-radius: 2px;
+  /* border-radius: 2px; */
 }
 
 .entry figure img {
@@ -352,7 +357,7 @@ figcaption {
   width: 40px;
 }
 
-.button {
+button, .button {
   display:inline-block;
   text-decoration:none;
   background-color: var(--primary);
@@ -366,4 +371,21 @@ figcaption {
   max-width:100%;
   text-overflow:ellipsis;
   font-weight: 400;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(65%);
+}
+
+button:active, button:focus {
+  border: 0;
+  outline: none;
+  filter: brightness(85%);
+}
+
+.highlight {
+  font-size: 0.8rem;
+  margin: 2rem 0;
 }

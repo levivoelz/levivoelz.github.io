@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Derivv Technical Breakdown: Resizing Images the Fast Way | Levi Voelz</title>
+  <meta name="description" content="Resizing Images Online the Fast Way Without Sending Images to the Server.">
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.levivoelz.com/projects/derivv-technical-breakdown-1-make-it-fast">
+  <meta name="twitter:title" content="Derivv Technical Breakdown: Resizing Images the Fast Way |  Levi Voelz">
+  <meta name="twitter:description" content="Resizing Images Online the Fast Way Without Sending Images to the Server.">
+  <meta name="twitter:image" content="https://www.levivoelz.com/images/projects/derivv-downscale-code.png">
+  <meta property="og:title" content="Derivv Technical Breakdown: Resizing Images the Fast Way | Levi Voelz" />
+  <meta property="og:image" content="https://www.levivoelz.com/images/projects/derivv-downscale-code.png" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <link rel="stylesheet" href="/css/main.css?v=1608060804">
+  
+</head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="hero">
+          <div class="hero--inner">
+            
+            <a href="/" style="line-height: 1">
+            
+              <img class="circle" src="/images/projects/derivv-downscale-code.png" />
+            
+            </a>
+            
+            <div class="header-circles">
+              <div class="circle circle--sm"></div>
+              <div class="page-name"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+    	<div class="content clearfix">
+        <article class="post">
+  <h1>Derivv Technical Breakdown: Resizing Images the Fast Way</h1>
+	<div class="date">
+	  <small>December 15, 2020</small>
+	</div>
+  <div class="entry">
+    <p>I had already built an image processor while working at an online retailer and knew how to resize and crop images to a set of derivatives at specific dimensions. It was fairly simple given the various command-line tools available like ImageMagick. The fun part of that project wasn’t necessarily creating an image processor, but creating an intuitive and simple interface for the it that addressed the user’s needs. I spoke with stakeholders on a regular basis and came up with a few options that worked well for them—a web interface and and native OS X interface.</p>
+
+<p>One of the project requirements was to be able to process batches of 10’s or even 1000’s of images at a time. Initially, a web interface did well, at least for smaller batches. Anyone could drop images onto the webpage and get their images back, cropped and resized. As time went on, we discovered the web interface was pretty slow, especially with large sets of images. So, I built an OS X application that had a UI kind of like Dropbox. You could drop any number of image files onto a folder and they would process in the background on your computer. When it was done, you’d get a Finder notification and you could grab the files to carry on with your project. The OS X application was relatively fast, given that I could process the files locally.</p>
+
+<p>I had a few ideas about how I could improve it but most of them were for use-cases that didn’t apply to BigCo. For example, I wanted to add the ability to change the derivative image configuration, which previously wasn’t available–it was hardcoded. I also wanted to add the ability to fine-tune the crop. Sometimes the focal point of an image is offset to one side or another and needs tweaking because the resizing algorithm will modify the image based on the center being the focal point by default. In BigCo’s app, the user could select a coordinate like “top”, “right”, or “topright” to move the focal point of the crop to match the focal point of the image, but I wanted to have more fine grained control where you could place the crop exactly where you want it.</p>
+
+<blockquote>
+  <p>It’s worth noting that Derivv intentionally doesn’t allow for freeform cropping. When resizing images to a specific size, freeform cropping isn’t necessary.</p>
+</blockquote>
+
+<p>Even with all the improvements I made, it still felt <em>slow</em>. I figured it was mainly due to transferring images to and from the server. I ran a few tests and found out that, yes, that was the biggest contributor, but not only that, the libraries I was using were also slow. In Ruby, there are two primary libraries for image processing and both of them are wrappers for ImageMagick–RMagick and MiniMagick. RMagick is C-bindings for ImageMagick. MiniMagick spawns an ImageMagick process. Both are great tools, but neither is particularly fast. I looked into other options, including using other languages, and found out I didn’t need to process images on the server at all. There was sufficient evidence that people were successfully processing images in the right in the browser. It was worth investigating and I found it relatively simple to do it.</p>
+
+<p>This is an image that is resized by simply scaling it down with the <code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code> tag and some JavaScript<a href="#1"><sup>1</sup></a>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">'base'</span> <span class="na">src=</span><span class="s">'/images/projects/plane-2560_x_1600.jpg'</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">'derivative'</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+</code></pre></div></div>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">base</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">base</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">derivative</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">derivative</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">derivative</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+  <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">derivative</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">src</span><span class="p">;</span>
+</code></pre></div></div>
+
+<figure>
+  <img id="base" src="/images/projects/plane-2560_x_1600.jpg" />
+  <figcaption>Original — 2560w x 1600h</figcaption>
+</figure>
+<figure>
+  <canvas id="derivative"></canvas>
+  <figcaption>Resized — <span id="derivative-width"></span>w x <span id="derivative-height"></span>h</figcaption>
+</figure>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const codeblocks = document.getElementsByClassName('language-javascript');
+    for (block of codeblocks) {
+      eval(block.innerText);
+    }
+
+    setTimeout(() => {
+      const canvas = document.getElementById('derivative');
+      const dWidth = document.getElementById('derivative-width');
+      const dHeight = document.getElementById('derivative-height');
+
+      dWidth.innerText = canvas.width;
+      dHeight.innerText = canvas.height;
+    }, 500);
+
+    document
+      .getElementById('derivative--resize')
+      .addEventListener('click', () => {
+        canvas = document.getElementById('derivative--resized');
+        context = canvas.getContext('2d');
+        context.clearRect(0,0, base.width, base.height);
+        canvas.width = base.width;
+        canvas.height = base.height;
+        canvas; // eh?
+        context.drawImage(base, 0, 0, base.width, base.height);
+    });
+  });
+</script>
+
+<p>Did you see how fast that is? Probably not, because the image was resized when the page loaded. Resize another one.</p>
+
+<div style="text-align: center"><button id="derivative--resize">Resize</button></div>
+<canvas id="derivative--resized"></canvas>
+
+<p>Did you see that? Press it a few times. Can you see the image clear and then load? I’m guessing the answer is “no”, unless you are on a really old computer.</p>
+
+<p>The point is, resizing in the browser is fast. It’s clearly faster than resizing on the server because we don’t have to send it there and back again. We completely skip the transfer step. The other plus is that processing images on the server is expensive because of data transfer costs, memory usage costs, and compute cycle costs, so we also save money.</p>
+
+<p>You may have noticed a problem with this method, however—the image quality isn’t great. Due to the way the browser downsizes images by default, we lose some clarity and detail.</p>
+
+<p><em>In the next article I’ll go through why that is and how to improve the image quality when downscaling in the browser.</em></p>
+
+<hr />
+<p><small id="1"><sup>1</sup>See Mozilla developer documentation for more <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage" target="_blank">Canvas 2D API</a> details.</small></p>
+
+<p><a href="/projects/derivv-technical-breakdown">Derivv Technical Breakdown Overview</a></p>
+
+  </div>
+</article>
+<div class='subscribe'>
+  <h3>Wowza! Nice work.</h3>
+  <p>
+    I didn't know if anyone was picking up what I was putting down, but you know that you've read this much and I know you know that, which makes me feel good.</p>
+    <p>
+    <b>Get notified when I deploy another article</b>. I'll shoot you an email when it's live. No spam. Just a simple notification that says, <i>"Hey {{contact.first_name}}, here's my new article about {{project.title}}"</i>. ;-)
+  </p>
+  <p>
+  <a class="typeform-share button" href="https://form.typeform.com/to/ECx7bSsR?typeform-medium=embed-snippet" data-mode="popup" data-size="70" target="_blank">Enable Notifications</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+  </p>
+</div>
+
+      </div>
+            <footer>
+        <div id="footer--top">
+          <nav>
+            <a href="/projects">Projects</a>
+            <!-- <a href="/concepts/">Concepts</a> -->
+            <a href="/about">About</a>
+          </nav>
+          <div class='circles'>
+            
+            <a href="/" style="line-height: 1">
+            
+              <div class='circle circle--md'></div>
+            
+            </a>
+            
+            <div class='circle circle--xs'></div>
+          </div>
+        </div>
+        <nav id="copyright">
+          <small><a href="//twitter.com/levivoelz" target="_blank">@levivoelz</a></small>
+        </nav>
+      </footer>
+    </div>
+    
+    <script>
+      (function() {
+        try {
+          document
+            .querySelector("nav a[href='" + window.location.pathname + "']")
+            .setAttribute('disabled', true);
+        } catch(e) {}
+      })();
+    </script>
+  </body>
+</html>
+

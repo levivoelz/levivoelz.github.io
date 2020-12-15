@@ -1,7 +1,7 @@
 ---
 layout: post
 name: Derivv Technical Breakdown
-short_description: What Makes it so Fast?
+short_description: What Makes Derivv so Fast?
 title: "Derivv Technical Breakdown: What Makes it so Fast?"
 featured_image: /images/projects/derivv-downscale-code.png
 hero: /images/projects/derivv-downscale-code.png
@@ -18,8 +18,8 @@ There are several key technical aspects to Derivv that make it different from an
 ---
 ### Article Series
 _I'll be writing articles over the next few weeks that go into detail about each of these topics. Check back in a week or sign up to get a notification when the next one comes out._
+- [Resizing Images Online the Fast Way](/projects/derivv-technical-breakdown-1-make-it-fast)
 - High Quality Image Processing in the Browser
-- Making it fast with Web Workers
 - What Makes the Interface so Unique?
 - Packaging Files for Delivery in the Browser
 - Offline Processing via a Progressive Web App (PWA)

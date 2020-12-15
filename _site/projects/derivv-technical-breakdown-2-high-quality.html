@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>BenchBuddy: Take Your Seat with You | Levi Voelz</title>
-  <meta name="description" content="BenchBuddy – Take your seat with you everywhere you go so you never have to sit on the ground again.">
+  <title>Derivv Technical Breakdown 2: High Quality | Levi Voelz</title>
+  <meta name="description" content="High Quality Image Processing in the Browser.">
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://www.levivoelz.com/projects/benchbuddy">
-  <meta name="twitter:title" content="BenchBuddy: Take Your Seat with You |  Levi Voelz">
-  <meta name="twitter:description" content="BenchBuddy – Take your seat with you everywhere you go so you never have to sit on the ground again.">
-  <meta name="twitter:image" content="https://www.levivoelz.com/images/projects/benchbuddy-design.png">
-  <meta property="og:title" content="BenchBuddy: Take Your Seat with You | Levi Voelz" />
-  <meta property="og:image" content="https://www.levivoelz.com/images/projects/benchbuddy-design.png" />
+  <meta name="twitter:url" content="https://www.levivoelz.com/projects/derivv-technical-breakdown-2-high-quality">
+  <meta name="twitter:title" content="Derivv Technical Breakdown 2: High Quality |  Levi Voelz">
+  <meta name="twitter:description" content="High Quality Image Processing in the Browser.">
+  <meta name="twitter:image" content="https://www.levivoelz.com/images/projects/derivv-downscale-code.png">
+  <meta property="og:title" content="Derivv Technical Breakdown 2: High Quality | Levi Voelz" />
+  <meta property="og:image" content="https://www.levivoelz.com/images/projects/derivv-downscale-code.png" />
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -45,7 +45,7 @@
             
             <a href="/" style="line-height: 1">
             
-              <img class="circle" src="" />
+              <img class="circle" src="/images/projects/derivv-downscale-code.png" />
             
             </a>
             
@@ -58,56 +58,38 @@
       </header>
     	<div class="content clearfix">
         <article class="post">
-  <h1>BenchBuddy: Take Your Seat with You</h1>
+  <h1>Derivv Technical Breakdown 2: High Quality</h1>
 	<div class="date">
-	  <small>July 13, 2020</small>
+	  <small>December  9, 2020</small>
 	</div>
   <div class="entry">
-    <p>Have you ever been frustrated by not having anywhere to sit except the ground? Me too and that’s why I created BenchBuddy. BenchBuddy is the seat you can take with you everywhere you go. I apologize in advance for no context.</p>
+    <p>One of the main problems I wanted to solve with Derivv was to make it eat super simple and quick to resize a raster/bitmap image to multiple sizes. There are tools out there that address it indirectly, simply through having the ability to resize and crop, but those operations are almost always a separate step—you probably first crop the image and then resize it. If you need your resulting images to be specific dimensions, you might start with a file in Photoshop that is already set to the dimension you are looking for and then drop your image in as a layer, then “save as” to process it (or “save for web”). There are so many ways to do it and I wont go into all of them, but suffice it to say, this specific problem didn’t really seem to have a direct solution.</p>
 
-<figure>
-  <a href="/images/projects/benchbuddy-designs.png"><img src="/images/projects/benchbuddy-designs.png" /></a>
-</figure>
-<figure>
-  <a href="/images/projects/benchbuddy-design.png"><img src="/images/projects/benchbuddy-design.png" /></a>
-</figure>
+<p>Regardless of why I built Derivv, I knew that if people were going to use it, it had to return high quality images. Low quality images only work in under certain conditions, like on the web, however, as bandwidth gets more affordable, more end-users become less tollerant of low quality images. Image compression is another story and Derivv doesn’t even offer it at this point.</p>
 
-<figure>
-  <a href="/images/projects/benchbuddy-1.JPG"><img src="/images/projects/benchbuddy-1.JPG" /></a>
-</figure>
+<p>As I worked on Derivv I realized the fastest way to resize an image online wasn’t to send it to a server, it was to process it in the browser. Everyone processes images on the server because you have fine grained control, many options, and tons of support in terms of documentation and community. The biggest problem with processing on the server is it’s slow. You have to updload the file, process it multiple times, and send every file back to the browser. What you could cut out the middleman and do it all locally? There were some client-side/browser-based image processing libraries like Pica and a few others, and they did a great job of resizing and cropping, but they didn’t seem to retain image quality like I wanted.</p>
 
-<figure>
-  <a href="/images/projects/benchbuddy-2.JPG"><img src="/images/projects/benchbuddy-2.JPG" /></a>
-</figure>
+<p>One of the main problems with resizing images is retaining resultion and color as you scale up or down. When images are scaled way down they tend to loose a lot of resolution and the color gets faded or it ends up looking pixelated. This even happens in Photoshop, where if you downscale an image by a lot then it can lose quality. One technique to mitigate it is to downscale in steps. If the end result should be 50% of the original size, you step it down 10% at a time until it reaches the goal. Doing it this way takes longer, but you get great results.</p>
 
-<figure>
-  <a href="/images/projects/benchbuddy-3.JPG"><img src="/images/projects/benchbuddy-3.JPG" /></a>
-</figure>
+<p>Another option is</p>
 
-<figure>
-  <a href="/images/projects/benchbuddy-4.JPG"><img src="/images/projects/benchbuddy-4.JPG" /></a>
-</figure>
+<ul>
+  <li>Upscaling
+    <ul>
+      <li>Interpolation</li>
+    </ul>
+  </li>
+  <li>Downscaling
+    <ul>
+      <li>Interpolation</li>
+      <li>No Interpolation</li>
+      <li>Downsampling</li>
+    </ul>
+  </li>
+</ul>
 
-<figure>
-  <a href="/images/projects/benchbuddy-5.JPG"><img src="/images/projects/benchbuddy-5.JPG" /></a>
-</figure>
-
-<figure>
-  <a href="/images/projects/benchbuddy-6.JPG"><img src="/images/projects/benchbuddy-6.JPG" /></a>
-</figure>
-
-<figure>
-  <a href="/images/projects/benchbuddy-7.JPG"><img src="/images/projects/benchbuddy-7.JPG" /></a>
-</figure>
-
-<figure>
-  <a href="/images/projects/benchbuddy-8.JPG"><img src="/images/projects/benchbuddy-8.JPG" /></a>
-</figure>
-
-<figure>
-  <a href="/images/projects/benchbuddy-9.JPG"><img src="/images/projects/benchbuddy-9.JPG" /></a>
-</figure>
-
+<hr />
+<p><a href="/projects/derivv-technical-breakdown">&lt;– Back</a></p>
 
   </div>
 </article>
