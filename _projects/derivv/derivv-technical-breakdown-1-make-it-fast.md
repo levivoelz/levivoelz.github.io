@@ -34,6 +34,12 @@ let canvas = document.getElementById('derivative');
 let context = canvas.getContext('2d');
 
 derivative.onload = function() {
+  // base.(width|height) is the pixel count of the source
+  // image as it is displayed on the screen. You can get the
+  // actual width or height of the image with
+  // originalWidth/originalHeight. I'm resizing to
+  // the displayed width/height because it lines up nicely
+  // in my layout.
   canvas.width = base.width;
   canvas.height = base.height;
   context.drawImage(this, 0, 0, base.width, base.height);

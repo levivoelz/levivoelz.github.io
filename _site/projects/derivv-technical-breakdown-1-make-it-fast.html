@@ -33,7 +33,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   
-  <link rel="stylesheet" href="/css/main.css?v=1608060804">
+  <link rel="stylesheet" href="/css/main.css?v=1608154553">
   
 </head>
 
@@ -87,6 +87,12 @@
 <span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">derivative</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// base.(width|height) is the pixel count of the source</span>
+  <span class="c1">// image as it is displayed on the screen. You can get the</span>
+  <span class="c1">// actual width or height of the image with</span>
+  <span class="c1">// originalWidth/originalHeight. I'm resizing to</span>
+  <span class="c1">// the displayed width/height because it lines up nicely</span>
+  <span class="c1">// in my layout.</span>
   <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
   <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
   <span class="nx">context</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
