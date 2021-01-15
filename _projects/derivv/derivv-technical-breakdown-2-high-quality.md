@@ -19,8 +19,25 @@ As I worked on Derivv I realized the fastest way to resize an image online wasn'
 One of the main problems with resizing images is retaining resultion and color as you scale up or down. When images are scaled way down they tend to loose a lot of resolution and the color gets faded or it ends up looking pixelated. This even happens in Photoshop, where if you downscale an image by a lot then it can lose quality. One technique to mitigate it is to downscale in steps. If the end result should be 50% of the original size, you step it down 10% at a time until it reaches the goal. Doing it this way takes longer, but you get great results.
 
 
+SIDE NOTE
+What other things could you do by resizing in the browser? If you had a lot of derivative images on your site you could improve performance by having the client only download one source image and then do something like:
 
+<img src='placeholder.gif' class='derivative' data-width='300' data-height='300' />
 
+or
+
+<img src='placeholder.gif' class='derivative' data-name='small' />
+```javascript
+[
+  {
+    small: {
+      width: 300,
+      height: 300
+    }
+  },  
+]
+
+```
 
 Another option is
 

@@ -33,7 +33,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   
-  <link rel="stylesheet" href="/css/main.css?v=1608154553">
+  <link rel="stylesheet" href="/css/main.css?v=1610741362">
   
 </head>
 
@@ -70,6 +70,25 @@
 <p>As I worked on Derivv I realized the fastest way to resize an image online wasn’t to send it to a server, it was to process it in the browser. Everyone processes images on the server because you have fine grained control, many options, and tons of support in terms of documentation and community. The biggest problem with processing on the server is it’s slow. You have to updload the file, process it multiple times, and send every file back to the browser. What you could cut out the middleman and do it all locally? There were some client-side/browser-based image processing libraries like Pica and a few others, and they did a great job of resizing and cropping, but they didn’t seem to retain image quality like I wanted.</p>
 
 <p>One of the main problems with resizing images is retaining resultion and color as you scale up or down. When images are scaled way down they tend to loose a lot of resolution and the color gets faded or it ends up looking pixelated. This even happens in Photoshop, where if you downscale an image by a lot then it can lose quality. One technique to mitigate it is to downscale in steps. If the end result should be 50% of the original size, you step it down 10% at a time until it reaches the goal. Doing it this way takes longer, but you get great results.</p>
+
+<p>SIDE NOTE
+What other things could you do by resizing in the browser? If you had a lot of derivative images on your site you could improve performance by having the client only download one source image and then do something like:</p>
+
+<p><img src="placeholder.gif" class="derivative" data-width="300" data-height="300" /></p>
+
+<p>or</p>
+
+<p><img src="placeholder.gif" class="derivative" data-name="small" /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">small</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+      <span class="na">height</span><span class="p">:</span> <span class="mi">300</span>
+    <span class="p">}</span>
+  <span class="p">},</span>  
+<span class="p">]</span>
+
+</code></pre></div></div>
 
 <p>Another option is</p>
 

@@ -23,3 +23,17 @@ background_color: '#000'
     </iframe>
   </div>
 </div>
+<div class='notes'>
+  Qalamsila was a similar idea that looks like petered out. They offered predetermined kits.
+  https://twitter.com/hashtag/qalamsila
+
+  General image search for "3d printed connectors"
+  lots of creations using connector and pole format
+  https://duckduckgo.com/?q=3d+printed+connectors&iar=images&iax=images&ia=images
+
+  DIY consumer demographics
+  https://www.venveo.com/blog/10-characteristics-of-the-diy-consumer
+
+  Bangin DIY stats
+  https://comfyliving.net/diy-statistics/
+</div>
