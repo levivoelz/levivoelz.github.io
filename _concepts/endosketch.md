@@ -24,6 +24,17 @@ background_color: '#000'
   </div>
 </div>
 <div class='notes'>
+  <p>
+    It's like Tinker Toys for adults
+  </p>
+  <h3>For Artists</h3>
+  <p>
+    Better
+  </p>
+  <h3>For Architects</h3>
+  <h3>For Makers</h3>
+  <h4>
+
   Qalamsila was a similar idea that looks like petered out. They offered predetermined kits.
   https://twitter.com/hashtag/qalamsila
 
