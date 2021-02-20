@@ -2,6 +2,7 @@
 layout: default
 title: Concepts
 color: "#A4CFEF"
+nofollow: true
 ---
 Some concepts in the pipeline.
 
@@ -15,8 +16,7 @@ Some concepts in the pipeline.
 - InstaFlip — First available apartment turnover service
 - Reversion - Version control for everyone
 - GoodMus - Curated music from local artists
-- MagLevinator — Levitate to isolate your speakers
-- Handjob.js — Browser based background job library
+- MagLevinator — Isolate your speakers by levitation
 - CronPom — Pomodoro based invoicing
-- BrainTree — The tree that echos your brain
-- Euclid Audio - Pretty speakers for a pretty world
+- BrainTree — The audio tree that relays what's going on inside you
+- Euclid Audio - Geometric speakers for a Geometric world
