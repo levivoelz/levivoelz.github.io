@@ -68,6 +68,12 @@
   margin-right: 1rem;
 }
 
+@media screen and (max-width: 500px) {
+  .CatalogRow {
+    margin-right: 0;
+  }
+}
+
 .CatalogBody .CatalogMenuLineDiv, .CatalogBody .CatalogJoinClubDiv, .CatalogBody .CatalogAddToRow {
   display: none !important;
 }
