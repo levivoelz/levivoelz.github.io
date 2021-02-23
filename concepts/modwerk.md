@@ -5,6 +5,7 @@ nofollow: true
 featured_image: /images/projects/polar-zonohedron-greenhouse-bare.png
 hero: /images/projects/polar-zonohedron-greenhouse-bare.png
 hero_color: '#000000'
+header: true
 ---
 <style>
   .endo-wrapper {

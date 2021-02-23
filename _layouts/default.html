@@ -3,23 +3,7 @@
   {% include head.html %}
   <body>
     <div class="wrapper">
-      <header>
-        <div class="hero">
-          <div class="hero--inner">
-            {% if page.url != '/' %}
-            <a href="/" style="line-height: 1">
-            {% endif %}
-              <img class="circle" src="{{ page.hero }}" style="background-color: {{ page.hero_color }}"/>
-            {% if page.url != '/' %}
-            </a>
-            {% endif %}
-            <div class="header-circles">
-              <div class="circle circle--sm"></div>
-              <div class="page-name">{{ page.display_name }}</div>
-            </div>
-          </div>
-        </div>
-      </header>
+      {% include header.html %}
     	<div class="content clearfix">
         {{ content }}
       </div>
