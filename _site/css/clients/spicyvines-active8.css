@@ -1,131 +1,9 @@
 /* override styles */
-@font-face {
-    font-family: proxima-nova;
-    src: url(https://use.typekit.net/af/199a3f/00000000000000007735955e/30/l?subset_id=2&fvd=n8&v=3) format("woff2"), url(https://use.typekit.net/af/199a3f/00000000000000007735955e/30/d?subset_id=2&fvd=n8&v=3) format("woff"),
-        url(https://use.typekit.net/af/199a3f/00000000000000007735955e/30/a?subset_id=2&fvd=n8&v=3) format("opentype");
-    font-weight: 800;
-    font-style: normal;
-    font-display: auto;
-}
 
-@font-face {
-    font-family: adobe-garamond-pro;
-    src: url(https://use.typekit.net/af/2011b6/00000000000000003b9b00c1/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/2011b6/00000000000000003b9b00c1/27/d?subset_id=2&fvd=n4&v=3) format("woff"),
-        url(https://use.typekit.net/af/2011b6/00000000000000003b9b00c1/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: adobe-garamond-pro;
-    src: url(https://use.typekit.net/af/af619f/00000000000000003b9b00c5/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/af619f/00000000000000003b9b00c5/27/d?subset_id=2&fvd=n7&v=3) format("woff"),
-        url(https://use.typekit.net/af/af619f/00000000000000003b9b00c5/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: adobe-garamond-pro;
-    src: url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/l?subset_id=2&fvd=i4&v=3) format("woff2"), url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/d?subset_id=2&fvd=i4&v=3) format("woff"),
-        url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: italic;
-    font-display: auto;
-}
-@font-face {
-    font-family: adobe-garamond-pro;
-    src: url(https://use.typekit.net/af/6c275f/00000000000000003b9b00c6/27/l?subset_id=2&fvd=i7&v=3) format("woff2"), url(https://use.typekit.net/af/6c275f/00000000000000003b9b00c6/27/d?subset_id=2&fvd=i7&v=3) format("woff"),
-        url(https://use.typekit.net/af/6c275f/00000000000000003b9b00c6/27/a?subset_id=2&fvd=i7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: italic;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: trade-gothic-next;
-    src: url(https://use.typekit.net/af/a741c0/00000000000000007735ba66/30/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/a741c0/00000000000000007735ba66/30/d?subset_id=2&fvd=n4&v=3) format("woff"),
-        url(https://use.typekit.net/af/a741c0/00000000000000007735ba66/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: auto;
-}
-@font-face {
-    font-family: trade-gothic-next;
-    src: url(https://use.typekit.net/af/e7065f/00000000000000007735ba3f/30/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/e7065f/00000000000000007735ba3f/30/d?subset_id=2&fvd=n7&v=3) format("woff"),
-        url(https://use.typekit.net/af/e7065f/00000000000000007735ba3f/30/a?subset_id=2&fvd=n7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: auto;
-}
-@font-face {
-    font-family: trade-gothic-next;
-    src: url(https://use.typekit.net/af/fc1070/00000000000000007735ba55/30/l?subset_id=2&fvd=i3&v=3) format("woff2"), url(https://use.typekit.net/af/fc1070/00000000000000007735ba55/30/d?subset_id=2&fvd=i3&v=3) format("woff"),
-        url(https://use.typekit.net/af/fc1070/00000000000000007735ba55/30/a?subset_id=2&fvd=i3&v=3) format("opentype");
-    font-weight: 300;
-    font-style: italic;
-    font-display: auto;
-}
-@font-face {
-    font-family: trade-gothic-next;
-    src: url(https://use.typekit.net/af/3eccd7/00000000000000007735ba6d/30/l?subset_id=2&fvd=i7&v=3) format("woff2"), url(https://use.typekit.net/af/3eccd7/00000000000000007735ba6d/30/d?subset_id=2&fvd=i7&v=3) format("woff"),
-        url(https://use.typekit.net/af/3eccd7/00000000000000007735ba6d/30/a?subset_id=2&fvd=i7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: italic;
-    font-display: auto;
-}
-@font-face {
-    font-family: futura-pt;
-    src: url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/d?subset_id=2&fvd=n4&v=3) format("woff"),
-        url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: auto;
-}
-@font-face {
-    font-family: futura-pt;
-    src: url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/d?subset_id=2&fvd=n7&v=3) format("woff"),
-        url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: auto;
-}
-@font-face {
-    font-family: futura-pt;
-    src: url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/l?subset_id=2&fvd=i4&v=3) format("woff2"), url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/d?subset_id=2&fvd=i4&v=3) format("woff"),
-        url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: italic;
-    font-display: auto;
-}
-@font-face {
-    font-family: futura-pt;
-    src: url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/l?subset_id=2&fvd=i7&v=3) format("woff2"), url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/d?subset_id=2&fvd=i7&v=3) format("woff"),
-        url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/a?subset_id=2&fvd=i7&v=3) format("opentype");
-    font-weight: 700;
-    font-style: italic;
-    font-display: auto;
-}
-@font-face {
-    font-family: trade-gothic-next-condensed;
-    src: url(https://use.typekit.net/af/395675/00000000000000007735ba49/30/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/395675/00000000000000007735ba49/30/d?subset_id=2&fvd=n4&v=3) format("woff"),
-        url(https://use.typekit.net/af/395675/00000000000000007735ba49/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: auto;
-}
-
-:root {
-  --primary: #a26c02;
-}
-
-h1, h2, h3, h4, form {
-  font-family: trade-gothic-next;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 .CatalogBody, .CatalogBasketBody, .CatalogMenuBody, .CatalogElementBodyDiv, .CartBody, .CheckoutBody, .CatalogMessageBody, .RegisterBody, .ManageBody, .SelectionBody, .CatalogMenuLineDiv, .ForgotPasswordBody, .ResetPasswordBody, .UnsubscribeBody, .NewsletterHookBody, .NewsletterBody {
-  font-family: adobe-garamond-pro;
+  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0rem;
@@ -135,13 +13,21 @@ h1, h2, h3, h4, form {
   -webkit-font-smoothing: antialiased;
 }
 
-#CatalogMenu {
-  font-family: trade-gothic-next;
+@media screen and (max-width: 500px) {
+  .CatalogImage {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .CatalogName {
+    height: auto;
+  }
 }
 
 .CatalogImage {
-  max-width: 280px;
-  margin-bottom: 10px;
+  max-width: 400px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,27 +35,14 @@ h1, h2, h3, h4, form {
 
 .CatalogImage img {
   height: auto;
-  width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  .CatalogImage {
-    text-align: left;
-    max-width: none;
-    margin-bottom: 0;
-  }
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .CatalogName {
   font-size: 1.5rem;
   margin-bottom: 0.2rem;
   font-weight: 500;
-}
-
-@media screen and (max-width: 1056px) {
-  .CatalogName {
-    height: auto;
-  }
 }
 
 .CatalogAvailableText {
@@ -190,27 +63,16 @@ h1, h2, h3, h4, form {
 .CatalogRow {
   width: 100%;
   float: none;
-  flex: 1 1 280px;
+  flex: 1 1 300px;
   margin-bottom: 6rem;
   margin-right: 1rem;
 }
 
-@media screen and (max-width: 500px) {
-  .CatalogRow {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-
-.CatalogBody .CatalogMenuLineDiv, .CatalogBody .CatalogJoinClubDiv {
+.CatalogBody .CatalogMenuLineDiv, .CatalogBody .CatalogJoinClubDiv, .CatalogBody .CatalogAddToRow {
   display: none !important;
 }
 
 .CatalogInfoHeader {
-  text-align: left;
-}
-
-.CatalogElementName, .CatalogElementInfoHeaderRight {
   text-align: left;
 }
 
@@ -222,15 +84,15 @@ h1, h2, h3, h4, form {
 }
 
 .CatalogBasketCheckoutButton, .CatalogElementBuyButton {
-  font-family: futura-pt;
   float: none;
   display: inline-block;
   color: #fff;
   font-weight: 500;
   padding: 1em 2em;
   text-align: center;
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: #c31230;
+  border-color: #c31230;
+  border-radius: 300px;
   -webkit-transition: .1s opacity linear;
   -moz-transition: .1s opacity linear;
   -o-transition: .1s opacity linear;
@@ -247,18 +109,12 @@ h1, h2, h3, h4, form {
 .CartButton.clear,
 .CheckoutContinueButton, .CheckoutLoginButton, .ManageAddressButton, .CheckoutButton, .ManageAddressButton.manage, .ManageAddressButton.remove, .ManageAddressButton.add, .CheckoutButton.update, .CheckoutButton.lookup, .UserLoginCancelButton, .RegisterBuyButton, .RegistrationCartButton.continue, .RegistrationCartButton.clear, .CatalogMessageButton, .ForgotPasswordCancelButton {
     font-size: 1rem;
-    font-family: futura-pt;
     font-weight: 400;
     line-height: 1.8rem;
     background-color: #fff;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-@media screen and (max-width: 600px) {
-  .CheckoutButton {
-    margin-top: 0;
-  }
+    color: #c31230;
+    border: 1px solid #c31230;
+    border-radius: 300px;
 }
 
 .CatalogBuyButton:hover,
@@ -270,7 +126,7 @@ h1, h2, h3, h4, form {
 .CheckoutContinueButton:hover,
 .CheckoutLoginButton:hover, .ManageAddressButton:hover, .CheckoutButton:hover, .ManageAddressButton.manage:hover, .ManageAddressButton.remove:hover, .ManageAddressButton.add:hover, .CheckoutButton.update:hover, .CheckoutButton.lookup:hover, .UserLoginCancelButton:hover, .RegisterBuyButton:hover, .RegistrationCartButton.continue:hover, .RegistrationCartButton.clear:hover, .CatalogMessageButton:hover, .ForgotPasswordCancelButton:hover {
     color: #fff;
-    background-color: var(--primary);
+    background-color: #c31230;
 }
 
 .CatalogBuyButton:focus,
@@ -282,7 +138,7 @@ h1, h2, h3, h4, form {
 .CheckoutContinueButton:focus,
 .CheckoutLoginButton:focus, .ManageAddressButton:focus, .CheckoutButton:focus, .ManageAddressButton.manage:focus, .ManageAddressButton.remove:focus, .ManageAddressButton.add:focus, .CheckoutButton.update:focus, .CheckoutButton.lookup:focus, .UserLoginCancelButton:focus, .RegisterBuyButton:focus, .RegistrationCartButton.continue:focus, .RegistrationCartButton.clear:focus, .CatalogMessageButton:focus, .ForgotPasswordCancelButton:focus {
   color: #fff;
-  background-color: var(--primary);
+  background-color: #c31230;
 }
 
 .CartCheckoutButton,
@@ -294,9 +150,9 @@ h1, h2, h3, h4, form {
   padding: 1em 2em;
   text-align: center;
   width: calc(100% - 4em);
-  font-family: futura-pt;
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: #c31230;
+  border-color: #c31230;
+  border-radius: 300px;
   -webkit-transition: .1s opacity linear;
   -moz-transition: .1s opacity linear;
   -o-transition: .1s opacity linear;
@@ -307,11 +163,11 @@ h1, h2, h3, h4, form {
 .CartCheckoutButton:focus,
 .CheckoutPlaceOrderButton:focus, .UserLoginLoginButton:focus, .RegisterReturnToCartButton:focus, .RegistrationCartRegistrationButton:focus, .RegisterContinueButton:focus, .CheckoutUserMsgButton:focus, .ForgotPasswordSubmitButton:focus, .ResetPasswordSubmitButton:focus, .UnsubscribeSubmitButton:focus, .NewsletterSubmitButton:focus, .RegistrationOrderReviewButton:focus, .RegistrationOrderReviewRegisterButton:focus {
   color: #fff;
-  background-color: var(--primary);
+  background-color: #c31230;
 }
 
 .CartCheckoutButton:hover, .CheckoutPlaceOrderButton:hover, .UserLoginLoginButton:hover, .RegisterReturnToCartButton:hover, .RegistrationCartRegistrationButton:hover, .RegisterContinueButton:hover, .CheckoutUserMsgButton:hover, .ForgotPasswordSubmitButton:hover, .ResetPasswordSubmitButton:hover, .UnsubscribeSubmitButton:hover, .NewsletterSubmitButton:hover, .RegistrationOrderReviewButton:hover, .RegistrationOrderReviewRegisterButton:hover {
-  background-color: var(--primary);
+  background-color: #c31230;
   opacity: 0.8;
 }
 
@@ -324,13 +180,13 @@ h1, h2, h3, h4, form {
 .CheckoutContinueButton:focus,
 .CheckoutLoginButton:focus, .ManageAddressButton:focus, .CheckoutButton:focus, .ManageAddressButton.manage:focus, .ManageAddressButton.remove:focus, .ManageAddressButton.add:focus, .CheckoutButton.update:focus, .CheckoutButton.lookup:focus, .UserLoginCancelButton:focus, .RegisterBuyButton:focus, .RegistrationCartButton.continue:focus, .RegistrationCartButton.clear:focus, .CatalogMessageButton:focus, .ForgotPasswordCancelButton:focus {
     color: #fff;
-    background-color: var(--primary);
+    background-color: #c31230;
 }
 
 .CatalogBasketCheckoutButton {
-  color: var(--primary);
+  color: #c31230;
   background-color: #fff;
-  border-color: var(--primary);
+  border-color: #c31230;
   border-width: 1px;
   border-style: solid;
 }
@@ -338,17 +194,18 @@ h1, h2, h3, h4, form {
 .CatalogBasketCheckoutButton:hover {
   padding: 1em 2.004em;
   opacity: 0.8;
-  background-color: var(--primary);
+  background-color: #c31230;
 }
 
 .CatalogElementBuyButton:hover {
-  background-color: var(--primary);
+  background-color: #c31230;
   opacity: 0.8;
 }
 
 @media screen and (max-width: 500px) {
   .CatalogBasketCheckoutButton, .CatalogElementBuyButton {
     padding: 6px 15px 6px 15px;
+    width: calc(100% - 30px);
   }
 
   .CatalogBasketCheckoutButton {
@@ -366,7 +223,10 @@ h1, h2, h3, h4, form {
     background-color: #fff;
     border: none;
     color: inherit;
-    font-weight: 700;
+}
+
+.CartProductHeaderLabel {
+    font-weight: 500;
 }
 
 .CatalogBasketSummary {
@@ -422,23 +282,11 @@ h1, h2, h3, h4, form {
 
 .CatalogElementInfo {
   width: 55%;
-  margin-left: 1em;
-}
-
-.CatalogElementNotes {
-  font-size: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  .CatalogElementNotes {
-    font-size: 100%;
-  }
 }
 
 @media screen and (max-width: 500px) {
   .CatalogElementInfo {
       width: 100%;
-      margin-left: 0;
   }
 }
 
@@ -464,25 +312,14 @@ h1, h2, h3, h4, form {
   width: 40%;
 }
 
-.CatalogElementImage img {
-  width: 100%;
-  margin-right: 1em;
-}
-
 @media screen and (max-width: 500px) {
   .CatalogElementImage {
     width: 100%;
   }
-
-  .CatalogElementImage img {
-    margin-right: 0;
-  }
 }
 
-@media screen and (max-width: 500px) {
-  .CatalogElementContinueButton {
-      width: calc(100% - 32px);
-  }
+.CatalogElementImage img {
+  width: 100%;
 }
 
 .CatalogElementInfoDescription {
@@ -498,9 +335,6 @@ h1, h2, h3, h4, form {
   display: block;
 }
 
-.CatalogElementButtonRow {
-  overflow: hidden;
-}
 
 .CatalogElementAddToRow {
   width: auto;
@@ -526,10 +360,6 @@ h1, h2, h3, h4, form {
   .CartProductRowLabel.remove {
     color: inherit;
   }
-}
-
-.CartTitleDiv, .CheckoutTitleDiv, .CheckoutAccordian {
-  font-family: trade-gothic-next;
 }
 
 @media screen and (max-width: 500px) {
@@ -575,19 +405,6 @@ h1, h2, h3, h4, form {
   border: none;
   padding: 0;
   height: auto;
-}
-
-.CheckoutColumn2 {
-    width: 46%;
-    padding-left: 3%;
-    border-left: 1px solid black;
-}
-
-@media screen and (max-width: 500px) {
-  .CheckoutColumn2 {
-      width: 46%;
-      border-left: none;
-    }
 }
 
 .RegisterRow {
@@ -645,22 +462,9 @@ h1, h2, h3, h4, form {
   border: 1px solid #ccc;
 }
 
-.UserLoginColumn1 {
-  display: none;
-}
-
-.UserLoginColumn2 {
-  float: none;
-}
-
 @media screen and (max-width: 500px) {
   .UserLoginInput {
       width: 100%;
       box-sizing: border-box;
   }
-}
-
-.ManageHistoryOrderProductRow:hover, .ManageHistoryOrderProductAltRow:hover {
-  cursor: pointer;
-  background-color: #ccc;
 }

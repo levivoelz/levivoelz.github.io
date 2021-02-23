@@ -150,8 +150,6 @@ h1, h2, h3, h4, form {
 .CatalogImage img {
   height: auto;
   width: 100%;
-  /* max-width: 400px; */
-  /* max-height: 400px; */
 }
 
 @media screen and (max-width: 500px) {
@@ -195,6 +193,13 @@ h1, h2, h3, h4, form {
   flex: 1 1 280px;
   margin-bottom: 6rem;
   margin-right: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .CatalogRow {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .CatalogBody .CatalogMenuLineDiv, .CatalogBody .CatalogJoinClubDiv {
@@ -286,9 +291,9 @@ h1, h2, h3, h4, form {
   display: inline-block;
   color: #fff;
   font-weight: 500;
-  padding: 1em 0;
+  padding: 1em 2em;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 4em);
   font-family: futura-pt;
   background-color: var(--primary);
   border-color: var(--primary);
@@ -344,7 +349,6 @@ h1, h2, h3, h4, form {
 @media screen and (max-width: 500px) {
   .CatalogBasketCheckoutButton, .CatalogElementBuyButton {
     padding: 6px 15px 6px 15px;
-    width: calc(100% - 30px);
   }
 
   .CatalogBasketCheckoutButton {
@@ -353,14 +357,8 @@ h1, h2, h3, h4, form {
 }
 
 @media screen and (max-width: 500px) {
-  .CatalogBasketCheckoutButton:hover, .CatalogElementBuyButton:hover {
-    padding: 6px 15px 6px 15px;
-  }
-}
-
-@media screen and (max-width: 500px) {
   .CartCheckoutButton {
-    padding: 6px 15px 6px 15px;
+    width: initial;
   }
 }
 
@@ -583,6 +581,13 @@ h1, h2, h3, h4, form {
     width: 46%;
     padding-left: 3%;
     border-left: 1px solid black;
+}
+
+@media screen and (max-width: 500px) {
+  .CheckoutColumn2 {
+      width: 46%;
+      border-left: none;
+    }
 }
 
 .RegisterRow {
