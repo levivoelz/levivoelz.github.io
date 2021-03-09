@@ -79,14 +79,16 @@ header: true
     <li>Builders</li>
     <li>Makers</li>
     <li>Designers</li>
+    <li>Architects</li>
+    <li>DIYers</li>
   </ul>
   <div class='spacer-3'>
   </div>
   <hr />
   <h2>Want to try it?</h2>
-  <p>Modwerk is in active development and you'll get to make incredible things with it before it launches. Take part in reshaping how things are made by becoming a <b>Modwerk <i>Beta Tester</i></b>.</p>
+  <p>Modwerk is in active development and you'll get to make incredible things with it before it launches. Take part in reshaping how things are made by joining the <b>Modwerk <i>Beta Program</i></b>.</p>
   <div class='beta-testeroni'>
-  <a class="typeform-share button" href="https://form.typeform.com/to/qHHe0cyM?typeform-medium=embed-snippet" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:hsla(212, 30%, 70%, 1);color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-size="100" target="_blank">Sign Up Now</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+  <a class="typeform-share button" href="https://form.typeform.com/to/qHHe0cyM?typeform-medium=embed-snippet" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:hsla(212, 30%, 70%, 1);color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-size="100" target="_blank">Join Now</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
   </div>
   <!-- <div class='notes'>
     Qalamsila was a similar idea that looks like petered out. They offered predetermined kits.
