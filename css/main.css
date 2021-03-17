@@ -332,16 +332,6 @@ canvas {
   justify-content: center;
 }
 
-#contribute {
-  padding-top: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-#contribute p {
-  padding-right: 1rem;
-}
-
 #contact {
   display: flex;
   align-items: center;
