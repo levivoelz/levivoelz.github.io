@@ -414,3 +414,7 @@ button:active, button:focus {
 .primary-category {
   font-weight: 600;
 }
+
+.center {
+  text-align: center;
+}
