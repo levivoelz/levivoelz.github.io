@@ -1,12 +1,14 @@
 ---
 layout: post
-name: Derivv Technical Breakdown
-short_description: What Makes Derivv so Fast?
+name: Derivv Technical Breakdown (Series)
+short_description: Using React, web workers, and canvas for fast and high-quality image resizing in the browser.
 title: "Derivv Technical Breakdown: What Makes it so Fast?"
 featured_image: /images/projects/derivv-downscale-code.png
 hero: /images/projects/derivv-downscale-code.png
 description: A lot of people use Derivv, the best way to resize a single image to multiple sizes, and they use it because it's not only simple, but it's fast.
 date: 04/12/2020
+category: Software
+tags: react web-workers canvas image-processing
 ---
 
 A lot of image processing tools, like Photoshop, are slow. The fastest ones are command line utilities like ImageMagick, but they require some technical knowhow to operate. While working at one of the largest online retailers, I helped build a really useful tool for creatives to resize and crop product images according to a config file. All they had to do was upload the images via a web interface or drag and drop them into a folder on their machine, the images would process in the background, and they'd get a notification when it was all done. Depending on how many images needed to be processed, it could take a while. I was using a Sinatra Web Server with ImageMagick to handle image uploads and processing tasks, which was great. Two problems always bothered me though. It felt slow and you couldn't change the configuration. If you wanted to change the image sizes and crops you'd have to hit me up to write a new config for you.

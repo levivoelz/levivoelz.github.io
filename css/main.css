@@ -10,6 +10,7 @@
   --primary-dark: hsla(212, 30%, 50%, 1);
   --primary-light: hsl(206 70% 96% / 1);
   --text-color: rgb(51, 51, 51);
+  --text-color-light: rgb(150, 150, 150);
   --font-body: 'Noto Serif JP', serif;
   --font-accent: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
@@ -89,6 +90,8 @@ img {
 
 small {
   font-size: 0.8rem;
+  font-family: Raleway;
+  color: var(--text-color-light);
 }
 
 blockquote {
@@ -375,4 +378,39 @@ button:active, button:focus {
 .highlight {
   font-size: 0.8rem;
   margin: 2rem 0;
+}
+
+.list--project {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  list-style: none;
+  line-height: 1.3rem;
+}
+
+.list--project li {
+  margin-bottom: 1rem;
+}
+
+.list--project-content {
+  margin-bottom: 2rem;
+}
+
+.list--project-content p {
+  margin-top: 0.5rem;
+}
+
+.list--project a {
+  text-decoration: none;
+}
+
+.list--project h3 {
+  margin: 0;
+}
+
+.tag {
+  background-color: var(--primary-light);
+}
+
+.primary-category {
+  font-weight: 600;
 }

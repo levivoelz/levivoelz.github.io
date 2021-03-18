@@ -1,12 +1,14 @@
 ---
 layout: post
 name: BarGod
-short_description: Drink Recipes in Your POS Terminal-ish
+short_description: Making a large drink recipes database accessible and searchable in point of sales terminals.
 title: "BarGod: Drink Recipes in Your POS Terminal-ish"
 featured_image: /images/projects/bargod-terminal-ui.png
 hero: /images/projects/bargod-logo.png
 description: BarGod – Get drink recipes right in your terminal. Sorta... When a good idea isn\'t good enough to merit moving mountains.
 date: 2/5/2019
+category: Software
+tags: ruby-on-rails react micros windows experiments side-project
 ---
 
 Every once in a while there's a problem worth going to great lengths to solve, but most of the time not so much. If you are addicted to problem-solving then it may not matter if the problem is worth solving or not. You just need to get your fix. I kind of felt like that while working on this project because my friend and I tried really hard to solve a problem that likely wasn't big enough to merit the time we spent on it. However, we had to try in order to learn why it wasn't worth it.

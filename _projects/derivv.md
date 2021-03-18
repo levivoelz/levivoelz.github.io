@@ -1,11 +1,12 @@
 ---
 layout: post
 name: Derivv
-short_description: Resize one image to multiple sizes
+short_description: Quickly resize one image to multiple sizes.
 title: Resize an Image to Multiple Sizes with Derivv
 featured_image: /images/projects/derivv-image-resizing-app-preview_1200_x_832.png
 description: Derivv makes it super easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop.
-category: software
+category: Software
+tags: side-project react web-workers product-launch
 date: 9/5/2016
 redirect_from:
   - /journal/2016/09/05/derivv-image-resizer.html

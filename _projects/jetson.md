@@ -1,11 +1,13 @@
 ---
 layout: post
 name: Jetson
-short_description: A Practical Application of Cloud AI Services
+short_description: A Practical Application of Cloud AI Services for making meetings better.
 title: "Jetson: A Practical Application of Cloud AI Services"
 featured_image: /images/projects/jetson-chatbot.png
 description: Jetson – A practical application of speech recognition, speaker recognition, and natural language processing services to make meetings better.
 date: 17/11/2020
+category: Software
+tags: google-cloud-platform microsoft-cognitive-services machine-learning array-microphones natural-language-processing firebase real-time-communications webRTC speaker-diarisation
 ---
 
 Have you ever felt like you've wasted hours of your life in meetings that weren't very productive? What about the follow-up meeting(s) where everyone was supposed to do something, but didn't, and then the meeting ends up going nowhere? There are tons of reasons why meetings go bad and the whole practice gets a bad rap. I'm not going to go into why meetings can suck since there is already plenty content about that. I'd rather write about how a few friends and I applied cloud AI services to our project so it might inspire you to try them out on one of your projects. It's a lot of fun and you can do really amazing things.

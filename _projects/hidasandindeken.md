@@ -1,11 +1,13 @@
 ---
 layout: post
 name: Hidasandindeken
-short_description: Hide your Sandbox in Your Deck
+short_description: Maximizing space by combining the functionality of a deck, sandbox and planter.
 title: "Hidasandindeken: Hide your Sandbox in Your Deck"
 featured_image: /images/projects/hidasandindeken-hidden-sandbox-render.png
 description: Hidasandindeken — When you are short on space, use your design mind to combine spaces and functionality like hiding your sandbox in your deck
 date: 8/9/2020
+category: Architecture
+tags: CAD design multi-use
 ---
 
 I have a small house on a small lot in a small neighborhood and a big problem. It's having space for my kids to play while also having space for my wife and me to hang out and relax. We don't have the option of having them separate because there just isn't enough room, so I've been figuring out how to combine them in interesting ways. Making structures and furniture multi-use is a great way to maximize limited space and is the perfect solution to the minimal space problem.

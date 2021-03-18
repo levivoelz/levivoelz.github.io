@@ -1,0 +1,31 @@
+---
+layout: default
+title: My Projects
+description: Here are few projects I've created or worked on.
+---
+<!-- categories: Software, Art, Music, Food, Furniture, Architecture -->
+
+{% assign projects = site.projects %}
+<ul class='list--project'/>
+  {% for project in projects reversed %}{% unless project.sub %}
+  <li>
+    <div class='list--project-content'>
+      <a href="{{ project.url }}" title="{{project.description}}">
+        <h3>{{ project.name }}</h3>
+      </a>
+      <small class={%if project.category == 'Software' %}'primary-category'{% endif %}>{{ project.category }}</small><br />
+      <p>{{ project.short_description }}</p>
+      {% for tag in project.tags %}
+      <small class='tag'>{{ tag }}{%unless tag == project.tags.last %},{% endunless %}</small>
+      {% endfor %}
+    </div>
+  </li>
+  {% endunless %}{% endfor %}
+</ul>
+<ul class='list--project'>
+  <li>Actimedean – Active truncated octaghedron speakers.</li>
+  <li>Patronish — Video based question and answer platform.</li>
+  <li>GreenZome — 3d printed model greenhouse skeleton.</li>
+  <li>Current Route — Using React Native to quickly build an iOS client.</li>
+  <li>CLVR TV — E-commerce through products placed in interactive videos.</li>
+</ul>
