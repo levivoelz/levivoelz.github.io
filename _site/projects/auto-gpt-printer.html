@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Derivv Technical Breakdown: What Makes it so Fast? | Levi Voelz</title>
-  <meta name="description" content="A lot of people use Derivv, the best way to resize a single image to multiple sizes, and they use it because it's not only simple, but it's fast.">
+  <title>Auto-GPT for 3d Printing | Levi Voelz</title>
+  <meta name="description" content="It's not very good, but Auto-GPT can generate STL files.">
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://localhost:4000/projects/derivv-technical-breakdown">
-  <meta name="twitter:title" content="Derivv Technical Breakdown: What Makes it so Fast? |  Levi Voelz">
-  <meta name="twitter:description" content="A lot of people use Derivv, the best way to resize a single image to multiple sizes, and they use it because it's not only simple, but it's fast.">
-  <meta name="twitter:image" content="http://localhost:4000/images/projects/derivv-downscale-code.png">
-  <meta property="og:title" content="Derivv Technical Breakdown: What Makes it so Fast? | Levi Voelz" />
-  <meta property="og:image" content="http://localhost:4000/images/projects/derivv-downscale-code.png" />
+  <meta name="twitter:url" content="http://localhost:4000/projects/auto-gpt-printer">
+  <meta name="twitter:title" content="Auto-GPT for 3d Printing |  Levi Voelz">
+  <meta name="twitter:description" content="It's not very good, but Auto-GPT can generate STL files.">
+  <meta name="twitter:image" content="">
+  <meta property="og:title" content="Auto-GPT for 3d Printing | Levi Voelz" />
+  <meta property="og:image" content="" />
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -45,7 +45,7 @@
       
       <a href="/" style="line-height: 1">
       
-        <img class="circle" src="/images/projects/derivv-downscale-code.png" style="background-color: "/>
+        <img class="circle" src="" style="background-color: "/>
       
       </a>
       
@@ -59,27 +59,43 @@
 
     	<div class="content clearfix">
         <article class="post">
-  <h1>Derivv Technical Breakdown: What Makes it so Fast?</h1>
+  <h1>Auto-GPT for 3d Printing</h1>
 	<div class="date">
-	  <small>December  4, 2020</small>
+	  <small>April 18, 2023</small>
 	</div>
   <div class="entry">
-    <p>A lot of image processing tools, like Photoshop, are slow. The fastest ones are command line utilities like ImageMagick, but they require some technical knowhow to operate. While working at one of the largest online retailers, I helped build a really useful tool for creatives to resize and crop product images according to a config file. All they had to do was upload the images via a web interface or drag and drop them into a folder on their machine, the images would process in the background, and they’d get a notification when it was all done. Depending on how many images needed to be processed, it could take a while. I was using a Sinatra Web Server with ImageMagick to handle image uploads and processing tasks, which was great. Two problems always bothered me though. It felt slow and you couldn’t change the configuration. If you wanted to change the image sizes and crops you’d have to hit me up to write a new config for you.</p>
+    <p>There’s been a lot of hype around Auto-GPT and the potential around it. It’s the first AI project I’ve been interested in contributing to and while kicking the tires I thought it might be fun to see if it could 3d print something. Of course, getting it to actually go from a text description to a printed object might be a tall ask, but what could it hurt to try?</p>
 
-<p>After leaving that job, I joined another company and forgot about the image processor for a while. It wasn’t until a few years later that I had time to work on my dream image processing app, <a href="https://derivv.com" target="_blank">Derivv</a>. I wrote down the problems I wanted to solve and had some ideas of how to address them, but I didn’t know how amazing it could be until I started working on it. One of the most impactful things I realized was that I could do 100% of the processing in the browser. I didn’t need to send the image to the server because I could do everything client-side. This realization was really important and I probably wouldn’t have launched Derivv if it wasn’t for that because not only did it make processing images so much faster, but it made it more accessible. You could process images offline. Very cool.</p>
+<p>At first, I was a little too ambitious. I set some goals around 3d printing and it failed miserably. It wanted to create jpg’s of 3d objects and kept going around and around while failing to install related software. When I decided to simplify things it stated to do some cool stuff.</p>
 
-<p>There are several key technical aspects to Derivv that make it different from anything out there that I want to share. Over a series of articles I will outline in detail how Derivv works under the hood and what makes it so fast. The most important and exiting things are how downsizing impacts image quality and why it’s an important step, cropping methods and the cropping interface, processing images concurrently and in the background, and packaging files before downloading.</p>
+<p>Here’s how I actually got it to create a model in STL file format:</p>
 
-<hr />
-<h3 id="article-series">Article Series</h3>
-<p><em>I’ll be writing articles over the next few weeks that go into detail about each of these topics. Check back in a week or sign up to get a notification when the next one comes out.</em></p>
-<ul>
-  <li><a href="/projects/derivv-technical-breakdown-1-make-it-fast">Resizing Images Online the Fast Way</a></li>
-  <li>High Quality Image Processing in the Browser</li>
-  <li>What Makes the Interface so Unique?</li>
-  <li>Packaging Files for Delivery in the Browser</li>
-  <li>Offline Processing via a Progressive Web App (PWA)</li>
-</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RqoqGz98ssU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<p>And the goals prompt that generated it:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ai_settings.yaml</span>
+
+<span class="na">ai_goals</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Research ASCII STL file format and use that information to generate STL files from scratch</span>
+  <span class="pi">-</span> <span class="s">Create a cube in STL format and save to disk as cube.stl</span>
+  <span class="pi">-</span> <span class="s">Create a tetrahedron in STL format and save to disk as tetrahedron.stl</span>
+  <span class="pi">-</span> <span class="s">Create a dodecahedron in STL format and save to disk as dodecahedron.stl</span>
+<span class="na">ai_name</span><span class="pi">:</span> <span class="s">STL-BUILDER</span>
+<span class="na">ai_role</span><span class="pi">:</span> <span class="s">an autonomous ai assistant that gives examples of STL format for use in 3d printing</span>
+</code></pre></div></div>
+
+<p>Another prompt I tried was a little more general but it kept wanting to create a python script and execute it:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ai_goals</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Create a 10cm diameter cube in STL format and save to disk as cube.stl</span>
+  <span class="pi">-</span> <span class="s">Create a 10cm diameter tetrahedron in STL format and save to disk as tetrahedron.stl</span>
+<span class="c1"># - Create a 10cm diameter dodecahedron in STL format and save to disk as dodecahedron.stl</span>
+<span class="na">ai_name</span><span class="pi">:</span> <span class="s">STL-BUILDER</span>
+<span class="na">ai_role</span><span class="pi">:</span> <span class="s">an autonomous ai assistant that creates STL files of polyhedra for use in 3d printing</span>
+</code></pre></div></div>
+
+<p>It was successful in creating the script but it threw an error when trying to execute it due to not having the ability to install dependencies like <code class="language-plaintext highlighter-rouge">numpy-stl</code>. I suppose Auto-GPT will be updated in the next few days or weeks to allow for that so I will try again when that happens.</p>
 
   </div>
 </article>
