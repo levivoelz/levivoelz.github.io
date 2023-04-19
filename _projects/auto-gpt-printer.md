@@ -11,7 +11,7 @@ category: Software
 tags: auto-gpt 3d-printing
 ---
 
-There's been a lot of hype around Auto-GPT and the potential around it. It's the first AI project I've been interested in contributing to and while kicking the tires I thought it might be fun to see if it could 3d print something. Of course, getting it to actually go from a text description to a printed object might be a tall ask, but what could it hurt to try?
+There's been a lot of hype around Auto-GPT and the potential of it. It's the first AI project I've been interested in contributing to and while kicking the tires I thought it might be fun to see if it could 3d print something. Of course, getting it to actually go from a text description to a printed object might be a tall ask, but what could it hurt to try?
 
 At first, I was a little too ambitious. I set some goals around 3d printing and it failed miserably. It wanted to create jpg's of 3d objects and kept going around and around while failing to install related software. When I decided to simplify things it stated to do some cool stuff.
 
