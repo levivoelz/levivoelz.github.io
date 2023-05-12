@@ -15,8 +15,8 @@
   --font-accent: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
-body, html {
-  font-size: 20px;
+html {
+  font-size: 16px;
   font-weight: 400;
   font-family: var(--font-body);
   color: var(--text-color);
@@ -25,9 +25,13 @@ body, html {
   height: 100%;
 }
 
+body {
+  font-size: 1rem;
+}
+
 header {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -36,7 +40,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  line-height: 1.2em;
+  line-height: 1.8rem;
 }
 
 #footer--top {
@@ -106,7 +110,6 @@ blockquote p {
 }
 
 figure {
-  /* padding: 2rem 0; */
   font-family: var(--font-accent);
   margin: 2rem 0;
   text-align: center;
@@ -128,7 +131,7 @@ canvas {
 }
 
 .entry img {
-  margin: 25px 0;
+  margin: 1.5625rem 0;
 }
 
 .entry figure img {
@@ -136,8 +139,7 @@ canvas {
 }
 
 .wrapper {
-  width: 60%;
-  max-width: 600px;
+  max-width: 40rem;
   margin: 0 auto;
 }
 
@@ -150,11 +152,11 @@ canvas {
 /* GoodMus */
 
 .video-container {
-    position: relative;
-    padding-bottom: 51.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 51.25%;
+  padding-top: 1.875rem;
+  height: 0;
+  overflow: hidden;
 }
 
 .video-container iframe,
@@ -174,8 +176,8 @@ canvas {
 }
 
 @media screen and (max-width: 500px) {
-  body, html {
-    font-size: 16px;
+  html {
+    font-size: 18px;
   }
 
   .wrapper {
@@ -199,7 +201,7 @@ canvas {
 .effofex-link {
   font-family: 'Roboto Mono', monospace;
   letter-spacing: -3px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .hero {

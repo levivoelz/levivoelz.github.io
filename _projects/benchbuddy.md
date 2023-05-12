@@ -10,7 +10,7 @@ category: Furniture
 tags: CAD wood-working product-design scalability
 ---
 
-Have you ever been frustrated by not having anywhere to sit except the ground? Me too and that's why I created BenchBuddy. BenchBuddy is the seat you can take with you everywhere you go. I apologize in advance for no context.
+Have you ever been frustrated by not having anywhere to sit except the ground? Me too and that's why I created BenchBuddy. BenchBuddy is the seat you can take with you everywhere you go. I apologize in advance for the context.
 
 <figure>
   <a href='/images/projects/benchbuddy-designs.png'><img src='/images/projects/benchbuddy-designs.png' /></a>
