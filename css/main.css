@@ -216,18 +216,55 @@ canvas {
   align-items: center;
 }
 
+#circle-orbit-container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+#circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: var(--primary);
+  overflow: hidden;
+  border: 1px solid var(--primary);
+}
+
+#outer-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 294px;
+  height: 294px;
+}
+
+#outer-orbit:hover {
+  animation: spin-right 20s linear infinite;
+}
+
+.outer-orbit-cirlces {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: var(--primary);
+}
+
+@-webkit-keyframes spin-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .circles {
   display: flex;
   padding: 1rem;
-}
-
-.circle {
-  overflow: hidden;
-  width: 12rem;
-  height: 12rem;
-  border: 1px solid var(--primary);
-  background-color: var(--primary);
-  border-radius: 50%;
 }
 
 .circle--md {

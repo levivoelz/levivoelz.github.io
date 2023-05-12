@@ -1,16 +1,24 @@
 <header>
+  <style>
+    
+  </style>
   <div class="hero">
     <div class="hero--inner">
-      {% if page.url != '/' %}
-      <a href="/" style="line-height: 1">
-      {% endif %}
-        <img class="circle" src="{{ page.hero }}" style="background-color: {{ page.hero_color }}"/>
-      {% if page.url != '/' %}
-      </a>
-      {% endif %}
-      <div class="header-circles">
-        <div class="circle circle--sm"></div>
-        <div class="page-name">{{ page.display_name }}</div>
+      <div id="circle-orbit-container">
+        <div id="outer-orbit">
+          <div class="outer-orbit-cirlces"></div>
+        </div>
+        <div id="circle">
+          {% if page.hero %}
+          {% if page.url != '/' %}
+          <a href="/" style="line-height: 1">
+          {% endif %}
+          <img src="{{ page.hero }}" {% if page.hero_color %} style="background-color: {{ page.hero_color }}" {% endif %}/>
+          {% endif %}
+          {% if page.url != '/' %}
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
