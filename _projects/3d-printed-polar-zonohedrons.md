@@ -32,9 +32,11 @@ tags: 3d-printing CAD making software
 }
 </style>
 
-A few years ago I was thinking about how to build a polar zonohedron similar to [Rob Bell's (Zomadic) Zomes](http://zomadic.blogspot.com/){:target="_blank"}. I had been to Rob's workshop many times. My brother-in-law had a woodworking shop next door to his and found the shapes and his process for making them fascinating.
+A few years ago I was thinking about how to build a polar zonohedron similar to [Rob Bell's (Zomadic) Zomes](http://zomadic.blogspot.com/){:target="_blank"}. I had been to Rob's workshop many times—my brother-in-law had a woodworking shop next door to his and found the shapes and his process for making them fascinating.
 
-He generated the polar zonohedron 3d models using a SketchUp plugin he created written in Ruby and then fine-tuned them according to the application. Sometimes he would combine multiple PZ's to create more complex environments or he would extend a side or two to suit his whims. Once the general shape or solid was conceived he would use his proprietary connection system to build panels and connectors cut out from CNCed plywood. Sometimes he'd paint the structures and sometimes he'd leave them bare. They were transformative architectural structures that evoked a spiritual experience for me and I wanted to understand more about these beautiful structures.
+He generated the 3d models using a SketchUp plugin he created and then fine-tuned them according to the application. Sometimes he would combine multiple PZ's to create more complex environments or he would extend a side or two to suit his whims. Once the general shape or solid was conceived he would use his proprietary connection system to build panels and connectors cut from plywood using a CNC machine.
+
+Sometimes he'd paint them and sometimes he'd leave them bare. They were beautiful and transformative architectural structures that evoked a spiritual experience in me and I wanted to understand more about them.
 
 <figure>
   <a href='http://zomadic.blogspot.com/2013/09/the-zonohedral-cathedral.html' target="_blank">
@@ -43,9 +45,9 @@ He generated the polar zonohedron 3d models using a SketchUp plugin he created w
   <figcaption><cite>Zonotopia and the Quasicrystalline Conjunction</cite>, by Rob Bell</figcaption>
 </figure>
 
-I dreamt about making one for a while and thought it would be interesting and more practical for me to do the shape out of tubes or rods and plumbing-like fittings. I did some research on how to make custom connectors but didn't find anything out there. Most connectors with unusual geometry are made for geodesic domes or cubic frames. I thought, maybe I could 3d print custom connectors. Seemed reasonable. I didn't have a 3d printer and wasn't very familiar with how 3d printing works. I did have a little bit of CAD experience from some projects around the house, so I figured it couldn't be that hard.
+I dreamt about making one for a while and thought it would be practical for me to do the shape out of tubes or rods and plumbing-like fittings. I did some research on how to make custom connectors but didn't find anything out there. Most connectors with unusual geometry are made for geodesic domes or cubic frames. I thought, maybe I could 3d print custom connectors. It seemed reasonable. I didn't have a 3d printer and wasn't very familiar with how 3d printing works. However, I did have a little bit of CAD experience from doing some projects around the house, so I figured it couldn't be that hard.
 
-I started designing PZ models from scratch using a [YouTube tutorial](https://www.youtube.com/watch?v=wLwqUjXph2s){:target="_blank"} I found for doing it in SketchUp. I'd draw the zono and once I had a shape I liked, I'd start the process of tracing the connectors over each of the vertices using a tube plugin. This was a painstaking and lengthy process, but it worked. Once I had designed all the connectors and exported them as STL files, I uploaded them to Shapeways and ordered some prints. A few days later I had the prototype.
+I started designing PZ models from scratch using a [YouTube tutorial](https://www.youtube.com/watch?v=wLwqUjXph2s){:target="_blank"} I found for doing it in SketchUp. I'd draw up the shape and once I had one I liked, I'd start the process of tracing the connectors over each of the vertices using a tube plugin. This was a painstaking and lengthy process, but it worked. Once I had designed all the connectors and exported them as printable STL files, I uploaded them to Shapeways and ordered some prints. A few days later I had a proof of concept.
 
 <figure>
   <img src='/images/first-polor-zonohedron-frame-levi-voelz.JPG' />
@@ -56,14 +58,16 @@ I was pretty blown away with how it all came together. The only things I had to 
 
 Driven by my curiosity, I played around with other shapes but found the process of actually designing the connectors in CAD too cumbersome and painful. Sometimes if I made a mistake I'd have to start from the beginning and design everything all over. Or, if I wanted to change the diameter of the rods, I'd have to go through a crazy complex process of scaling up or down and adjusting the thickness of the connectors.
 
-I did some research and came across Trammel Hudson's project, [Wireframe](https://trmm.net/Wireframe/){:target="_blank"}. The frame he generated was slightly different from what I was going after, but the general concept was the same—drop in a shape and have a script generate the frame for you, including the 3d printable connectors. He identified some constraints and maybe he thought it was impractical to pursue on a greater scale, but being as naive as I am I decided to see if I could improve upon what he had done, build a GUI for it, and make frames all day long.
+I did some research and came across Trammel Hudson's project, [Wireframe](https://trmm.net/Wireframe/){:target="_blank"}. The frame he generated was slightly different from what I was going after, but the general concept was similar—drop in a shape and have a script generate the frame for you, including the 3d printable connectors. He identified some constraints and maybe he thought it was impractical to pursue on a greater scale, but being as naive as I am I decided to see if I could improve upon what he had done, build a GUI for it, and make frames all day long.
 
 <figure>
   <img src='/images/projects/modwerk-prototype-preview.png' />
   <figcaption><cite>Modwerk Clickable Prototype</cite>, Designed in Adobe XD</figcaption>
 </figure>
 
-I've built numerous frames out of custom polyhedra and even did a demo at local maker space, Chimera Arts, where people loved making things with connectors and stretching their creative muscles.
+I needed a little help getting over the geometry/trig hump and reached out to [George Profenza](https://sensori.al/), who previously helped me track down Rob Bell's missing [Polar Zonohedron SketchUp script](/polar_zonohedron.rb) for quickly creating PZ's. He got me up to speed with Three.js and wrote the first iteration of a frame generator called Modwerk. I'm eternally grateful to him for that.
+
+I've built numerous frames using it and even did a live demo at a local maker space, [Chimera Arts](https://www.instagram.com/chimeraartspace/){:target="_blank"}, where people loved making things with connectors and stretching their creative muscles.
 
 <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false }'>
   <figure>
@@ -130,8 +134,6 @@ I've built numerous frames out of custom polyhedra and even did a demo at local 
   </figure>
 </div>
 
-I needed a little help getting over the geometry/trig hump and reached out to [George Profenza](https://sensori.al/), who previously helped me track down Rob Bell's missing [Polar Zonohedron SketchUp script](/polar_zonohedron.rb) for quickly creating PZ's. He got me up to speed with Three.js and wrote the first iteration of a frame generator called Modwerk. I'm eternally grateful to him for that.
-
 <hr />
 
 # More on Modwerk
@@ -148,7 +150,7 @@ For simple shapes, assembly is pretty straightforward. All the shapes in the sha
 I plan on doing a more in-depth technical breakdown of Modwerk in the future, but from a high level, it's a client-only web app. The first version was written in Svelte, but I ran into some limitations with that and found it slow to iterate. V2, which hasn't been released yet, is a complete rewrite in React that uses React Three Fiber on the FE and will have a Ruby on Rails REST API for handling saving projects and payments.
 
 <div style="text-align: center; padding: 10px;">
-<a class="button" href="https://www.modwerk.com" target="_blank">Try It Now</a>
+<a class="button" href="https://www.modwerk.com" target="_blank">Try It</a>
 </div>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
