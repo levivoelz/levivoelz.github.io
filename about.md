@@ -30,6 +30,9 @@ While I specialize in web UI, I'm also considered full-stack (Node/Ruby/Go). Mos
 People say I'm good at what I do and that they are surprised I haven't made it further in life. They say things like, "Man, I figured you'd be like mega-rich by now." I usually don't have a response for that so I just laugh. A lot of rich people aren't very smart either so maybe I'll redeem myself in the eyes of my peers someday. -->
 
 <div id='contact'>
+  <h3>Contact Levi</h3>
+  <div>
   <a href='https://twitter.com/levivoelz' title='@levivoelz' target='_blank'><img src='/images/twitter-icon.svg' /></a>
   <a href='mailto:levivoelz+web@gmail.com' title='levivoelz+web@gmail.com'><img src='/images/email-icon.svg' /></a>
+  </div>
 </div>
