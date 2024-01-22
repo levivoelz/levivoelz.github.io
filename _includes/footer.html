@@ -1,35 +1,39 @@
-      <footer>
-        <div id="footer--top">
-          <nav>
-            <a href="/projects">Projects</a>
-            <!-- <a href="/concepts/">Concepts</a> -->
-            <a href="/about">About</a>
-          </nav>
-          <div class='circles'>
-            {% if page.url != '/' %}
-            <a href="/" style="line-height: 1">
-            {% endif %}
-              <div class='circle circle--md'></div>
-            {% if page.url != '/' %}
-            </a>
-            {% endif %}
-            <div class='circle circle--xs'></div>
-          </div>
-        </div>
-        <div id="copyright">
-          <small><a href="//twitter.com/levivoelz" target="_blank">@levivoelz</a><br />Happily built with <a href='https://jekyllrb.com/' target='_blank'>Jekyll</a> and hosted on <a href='https://github.com/levivoelz/levivoelz.github.io' target='_blank'>Github</a>.</small>
-        </div>
-      </footer>
+<footer>
+  <div id="footer--top">
+    <nav>
+      <a href="/projects/">Projects</a>
+      <a href="/posts/">Posts</a>
+      <!-- <a href="/concepts/">Concepts</a> -->
+      <a href="/about/">About</a>
+    </nav>
+    <div class='circles'>
+      {% if page.url != '/' %}
+      <a href="/" style="line-height: 1" title="Home">
+        {% endif %}
+        <div class='circle circle--md'></div>
+        {% if page.url != '/' %}
+      </a>
+      {% endif %}
+      <div class='circle circle--xs'></div>
     </div>
-    {% include ga.html %}
-    <script>
-      (function() {
-        try {
-          document
-            .querySelector("nav a[href='" + window.location.pathname + "']")
-            .setAttribute('disabled', true);
-        } catch(e) {}
-      })();
-    </script>
-  </body>
+  </div>
+  <div id="copyright">
+    <small><a href="//twitter.com/levivoelz" target="_blank">@levivoelz</a><br />Happily built with <a
+        href='https://jekyllrb.com/' target='_blank'>Jekyll</a> and hosted on <a
+        href='https://github.com/levivoelz/levivoelz.github.io' target='_blank'>Github</a>.</small>
+  </div>
+</footer>
+</div>
+<script>
+  (function () {
+    try {
+      document
+        .querySelector("nav a[href='" + window.location.pathname + "']")
+        .setAttribute('disabled', true);
+    } catch (e) { }
+  })();
+</script>
+<script data-goatcounter="https://levivoelz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
 </html>

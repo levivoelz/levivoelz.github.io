@@ -4,7 +4,7 @@ name: Derivv
 short_description: Quickly resize one image to multiple sizes.
 title: Resize an Image to Multiple Sizes with Derivv
 featured_image: /images/projects/derivv-image-resizing-app-preview_1200_x_832.png
-description: Derivv makes it super easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop.
+description: Derivv makes it easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop.
 category: Software
 tags: side-project react web-workers product-launch
 date: 9/5/2016
@@ -24,13 +24,13 @@ I'm excited to announce a new piece of software I wrote for people who need to [
 
 Anyone who's had to resize images over and over in Photoshop knows what a pain in the ass it can be. You open an image you want to resize, reduce the size, then crop it to the exact dimensions. If you are an advanced user, you either create some Photoshop actions to handle the repetitive task, or you have a script that batch processes your files. It's quite a bit faster that way but still takes a while if you have a lot of images to do.
 
-Derivv makes it super easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop. You don't have to downsize the image to the approximate dimensions and then crop it. You just choose the size you want and Derivv does the rest.
+Derivv makes it easy to resize an image to the exact dimensions you are looking for. It resizes and crops it all in one fell swoop. You don't have to downsize the image to the approximate dimensions and then crop it. You just choose the size you want and Derivv does the rest.
 
-I specifically built Derivv with Web producers, bloggers, graphic designers, and photographers in mind. If you are in one of those (or similar) professions, and you resize a lot of images, then it's perfect for you. Resizing images to the same size over and over and over again, is super easy with Derivv. Of course, it is dialed in for a very specific use. It's not for people who need to resize an image every once and a while. It's not for people who just want to downsize an image by some percentage (at least not yet). It is for people doing the same thing over and over, who are sick of using Photoshop for resizing images and don't want to pay for another all-in-one imaging tool that does everything under the sun.
+I specifically built Derivv with Web producers, bloggers, graphic designers, and photographers in mind. If you are in one of those (or similar) professions, and you resize a lot of images, then it's perfect for you. Resizing images to the same size over and over and over again, is easy with Derivv. Of course, it is dialed in for a very specific use. It's not for people who need to resize an image every once and a while. It's not for people who just want to downsize an image by some percentage (at least not yet). It is for people doing the same thing over and over, who are sick of using Photoshop for resizing images and don't want to pay for another all-in-one imaging tool that does everything under the sun.
 
 I know what web producers go through, and that's a topic of a whole other post, but I will say that this app is tuned for them. I worked several jobs where I needed to resize images over and over. It's not fun. So, if you are a web producer at an eCommerce company, Derivv will be a great tool for you.
 
-> Derivv makes it super easy to resize an image to the exact dimensions you are looking for.
+> Derivv makes it easy to resize an image to the exact dimensions you are looking for.
 
 ## How it works
 As I said before, Derivv resizes photos in the browser. It doesn't upload them to a server to resize and send back, which makes it fast. The downside to that is the quality suffers a little bit, but as I go along I'll be working to improve the quality. And, if you are someone who needs the absolute best quality, I may end up building a feature where images are uploaded to a server and processed with some beefier processing tool like ImageMagick and sent back. Or, I may build a native app that does all that right on your computer.
