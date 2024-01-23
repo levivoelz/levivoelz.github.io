@@ -1,12 +1,12 @@
 ---
 layout: post
-short_description: A short description
-title: Observations of Startups from a Software Developer
+short_description: Startup Observations
+title: Observations of Startups by a Software Developer
 featured_image: /images/clean-vs-dirty-office.jpg
 hero: /images/clean-vs-dirty-office.jpg
 allow_expand_hero: false
 description: I outline my observations of successful or failing startups by the traits they exhibit.
-slug: startup-observations-from-a-developer
+slug: startup-observations-by-a-developer
 ---
 
 
