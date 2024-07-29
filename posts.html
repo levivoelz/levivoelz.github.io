@@ -7,10 +7,10 @@ description: A list of my posts.
 <ul class="posts">
   {% for post in site.posts %}
   <li>
-    <img src="{{ post.hero }}" alt="{{ post.title }}" style="height: 10px; border-radius: 2px" /><br />
     <a href="{{ post.url }}">
       {{ post.title
-      }}</a> | <i>{{ post.date | date_to_string }}</i>
+      }}</a>
+    <div><small>{{ post.date | date_to_string }}</small></div>
     <div><i>{{ post.description }}</i><a href="{{ post.url }}"> >-></a></div>
   </li>
   {% endfor %}
