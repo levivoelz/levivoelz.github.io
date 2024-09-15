@@ -102,4 +102,6 @@ _In the next article I'll go through why that is and how to improve the image qu
 ---
 <small id='1'><sup>1</sup>See Mozilla developer documentation for more <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage' target='_blank'>Canvas 2D API</a> details.</small>
 
+[Next: High-Quality Image Processing in the Browser](/projects/derivv-technical-breakdown-2-high-quality)
+
 [Derivv Technical Breakdown Overview](/projects/derivv-technical-breakdown)

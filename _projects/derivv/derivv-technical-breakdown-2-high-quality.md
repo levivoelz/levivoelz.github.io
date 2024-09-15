@@ -7,46 +7,27 @@ featured_image: /images/projects/derivv-downscale-code.png
 hero: /images/projects/derivv-downscale-code.png
 description: High Quality Image Processing in the Browser.
 sub: true
-date: 9/12/2020
+date: 01/01/2021
 ---
 
-One of the main problems I wanted to solve with Derivv was to make it simple and quick to resize a raster/bitmap image to multiple sizes. There are tools out there that address it indirectly, simply through having the ability to resize and crop, but those operations are almost always a separate step—you probably first crop the image and then resize it. If you need your resulting images to be specific dimensions, you might start with a file in Photoshop that is already set to the dimension you are looking for and then drop your image in as a layer, then "save as" to process it (or "save for web"). There are so many ways to do it and I wont go into all of them, but suffice it to say, this specific problem didn't really seem to have a direct solution.
+It was almost too easy to resize an image in the browser. I tested a few images and there were some issues with clarity and fidelity that I wanted to address that often occurred when drastically reducing the size of the source image. After a lengthy search, I came across a stack overflow post about high quality [downscaling in the browser](https://stackoverflow.com/questions/18922880/html5-canvas-resize-downscale-image-high-quality). Like any good dev, I snagged the code and adapted it for my use. I made a few modifications to handle the alpha channel for png and refactored it to be more intelligible.
 
-Regardless of why I built Derivv, I knew that if people were going to use it, it had to return high quality images. Low quality images only work in under certain conditions, like on the web, however, as bandwidth gets more affordable, more end-users become less tolerant of low quality images. Image compression is another story and Derivv doesn't even offer it at this point.
+Breaking down the algorithm:
 
-As I worked on Derivv I realized the fastest way to resize an image online wasn't to send it to a server, it was to process it in the browser. Everyone processes images on the server because you have fine grained control, many options, and tons of support in terms of documentation and community. The biggest problem with processing on the server is it's slow. You have to upload the file, process it multiple times, and send every file back to the browser. What you could cut out the middleman and do it all locally? There were some client-side/browser-based image processing libraries like Pica and a few others, and they did a great job of resizing and cropping, but they didn't seem to retain image quality like I wanted.
+1. Start with the original image dimensions and the target dimensions.
+Calculate the scale factor needed to reach the target size.
 
-One of the main problems with resizing images is retaining resolution and color as you scale up or down. When images are scaled way down they tend to loose a lot of resolution and the color gets faded or it ends up looking pixelated. This even happens in Photoshop, where if you downscale an image by a lot then it can lose quality. One technique to mitigate it is to downscale in steps. If the end result should be 50% of the original size, you step it down 10% at a time until it reaches the goal. Doing it this way takes longer, but you get great results.
+2. Scale Factor Calculation:
+  The scale factor is calculated as the maximum of:
+  a. The ratio of target width to current width
+  b. The ratio of target height to current height
+  c. The scale factor is generally 0.5 but I made it variable.
 
+See [derivv source](https://github.com/levivoelz/derivv/tree/master/_src/_frontend/lib) for implementation details.
 
-SIDE NOTE
-What other things could you do by resizing in the browser? If you had a lot of derivative images on your site you could improve performance by having the client only download one source image and then do something like:
+The downside of this solution is it is memory and compute intensive. I noticed that UI would freeze when processing images. After looking into various solutions I landed on using web workers, which I'll go over in the next article.
 
-<img src='placeholder.gif' class='derivative' data-width='300' data-height='300' />
+[Previous: Make it Fast using Web Workers](/projects/derivv-technical-breakdown-3-make-it-tolerable)<br />
+[Next: Make it Tolerable using Web Workers](/projects/derivv-technical-breakdown-3-make-it-tolerable)
 
-or
-
-<img src='placeholder.gif' class='derivative' data-name='small' />
-```javascript
-[
-  {
-    small: {
-      width: 300,
-      height: 300
-    }
-  },  
-]
-
-```
-
-Another option is
-
-- Upscaling
-  - Interpolation
-- Downscaling
-  - Interpolation
-  - No Interpolation
-  - Downsampling
-
----
-[<-- Back](/projects/derivv-technical-breakdown)
+[Derivv Technical Breakdown Overview](/projects/derivv-technical-breakdown)

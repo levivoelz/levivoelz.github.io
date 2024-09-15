@@ -21,7 +21,8 @@ There are several key technical aspects to Derivv that make it different from an
 ### Article Series
 _I'll be writing articles over the next few weeks that go into detail about each of these topics. Check back in a week or sign up to get a notification when the next one comes out._
 - [Resizing Images Online the Fast Way](/projects/derivv-technical-breakdown-1-make-it-fast)
-- High-Quality Image Processing in the Browser
-- What Makes the Interface So Unique?
-- Packaging Files for Delivery in the Browser
-- Offline Processing via a Progressive Web App (PWA)
+- [High-Quality Image Processing in the Browser](/projects/derivv-technical-breakdown-2-high-quality)
+- [Make it Tolerable using Web Workers](/projects/derivv-technical-breakdown-3-make-it-tolerable)
+- [What Makes the Interface So Unique?](/projects/derivv-technical-breakdown-4-unique-interface)
+- [Packaging Files for Delivery in the Browser](/projects/derivv-technical-breakdown-5-packaging-files)
+
