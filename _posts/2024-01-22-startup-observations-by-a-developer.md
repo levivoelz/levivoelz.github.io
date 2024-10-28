@@ -9,17 +9,15 @@ description: I outline my observations of successful or failing startups by the 
 slug: startup-observations-by-a-developer
 ---
 
-
 Over the years, I've worked with dozens of startups—from small pre-revenue and pre-seed startups, to large startups that have been around for 10+ years, and everything in between. I was also the technical co-founder of a failed startup in 2009. I have noticed a few commonalities of startups that tend to succeed and ones that tend to fail.
 
 As you probably know, a startup is generally considered successful if they've exited, meaning either through an IPO or through an acquisition. I don't consider an exit to be the only metric of success, but it's a milestone that can be easily quantified. I'm not going to enumerate all the ways a startup could be considered a success or a failure. I just want to list some first-hand observations about startups that have either been what I consider successful (primarily that they are _in the black_) or have been catastrophic failures and had to close up shop.
 
-Again, this compilation of some of _my observations_. Obviously, there have been startups that have exited that didn't exhibit some of these traits. I'm well aware of that and simply want to share my experience.
+Again, this compilation of some of _my observations_. Obviously, there have been startups that have exited that didn't exhibit some of these traits. There are outliers. I'm well aware of that and simply want to share my experience.
 
 My aim is not to make fun or hurt anyone's feelings. Hopefully, some founders will come across this information and do something useful with it. I've outlined more factors contributing to failures than ones contributing to success simply because I've seen more failures. [Statistically](https://explodingtopics.com/blog/startup-failure-stats){:target="_blank"}, this reflects reality.
 
-<button onclick="alert('Founders that focus on the right things succeed. Founders that don\'t run out of money and fail.')">TL;DR</button>
-
+<button onclick="alert('Founders that focus on the right things tend to succeed. Founders that don\'t run out of money and fail.')">TL;DR</button>
 
 ---
 
@@ -98,10 +96,10 @@ Successful founders and startups are in it for the long-haul. They're not intere
 - [Spend a lot of time on tasks that are not product related](#failure-2)
 - [Are afraid to bring their product to market before being perfect](#failure-3)
 - [Have raised money who but it on things of little importance or value](#failure-4)
-- [Hire contractors or consulting firms instead of full-time employees](#failure-5)
+- [Hire contractors or consulting firms in lieu of full-time employees](#failure-5)
 - [Don't contribute to product development](#failure-6)
 - [Don't properly incentivize their early employees](#failure-7)
-- [Spend a substantial amount of time and money on building the product before launching](#failure-8)
+- [Spend a substantial amount of time and money on building the product before launching or getting feedback](#failure-8)
 - [Pivot and don't give time for the pivot to run its course](#failure-9)
 - [Are indecisive](#failure-10)
 - [Prioritize investors over users and employees](#failure-11)
@@ -139,7 +137,7 @@ Starting a company is hard. I've been through it myself and there are a number o
 
 Noob founders are the worst to work for and be involved with unless they are incredibly empathetic, smart, and have integrity. If they have those traits, they quickly pick up on the fact that it is hard for _everyone involved_ and they compensate everyone very well. They do what they can to help ease the pain. When they don't, nobody wants to work for them.[^4]
 
-### Spend a substantial amount of time and money on building the product before launching {#failure-8}
+### Spend a substantial amount of time and money on building the product before launching or getting feedback {#failure-8}
 I don't want to make any hard and fast rules, however, ideally you'd shape your MVP in a way that you could deliver it in 3 months or less. Of course, there are many exceptions to that, especially in B2B, but if you don't have substantial funding in place to build out a larger product and you haven't done something similar before, you shouldn't entertain building it, let alone start. A lot of founders who want to build a big, full-featured product either don't understand the level of effort it will take, or they are lying to themselves and everyone else involved. If you are the latter, shame on you. If you are the former, also shame on you but I hope you'll learn from the mistake.
 
 The big takeaway here is—if you can't distill your product down to one or two primary features, then you are taking on too much. I've seen this so many times and not just in startups. Big companies fall into this trap as well. They spend a ton of money and resources only to discover their product doesn't work as intended (e.g. bugs, irrelevant features), it is bloated and confusing for users, or it takes too many resources to maintain and falls off the priority list.
@@ -178,9 +176,9 @@ This has to be the worst trait in this list of observations. I've heard some pre
 ___
 
 [^1]: I'm primarily referencing software products.
-[^2]: I consulted with a founder who had spent over $1m of his own money and never launched to a single customer.
+[^2]: I worked with a founder who had spent a significant amount of their own money and never got a customer.
 [^3]: It's not to say that you shouldn't hire contractors or consulting firms, but if your entire go-to-market strategy is hinges on contractors and consulting firms and you don't have any staff, that's bad. Having full-time staff that has interests aligned with the project over a long period of time and carries institutional knowledge is crucial.
-[^4]: It's important to recognize the difficulty of the undertaking early on and to take steps to get ahead of people's feelings. A common complaint among startup employees that I've noticed is not feeling appreciated. Words aren't enough. Bust out your checkbook, buy a gift, take them out, or whatever. Do something more than just saying, "thank you."
+[^4]: It's important to recognize the difficulty of the undertaking early on and to take steps to get ahead of people's feelings. A common complaint among startup employees that I've noticed is feeling underappreciated. Words aren't enough. Bust out your checkbook, buy a gift, take them out, or whatever. Do something more than just saying, "thank you."
 
 <div class="success-failure-buttons">
 <a class='btn' href="#success">Success list</a>

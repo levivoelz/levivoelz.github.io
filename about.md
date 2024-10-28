@@ -1,14 +1,20 @@
 ---
 layout: default
 title: Levi Voelz | About Me
-hero: /images/levi_voelz-hero-side-dark.jpg
+hero: /images/levi_voelz-2024.jpg
 ---
 
-Levi is a software engineering consultant with expertise in JavaScript/TypeScript, Ruby, and Node.js and he primarily specializes in UI development for the web. <a href="https://app.10xmanagement.com/clients/levi-voelz-9679/profile" target="_blank">More info</a>
+Levi builds software, things, and experiences. He resides in Sonoma County, CA with his wife and two children.
+{:.center}
+
 <div id='contact'>
-  <h3>Contact Levi</h3>
+
+  <h3>Get in touch</h3>
   <p>
-    <a href='mailto:levivoelz+web@gmail.com' title='levivoelz+web@gmail.com'><img src='/images/email-icon.svg' /></a>
+    <a href='mailto:levi+levivoelz_com@hatchmatter.com' title='levi@hatchmatter.com'><img src='/images/email-icon.svg' /></a>
   </p>
-  <!-- <a >Hire Levi</a> -->
+  <h3>Hire Levi</h3>
+  <p>
+  Please reach out via his agency, <a href="https://10xmanagement.com/" target="_blank">10x Management</a>. You can view his profile <a href="https://app.10xmanagement.com/clients/levi-voelz-9679/profile" target="_blank">here</a>.
+  </p>
 </div>
