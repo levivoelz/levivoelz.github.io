@@ -4,6 +4,7 @@ name: Derivv Pro Cross-Platform Desktop App
 short_description: A nifty solution to a fairly common problem—<i>multiple sizes of the same image</i>.
 title: My new desktop app, Derivv Pro
 featured_image: /images/projects/derivv-pro-desktop.png
+hero: /images/projects/derivv-pro-desktop-800x800.png
 description: Mega ultra fast image resizing for Mac, Windows, and Linux.
 category: Software
 tags: software tauri rust typescript react sqlite
