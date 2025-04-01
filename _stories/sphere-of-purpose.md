@@ -9,6 +9,7 @@ allow_expand_hero: true
 description: One day, a man loses his way while trying to find his purpose.
 date: 03/12/2023
 hide_subscribe: true
+redirect_to: /
 ---
 One day, a man was searching for his purpose. He lost his way and went down the dark path of uncertainty. While wandering in the darkness, a small light appeared in the distance. He pondered the meaning of it and followed the source of its rays. As he got closer, he realized he could only see the light and nothing else but the floor. He was standing in the void.
 
