@@ -7,6 +7,7 @@ hero: /images/clean-vs-dirty-office.jpg
 allow_expand_hero: false
 description: I outline my observations of successful or failing startups by the traits they exhibit.
 slug: startup-observations-by-a-developer
+redirect_to: /
 ---
 
 Over the years, I've worked with dozens of startups—from small pre-revenue and pre-seed startups, to large startups that have been around for 10+ years, and everything in between. I was also the technical co-founder of a failed startup in 2009. I have noticed a few commonalities of startups that tend to succeed and ones that tend to fail.
