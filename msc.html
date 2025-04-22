@@ -1,0 +1,147 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Keynote</title>
+  <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    body {
+      font-family: Helivetica-Neue, Helvetica, Arial, sans-serif;
+    }
+
+    img {
+      width: 100%
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #form {
+      /* display: flex;
+      flex-direction: column; */
+      max-width: 400px;
+      margin-left: 5%;
+    }
+
+    h2 {
+      margin-left: 5%;
+    }
+
+    .group {
+      margin-bottom: 5px;
+    }
+
+    #total {
+      border: none;
+      background: none;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    #status {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="/images/Mirabel-Supper-Club/Mirabel-Supper-Club.001.png" />
+    <h2>RSVP by Wed, 4/30</h2>
+    <form id="form">
+      <div class="group">
+        <label>Name*</label><br />
+        <input type="text" name="name" required />
+      </div>
+      <div class="group">
+        <label>Email*</label><br />
+        <input type="email" name="email" required />
+      </div>
+      <div class="group">
+        <label>How many adults?*</label><br />
+        <input type="number" min="0" name="numAdults" id="numAdults" required />
+      </div>
+      <div class="group">
+        <label>How many kids?*</label><br />
+        <input type="number" min="0" name="numKids" id="numKids" required />
+      </div>
+      <div class="group" style="margin-bottom: 20px;">
+        <label>Questions/comments</label><br />
+        <textarea name="comments"></textarea>
+      </div>
+      <div>
+        <button id="btn" type="submit">reserve & pay</button> $<input type="number" id="total" value="0" disabled />
+      </div>
+      <div id="status"></div>
+    </form>
+  </div>
+
+
+  <script type="text/javascript">
+    const payURL = "https://account.venmo.com/pay";
+    const formURL = "https://formspree.io/f/mvgaoaor";
+    const form = document.getElementById("form");
+    const numAdultsEl = document.getElementById("numAdults");
+    const numKidsEl = document.getElementById("numKids");
+    const totalEl = document.getElementById("total");
+    const statusEl = document.getElementById("status");
+    const btnEl = document.getElementById("btn");
+
+    let total = 0;
+
+    numAdultsEl.addEventListener("change", (e) => {
+      statusEl.innerHTML = ""
+      totalEl.value = Number(numKidsEl.value) * 5 + Number(e.target.value) * 10;
+    })
+
+    numKidsEl.addEventListener("change", (e) => {
+      statusEl.innerHTML = ""
+      totalEl.value = Number(numAdultsEl.value) * 10 + Number(e.target.value) * 5;
+    })
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      handleSubmit(e);
+    });
+
+    function handleSubmit(e) {
+      const data = new FormData(event.target);
+      btnEl.disabled = true;
+
+      if (Number(totalEl.value) === 0) {
+        statusEl.innerHTML = "Somebody has to eat! Please add an adult or kid"
+        return;
+      }
+
+      fetch(formURL, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          const params = new URLSearchParams({
+            audience: 'private',
+            amount: totalEl.value,
+            note: "msc",
+            recipients: "Levi-Voelz",
+            txn: "pay"
+          });
+
+          if (Number(totalEl.value) > 0) {
+            window.location.href = payURL + "?" + params.toString()
+          }
+        }
+      }).catch(error => {
+        statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
+      }).finally(() => {
+        btnEl.disabled = false;
+      });
+    }
+  </script>
+</body>
