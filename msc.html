@@ -82,8 +82,8 @@
 
 
   <script type="text/javascript">
-    const payURL = "https://account.venmo.com/pay";
-    const formURL = "https://formspree.io/f/mvgaoaor";
+    const payURL = "https://venmo.com/";
+    const formURL = "https://formspree.io/f/mldbebjy";
     const form = document.getElementById("form");
     const numAdultsEl = document.getElementById("numAdults");
     const numKidsEl = document.getElementById("numKids");
@@ -133,14 +133,10 @@
             txn: "pay"
           });
 
-          if (Number(totalEl.value) > 0) {
-            window.location.href = payURL + "?" + params.toString()
-          }
+          window.location.href = payURL + "?" + params.toString();
         }
       }).catch(error => {
         statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
-      }).finally(() => {
-        btnEl.disabled = false;
       });
     }
   </script>
