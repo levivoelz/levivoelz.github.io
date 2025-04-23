@@ -2,12 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <title>Keynote</title>
+  <title>Mirabel Supper Club</title>
   <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <style type="text/css">
+    html {
+      font-size: 16px;
+    }
+
     body {
       font-family: Helivetica-Neue, Helvetica, Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
     }
 
     img {
@@ -15,69 +32,109 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 60rem;
       margin: auto;
+      padding: 1rem;
     }
 
-    #form {
-      /* display: flex;
-      flex-direction: column; */
-      max-width: 400px;
-      margin-left: 5%;
-    }
-
-    h2 {
-      margin-left: 5%;
+    #description {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 2rem;
     }
 
     .group {
-      margin-bottom: 5px;
+      margin-bottom: 0.5rem;
     }
 
     #total {
       border: none;
       background: none;
       padding: 0;
-      font-size: 1rem;
+      font-size: inherit;
     }
 
     #status {
       color: red;
-      margin-top: 10px;
+      margin-top: 0.6rem;
+    }
+
+    footer {
+      margin-top: 6rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 600px) {
+      html {
+        font-size: 20px;
+      }
+      #description {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <img src="/images/Mirabel-Supper-Club/Mirabel-Supper-Club.001.png" />
-    <h2>RSVP by Wed, 4/30</h2>
-    <form id="form">
-      <div class="group">
-        <label>Name*</label><br />
-        <input type="text" name="name" required />
+    <div class="content">
+      <h1>Momofuku's Bo Ssam</h1>
+      <h2 style="margin-top: 0">6pm-7pm, Friday, 5/2 | $10/adults, $5/kids</h2>
+      <div id="description">
+        <div>
+          <h3>BYO:</h3>
+          <ul>
+            <li>Plates</li>
+            <li>Utensils</li>
+            <li>Napkins</li>
+            <li>Beverages</li>
+            <li>Chairs</li>
+          </ul>
+        </div>
+        <div>
+          <p>Momofuku Bo Ssam is David Chang’s famous dish from his Momofuku restaurant in New York. It’s an epic
+            centerpiece consisting of slow cooked pork roast with an insane caramelized crust, served with condiments
+            for DIY fully loaded Korean lettuce wraps.
+          </p>
+          <p>
+            Come hang with us and eat here. or take your food home. Either way, come get some yummy grub.
+          </p>
+          <p>—Levi<br />510-335-5420</p>
+        </div>
       </div>
-      <div class="group">
-        <label>Email*</label><br />
-        <input type="email" name="email" required />
-      </div>
-      <div class="group">
-        <label>How many adults?*</label><br />
-        <input type="number" min="0" name="numAdults" id="numAdults" required />
-      </div>
-      <div class="group">
-        <label>How many kids?*</label><br />
-        <input type="number" min="0" name="numKids" id="numKids" required />
-      </div>
-      <div class="group" style="margin-bottom: 20px;">
-        <label>Questions/comments</label><br />
-        <textarea name="comments"></textarea>
-      </div>
-      <div>
-        <button id="btn" type="submit">reserve & pay</button> $<input type="number" id="total" value="0" disabled />
-      </div>
-      <div id="status"></div>
-    </form>
+      <h2>RSVP by Wed, 4/30</h2>
+      <form id="form">
+        <div class="group">
+          <label>Name*</label><br />
+          <input type="text" name="name" required />
+        </div>
+        <div class="group">
+          <label>Email*</label><br />
+          <input type="email" name="email" required />
+        </div>
+        <div class="group">
+          <label>How many adults?*</label><br />
+          <input type="number" min="0" name="numAdults" id="numAdults" required />
+        </div>
+        <div class="group">
+          <label>How many kids?*</label><br />
+          <input type="number" min="0" name="numKids" id="numKids" required />
+        </div>
+        <div class="group" style="margin-bottom: 20px;">
+          <label>Questions/comments</label><br />
+          <textarea name="comments"></textarea>
+        </div>
+        <div>
+          <button id="btn" type="submit">reserve & pay</button> $<input type="number" id="total" value="0" disabled />
+        </div>
+        <div id="status"></div>
+      </form>
+    </div>
+    <footer>
+      Mirabel Supper Club, <a href="https://www.google.com/maps/place/8150+Savio+Ln,+Forestville,+CA+95436/@38.4914904,-122.8952906,16z/data=!3m1!4b1!4m6!3m5!1s0x80843cd6a601fbfb:0x86ba7a0c0567c5fe!8m2!3d38.4914904!4d-122.8927157!16s%2Fg%2F11c5kpww9c?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">8150 Savio Ln</a>
+    </footer>
   </div>
 
 
@@ -125,19 +182,25 @@
         }
       }).then(response => {
         if (response.ok) {
-          const params = new URLSearchParams({
-            audience: 'private',
-            amount: totalEl.value,
-            note: "msc",
-            recipients: "Levi-Voelz",
-            txn: "pay"
-          });
-
-          window.location.href = payURL + "?" + params.toString();
+          requestPayment();
         }
       }).catch(error => {
         statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
       });
+    }
+
+    function requestPayment() {
+      const params = new URLSearchParams({
+        txn: "pay",
+        audience: 'private',
+        recipients: "Levi-Voelz",
+        amount: totalEl.value,
+        note: "msc",
+      });
+
+      const url = payURL + "?" + params.toString();
+
+      window.location.href = encodeURI(url);
     }
   </script>
 </body>
