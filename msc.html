@@ -12,15 +12,16 @@
 
     body {
       font-family: Helivetica-Neue, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 5rem;
+      font-size: 3.8rem;
       margin-bottom: 0;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     h3 {
@@ -32,9 +33,8 @@
     }
 
     .container {
-      max-width: 60rem;
+      max-width: 50rem;
       margin: auto;
-      padding: 1rem;
     }
 
     #description {
@@ -47,7 +47,21 @@
       margin-bottom: 0.5rem;
     }
 
+    form {
+      width: 100%;
+    }
+
+    input, textarea, button {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+    }
+
+    #money {
+      font-size: 1.6rem;
+    }
+
     #total {
+      width: 3rem;
       border: none;
       background: none;
       padding: 0;
@@ -70,6 +84,7 @@
       html {
         font-size: 20px;
       }
+
       #description {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -127,13 +142,15 @@
           <textarea name="comments"></textarea>
         </div>
         <div>
-          <button id="btn" type="submit">reserve & pay</button> $<input type="number" id="total" value="0" disabled />
+          <button id="btn" type="submit">reserve & pay</button> <span id='money'>$<input type="number" id="total" value="0" disabled /></span>
         </div>
         <div id="status"></div>
       </form>
     </div>
     <footer>
-      Mirabel Supper Club, <a href="https://www.google.com/maps/place/8150+Savio+Ln,+Forestville,+CA+95436/@38.4914904,-122.8952906,16z/data=!3m1!4b1!4m6!3m5!1s0x80843cd6a601fbfb:0x86ba7a0c0567c5fe!8m2!3d38.4914904!4d-122.8927157!16s%2Fg%2F11c5kpww9c?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">8150 Savio Ln</a>
+      Mirabel Supper Club, <a
+        href="https://www.google.com/maps/place/8150+Savio+Ln,+Forestville,+CA+95436/@38.4914904,-122.8952906,16z/data=!3m1!4b1!4m6!3m5!1s0x80843cd6a601fbfb:0x86ba7a0c0567c5fe!8m2!3d38.4914904!4d-122.8927157!16s%2Fg%2F11c5kpww9c?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">8150 Savio Ln</a>
     </footer>
   </div>
 
