@@ -138,11 +138,11 @@
         </div>
         <div class="group">
           <label>How many adults?*</label><br />
-          <input type="number" min="0" name="numAdults" id="numAdults" required />
+          <input type="number" min="0" value="0" name="numAdults" id="numAdults" required />
         </div>
         <div class="group">
           <label>How many kids?*</label><br />
-          <input type="number" min="0" name="numKids" id="numKids" required />
+          <input type="number" min="0" value="0" name="numKids" id="numKids" required />
         </div>
         <div class="group" style="margin-bottom: 20px;">
           <label>Questions/comments</label><br />
@@ -191,13 +191,14 @@
     });
 
     function handleSubmit(e) {
-      const data = new FormData(event.target);
-      btnEl.disabled = true;
-
       if (Number(totalEl.value) === 0) {
         statusEl.innerHTML = "Somebody has to eat! Please add an adult or kid"
         return;
       }
+
+      btnEl.disabled = true;
+
+      const data = new FormData(event.target);
 
       fetch(formURL, {
         method: "POST",
