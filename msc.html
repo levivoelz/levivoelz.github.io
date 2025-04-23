@@ -88,6 +88,12 @@
       font-weight: bold;
     }
 
+    #finish {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     @media screen and (min-width: 600px) {
       html {
         font-size: 20px;
@@ -149,8 +155,8 @@
           <label>Questions/comments</label><br />
           <textarea name="comments"></textarea>
         </div>
-        <div>
-          <button id="btn" type="submit">reserve & pay</button> <span id='money'>$<input type="number" id="total"
+        <div id="finish">
+          <button id="btn" type="submit">Reserve</button> <span id='money'>$<input type="number" id="total"
               value="0" disabled /></span>
         </div>
         <div id="status"></div>
@@ -227,7 +233,7 @@
 
       const url = payURL + "?" + params.toString();
 
-      window.location.href = encodeURI(url);
+      window.location.assign(encodeURI(url));
     }
   </script>
 </body>
