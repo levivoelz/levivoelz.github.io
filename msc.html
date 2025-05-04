@@ -171,7 +171,7 @@
 
 
   <script type="text/javascript">
-    const payURL = "https://venmo.com/";
+    const payURL = "https://venmo.com/u/levi-voelz";
     const formURL = "https://formspree.io/f/mldbebjy";
     const form = document.getElementById("form");
     const numAdultsEl = document.getElementById("numAdults");
@@ -207,19 +207,21 @@
 
       const data = new FormData(event.target);
 
-      fetch(formURL, {
-        method: "POST",
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          requestPayment();
-        }
-      }).catch(error => {
-        statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
-      });
+      // fetch(formURL, {
+      //   method: "POST",
+      //   body: data,
+      //   headers: {
+      //     'Accept': 'application/json'
+      //   }
+      // }).then(response => {
+      //   if (response.ok) {
+      //     requestPayment();
+      //   }
+      // }).catch(error => {
+      //   statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
+      // });
+
+      requestPayment();
     }
 
     function requestPayment() {
