@@ -109,58 +109,10 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>Momofuku's Bo Ssam</h1>
-      <h2 style="margin-top: 0">6pm-7pm, Friday, 5/2 | $10/adults, $5/kids</h2>
-      <div id="description">
-        <div>
-          <h3>BYO:</h3>
-          <ul>
-            <li>Plates</li>
-            <li>Utensils</li>
-            <li>Napkins</li>
-            <li>Beverages</li>
-            <li>Chairs</li>
-          </ul>
-        </div>
-        <div>
-          <p>Momofuku Bo Ssam is David Chang’s famous dish from his Momofuku restaurant in New York. It’s an epic
-            centerpiece consisting of slow cooked pork roast with an insane caramelized crust, served with condiments
-            for DIY fully loaded Korean lettuce wraps.
-          </p>
-          <p>
-            Come hang with us and eat here. or take your food home. Either way, come get some yummy grub.
-          </p>
-          <p>—Levi<br />510-335-5420</p>
-        </div>
-      </div>
-      <h2>RSVP by Wed, 4/30</h2>
-      <form id="form">
-        <div class="group">
-          <label>Name*</label><br />
-          <input type="text" name="name" required />
-        </div>
-        <div class="group">
-          <label>Email*</label><br />
-          <input type="email" name="email" required />
-        </div>
-        <div class="group">
-          <label>How many adults?*</label><br />
-          <input type="number" min="0" value="0" name="numAdults" id="numAdults" required />
-        </div>
-        <div class="group">
-          <label>How many kids?*</label><br />
-          <input type="number" min="0" value="0" name="numKids" id="numKids" required />
-        </div>
-        <div class="group" style="margin-bottom: 20px;">
-          <label>Questions/comments</label><br />
-          <textarea name="comments"></textarea>
-        </div>
-        <div id="finish">
-          <button id="btn" type="submit">Reserve</button> <span id='money'>$<input type="number" id="total"
-              value="0" disabled /></span>
-        </div>
-        <div id="status"></div>
-      </form>
+      <h1 id="meal-name">Chicago Dogs</h1>
+      <h2 style="margin-top: 0" id="event-details">6pm-7pm, Friday, 5/23 | $10/adults, $5/kids</h2>
+      <p>Download and do a double sided print of the flyer below and follow the instructions. See ya soon!</p>
+      <a href="/pdfs/msc-flyer.pdf">Download Flyer</a>
     </div>
     <footer>
       Mirabel Supper Club, <a
@@ -168,74 +120,4 @@
         target="_blank">8150 Savio Ln</a>
     </footer>
   </div>
-
-
-  <script type="text/javascript">
-    const payURL = "https://venmo.com/u/levi-voelz";
-    const formURL = "https://formspree.io/f/mldbebjy";
-    const form = document.getElementById("form");
-    const numAdultsEl = document.getElementById("numAdults");
-    const numKidsEl = document.getElementById("numKids");
-    const totalEl = document.getElementById("total");
-    const statusEl = document.getElementById("status");
-    const btnEl = document.getElementById("btn");
-
-    let total = 0;
-
-    numAdultsEl.addEventListener("change", (e) => {
-      statusEl.innerHTML = ""
-      totalEl.value = Number(numKidsEl.value) * 5 + Number(e.target.value) * 10;
-    })
-
-    numKidsEl.addEventListener("change", (e) => {
-      statusEl.innerHTML = ""
-      totalEl.value = Number(numAdultsEl.value) * 10 + Number(e.target.value) * 5;
-    })
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      handleSubmit(e);
-    });
-
-    function handleSubmit(e) {
-      if (Number(totalEl.value) === 0) {
-        statusEl.innerHTML = "Somebody has to eat! Please add an adult or kid"
-        return;
-      }
-
-      btnEl.disabled = true;
-
-      const data = new FormData(event.target);
-
-      // fetch(formURL, {
-      //   method: "POST",
-      //   body: data,
-      //   headers: {
-      //     'Accept': 'application/json'
-      //   }
-      // }).then(response => {
-      //   if (response.ok) {
-      //     requestPayment();
-      //   }
-      // }).catch(error => {
-      //   statusEl.innerHTML = "Oh man. Something broke. Please text me at 510.335.5420."
-      // });
-
-      requestPayment();
-    }
-
-    function requestPayment() {
-      const params = new URLSearchParams({
-        txn: "pay",
-        audience: 'private',
-        recipients: "Levi-Voelz",
-        amount: totalEl.value,
-        note: "msc",
-      });
-
-      const url = payURL + "?" + params.toString();
-
-      window.location.assign(encodeURI(url));
-    }
-  </script>
 </body>
