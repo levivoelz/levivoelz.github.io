@@ -173,7 +173,7 @@ function enableTiltControls() {
     const handleOrientation = (e) => {
         const gamma = (e.gamma || 0);
         // Right tilt (positive gamma) → accelerate right
-        const gx = -THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
+        const gx = THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
         const gy = -BASE_GRAVITY;
         const gz = 0;
         tiltGravity.x = THREE.MathUtils.lerp(tiltGravity.x, gx, TILT_LERP);
