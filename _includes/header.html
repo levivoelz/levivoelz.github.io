@@ -1,5 +1,5 @@
 <header>
-  <div class="hero">
+  <div class="hero{% unless page.hero %} hero--full{% endunless %}">
     {% if page.hero %}
       <!-- Show hero image when available -->
       <div class="hero-image-container">
@@ -9,7 +9,7 @@
       <!-- Show 3D spheres when no hero image -->
       <div class="hero--inner">
         <div id="circle-orbit-container">
-          <canvas id="sphere-canvas" onclick="window.location.href='/'"></canvas>
+          <canvas id="sphere-canvas"></canvas>
         </div>
       </div>
     {% endif %}

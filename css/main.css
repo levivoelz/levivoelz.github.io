@@ -28,7 +28,9 @@ html {
 
 body {
   font-size: 1rem;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -68,14 +70,21 @@ p {
 }
 
 .wrapper {
-  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   max-width: 40rem;
   margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Allow header to full-bleed outside wrapper constraints */
+header {
+  width: 100%;
 }
 
 .wrapper > footer {
-  position: sticky;
-  top: 100vh;
+  margin-top: auto;
 }
 
 #footer--top {
@@ -163,8 +172,9 @@ figcaption {
   line-height: 1.5em;
 }
 
+/* Avoid global canvas margin impacting full-bleed hero */
 canvas {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .date {
@@ -241,20 +251,25 @@ canvas {
   font-size: 0.9rem;
 }
 
-.hero {
-  margin: 6rem 0 1rem;
-}
-
 .hero--inner {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Full-bleed hero when there is no hero image (canvas mode) */
+.hero.hero--full {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
 #circle-orbit-container {
   position: relative;
-  height: 300px;
-  width: 330px;
+  width: 100vw; /* full viewport width */
+  height: 56.25vw; /* enforce 16:9 */
+  max-height: 600px; /* cap overall height */
+  margin-left: calc(-50vw + 50%);
 }
 
 #sphere-canvas {
@@ -263,12 +278,10 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
 }
 
 .hero-image-container {
   width: 100%;
-  margin-bottom: 2rem;
 }
 
 .hero-image {
