@@ -206,8 +206,14 @@ function animate() {
 
         if (world && bodies.length >= 2) {
             // Use Rapier if available (handles sphere-sphere collisions)
-            // Apply tilt gravity (x/z from device, y upward is negative)
-            world.gravity = { x: tiltGravity.x, y: tiltGravity.y, z: tiltGravity.z };
+            // Apply tilt gravity; prefer API if available
+            if (typeof world.setGravity === 'function') {
+                world.setGravity({ x: tiltGravity.x, y: tiltGravity.y, z: tiltGravity.z }, true);
+            } else if (world.gravity) {
+                world.gravity.x = tiltGravity.x;
+                world.gravity.y = tiltGravity.y;
+                world.gravity.z = tiltGravity.z;
+            }
             world.step();
             const mainPos = bodies[0].translation();
             const orbitPos = bodies[1].translation();
