@@ -18,6 +18,8 @@ let groundY = -ORTHO_FRUSTUM;
 let mainVelocity = new THREE.Vector3(0, 0, 0);
 let orbitVelocity = new THREE.Vector3(0, 0, 0);
 let lastTime = null;
+let isTouchDevice = false;
+let mobileOrbitActive = false;
 
 function init() {
     // Create scene
@@ -224,8 +226,8 @@ function animate() {
             }
         }
     } else {
-        // Normal orbit behavior
-        if (isHovering) {
+        const shouldOrbit = isTouchDevice ? mobileOrbitActive : isHovering;
+        if (shouldOrbit) {
             orbitGroup.rotation.z += 0.01;
         }
     }
@@ -259,6 +261,7 @@ function enablePhysics() {
     
     try {
         physicsEnabled = true;
+        mobileOrbitActive = false;
         // Capture current world positions before changing hierarchy
         const mainWorldPos = new THREE.Vector3();
         const orbitWorldPos = new THREE.Vector3();
@@ -335,6 +338,51 @@ function onCanvasClick(event) {
     }
 
     if (hitSmall) {
+        if (isTouchDevice && !physicsEnabled) {
+            // Toggle orbit on first tap; drop on second tap while orbiting
+            if (!mobileOrbitActive) {
+                mobileOrbitActive = true;
+                return;
+            }
+        }
+        enablePhysics();
+    } else if (hitBig) {
+        window.location.href = '/';
+    }
+}
+
+function onTouchStart(event) {
+    const canvas = document.getElementById('sphere-canvas');
+    const rect = canvas.getBoundingClientRect();
+    const t = event.touches && event.touches[0] ? event.touches[0] : (event.changedTouches ? event.changedTouches[0] : null);
+    if (!t) return;
+
+    mouse.x = ((t.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((t.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects([mainSphere, orbitSphere, orbitHitTarget]);
+    let hitSmall = intersects.some(i => i.object === orbitSphere || i.object === orbitHitTarget);
+    let hitBig = intersects.some(i => i.object === mainSphere);
+
+    if (!hitSmall && !physicsEnabled) {
+        const worldPos = new THREE.Vector3();
+        orbitSphere.getWorldPosition(worldPos);
+        const ndc = worldPos.project(camera);
+        const sx = ((ndc.x + 1) / 2) * rect.width + rect.left;
+        const sy = ((-ndc.y + 1) / 2) * rect.height + rect.top;
+        const dx = t.clientX - sx;
+        const dy = t.clientY - sy;
+        if (Math.hypot(dx, dy) <= 24) hitSmall = true;
+    }
+
+    if (hitSmall) {
+        if (!physicsEnabled) {
+            if (!mobileOrbitActive) {
+                mobileOrbitActive = true;
+                return;
+            }
+        }
         enablePhysics();
     } else if (hitBig) {
         window.location.href = '/';
@@ -357,10 +405,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         init();
         
-        // Add mouse interaction
         const canvas = document.getElementById('sphere-canvas');
-        canvas.addEventListener('mousemove', onMouseMove);
-        canvas.addEventListener('click', onCanvasClick);
+        // Detect touch-capable device
+        isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouchDevice) {
+            canvas.addEventListener('touchstart', onTouchStart, { passive: true });
+        } else {
+            canvas.addEventListener('mousemove', onMouseMove);
+            canvas.addEventListener('click', onCanvasClick);
+        }
 
         // Prevent physics jumps when tab/window regains focus
         const resetTime = () => { lastTime = performance.now(); };
