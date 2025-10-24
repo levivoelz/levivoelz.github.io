@@ -171,14 +171,11 @@ function init() {
 function enableTiltControls() {
     if (!isTouchDevice) return;
     const handleOrientation = (e) => {
-        // gamma: left-right tilt (-90..90), beta: front-back tilt (-180..180)
-        const gamma = (e.gamma || 0); // x-axis
-        const beta = (e.beta || 0);   // y-axis
-        // Map to gravity vector; clamp and scale down for stability
-        const gx = THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
-        const gy = -BASE_GRAVITY; // keep downward gravity constant baseline
-        const gz = THREE.MathUtils.clamp(beta / 45, -1, 1) * BASE_GRAVITY;
-        // Smooth changes
+        const gamma = (e.gamma || 0);
+        // Invert to match intuitive left/right; restrict to x-axis only
+        const gx = -THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
+        const gy = -BASE_GRAVITY;
+        const gz = 0;
         tiltGravity.x = THREE.MathUtils.lerp(tiltGravity.x, gx, TILT_LERP);
         tiltGravity.y = THREE.MathUtils.lerp(tiltGravity.y, gy, TILT_LERP);
         tiltGravity.z = THREE.MathUtils.lerp(tiltGravity.z, gz, TILT_LERP);
@@ -249,11 +246,11 @@ function animate() {
             // Use Rapier if available (handles sphere-sphere collisions)
             // Apply tilt gravity; prefer API if available
             if (typeof world.setGravity === 'function') {
-                world.setGravity({ x: tiltGravity.x, y: tiltGravity.y, z: tiltGravity.z }, true);
+                world.setGravity({ x: tiltGravity.x, y: tiltGravity.y, z: 0 }, true);
             } else if (world.gravity) {
                 world.gravity.x = tiltGravity.x;
                 world.gravity.y = tiltGravity.y;
-                world.gravity.z = tiltGravity.z;
+                world.gravity.z = 0;
             }
             world.step();
             const mainPos = bodies[0].translation();
@@ -265,10 +262,8 @@ function animate() {
             // Fallback uses tiltGravity
             mainVelocity.x += tiltGravity.x * dt;
             mainVelocity.y += tiltGravity.y * dt;
-            mainVelocity.z += tiltGravity.z * dt;
             orbitVelocity.x += tiltGravity.x * dt;
             orbitVelocity.y += tiltGravity.y * dt;
-            orbitVelocity.z += tiltGravity.z * dt;
 
             // Integrate
             mainSphere.position.addScaledVector(mainVelocity, dt);
