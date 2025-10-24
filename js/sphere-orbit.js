@@ -23,6 +23,7 @@ let tiltGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0);
 let lastTime = null;
 let isTouchDevice = false;
 let mobileOrbitActive = false;
+let motionBtn = null;
 
 function init() {
     // Create scene
@@ -182,16 +183,56 @@ function enableTiltControls() {
         tiltGravity.y = THREE.MathUtils.lerp(tiltGravity.y, gy, TILT_LERP);
         tiltGravity.z = THREE.MathUtils.lerp(tiltGravity.z, gz, TILT_LERP);
     };
+    const attach = () => {
+        window.addEventListener('deviceorientation', handleOrientation);
+        if (motionBtn) motionBtn.style.display = 'none';
+    };
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-        // iOS permission flow
+        // iOS permission flow; must be triggered by user gesture. If it fails, show a button.
         DeviceOrientationEvent.requestPermission().then((state) => {
             if (state === 'granted') {
-                window.addEventListener('deviceorientation', handleOrientation);
+                attach();
+            } else {
+                showMotionPermissionButton(attach);
             }
-        }).catch(() => {});
+        }).catch(() => {
+            showMotionPermissionButton(attach);
+        });
     } else {
-        window.addEventListener('deviceorientation', handleOrientation);
+        attach();
     }
+}
+
+function showMotionPermissionButton(onGranted) {
+    if (motionBtn) {
+        motionBtn.style.display = 'block';
+        return;
+    }
+    motionBtn = document.createElement('button');
+    motionBtn.textContent = 'Enable motion';
+    motionBtn.setAttribute('type', 'button');
+    motionBtn.style.position = 'fixed';
+    motionBtn.style.right = '12px';
+    motionBtn.style.bottom = '12px';
+    motionBtn.style.zIndex = '1000';
+    motionBtn.style.padding = '10px 14px';
+    motionBtn.style.borderRadius = '8px';
+    motionBtn.style.border = '0';
+    motionBtn.style.background = 'rgba(0,0,0,0.7)';
+    motionBtn.style.color = '#fff';
+    motionBtn.style.font = '600 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+    motionBtn.addEventListener('click', () => {
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission().then((state) => {
+                if (state === 'granted') {
+                    onGranted();
+                }
+            }).catch(() => {});
+        } else {
+            onGranted();
+        }
+    });
+    document.body.appendChild(motionBtn);
 }
 
 function animate() {
