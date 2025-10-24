@@ -172,7 +172,7 @@ function enableTiltControls() {
     if (!isTouchDevice) return;
     const handleOrientation = (e) => {
         const gamma = (e.gamma || 0);
-        // Invert to match intuitive left/right; restrict to x-axis only
+        // Right tilt (positive gamma) → accelerate right
         const gx = -THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
         const gy = -BASE_GRAVITY;
         const gz = 0;
@@ -364,14 +364,20 @@ function enablePhysics() {
 
         // If Rapier is available, also set up real physics bodies (handles ball-ball collisions)
         if (typeof RAPIER !== 'undefined' && world) {
-            const mainColliderDesc = RAPIER.ColliderDesc.ball(3.0)
+            const mainColliderDesc = RAPIER.ColliderDesc.ball(MAIN_RADIUS)
                 .setRestitution(0.08)
-                .setFriction(0.9);
-            const orbitColliderDesc = RAPIER.ColliderDesc.ball(0.48)
+                .setFriction(0.3)
+                .setDensity(1.0);
+            const orbitColliderDesc = RAPIER.ColliderDesc.ball(ORBIT_RADIUS)
                 .setRestitution(0.1)
-                .setFriction(0.9);
-            const mainRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic());
-            const orbitRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic());
+                .setFriction(0.3)
+                .setDensity(1.0);
+            if (RAPIER.CoefficientCombineRule && mainColliderDesc.setFrictionCombineRule) {
+                mainColliderDesc.setFrictionCombineRule(RAPIER.CoefficientCombineRule.Min);
+                orbitColliderDesc.setFrictionCombineRule(RAPIER.CoefficientCombineRule.Min);
+            }
+            const mainRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setCcdEnabled(true));
+            const orbitRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setCcdEnabled(true));
             mainRigidBody.setTranslation({ x: mainWorldPos.x, y: mainWorldPos.y, z: mainWorldPos.z }, true);
             orbitRigidBody.setTranslation({ x: orbitWorldPos.x, y: orbitWorldPos.y, z: orbitWorldPos.z }, true);
             mainRigidBody.setLinvel({ x: mainVelocity.x, y: mainVelocity.y, z: mainVelocity.z }, true);
