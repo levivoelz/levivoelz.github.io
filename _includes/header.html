@@ -1,24 +1,25 @@
 <header>
   <div class="hero">
-    <div class="hero--inner">
-      <div id="circle-orbit-container">
-        <div id="outer-orbit">
-          <div class="outer-orbit-cirlces"></div>
-        </div>
-        <div id="circle">
-          {% if page.hero %}
-          {% if page.allow_expand_hero %}
-            <a href={{page.hero}} style="line-height: 1">
-          {% elsif page.url != '/' %}
-            <a href="/" style="line-height: 1">
-          {% endif %}
-          <img src="{{ page.hero }}" {% if page.hero_color %} style="background-color: {{ page.hero_color }}" {% endif %}/>
-          {% endif %}
-          {% if page.url != '/' or page.allow_expand_hero %}
-          </a>
-          {% endif %}
+    {% if page.hero %}
+      <!-- Show hero image when available -->
+      <div class="hero-image-container">
+        <img src="{{ page.hero }}" {% if page.hero_color %} style="background-color: {{ page.hero_color }}" {% endif %} class="hero-image" onclick="openImageDialog(this.src)"/>
+      </div>
+    {% else %}
+      <!-- Show 3D spheres when no hero image -->
+      <div class="hero--inner">
+        <div id="circle-orbit-container">
+          <canvas id="sphere-canvas" onclick="window.location.href='/'"></canvas>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </header>
+
+<!-- Image Dialog -->
+<div id="image-dialog" class="image-dialog" onclick="closeImageDialog()">
+  <div class="image-dialog-content">
+    <img id="dialog-image" src="" alt="Full size image">
+    <button class="close-button" onclick="closeImageDialog()">&times;</button>
+  </div>
+</div>
