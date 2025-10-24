@@ -5,7 +5,9 @@ const ORBIT_RADIUS = 0.48;
 const ORBIT_PATH_RADIUS = 4.5; // distance from center for small sphere
 const ORBIT_START_ANGLE = -Math.PI / 4; // bottom-right
 const SHADOW_MAP_SIZE = 1024;
-const MAX_DT = 0.03; // clamp timestep to avoid jumps
+const MAX_DT = 0.03;
+const BASE_GRAVITY = 9.81;
+const TILT_LERP = 0.15;
 
 let scene, camera, renderer, mainSphere, orbitSphere, orbitGroup, orbitHitTarget;
 let groundBody = null;
@@ -17,6 +19,7 @@ let physicsEnabled = false;
 let groundY = -ORTHO_FRUSTUM;
 let mainVelocity = new THREE.Vector3(0, 0, 0);
 let orbitVelocity = new THREE.Vector3(0, 0, 0);
+let tiltGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0);
 let lastTime = null;
 let isTouchDevice = false;
 let mobileOrbitActive = false;
@@ -164,6 +167,33 @@ function init() {
     animate();
 }
 
+function enableTiltControls() {
+    if (!isTouchDevice) return;
+    const handleOrientation = (e) => {
+        // gamma: left-right tilt (-90..90), beta: front-back tilt (-180..180)
+        const gamma = (e.gamma || 0); // x-axis
+        const beta = (e.beta || 0);   // y-axis
+        // Map to gravity vector; clamp and scale down for stability
+        const gx = THREE.MathUtils.clamp(gamma / 45, -1, 1) * BASE_GRAVITY;
+        const gy = -BASE_GRAVITY; // keep downward gravity constant baseline
+        const gz = THREE.MathUtils.clamp(beta / 45, -1, 1) * BASE_GRAVITY;
+        // Smooth changes
+        tiltGravity.x = THREE.MathUtils.lerp(tiltGravity.x, gx, TILT_LERP);
+        tiltGravity.y = THREE.MathUtils.lerp(tiltGravity.y, gy, TILT_LERP);
+        tiltGravity.z = THREE.MathUtils.lerp(tiltGravity.z, gz, TILT_LERP);
+    };
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+        // iOS permission flow
+        DeviceOrientationEvent.requestPermission().then((state) => {
+            if (state === 'granted') {
+                window.addEventListener('deviceorientation', handleOrientation);
+            }
+        }).catch(() => {});
+    } else {
+        window.addEventListener('deviceorientation', handleOrientation);
+    }
+}
+
 function animate() {
     animationId = requestAnimationFrame(animate);
 
@@ -176,6 +206,8 @@ function animate() {
 
         if (world && bodies.length >= 2) {
             // Use Rapier if available (handles sphere-sphere collisions)
+            // Apply tilt gravity (x/z from device, y upward is negative)
+            world.gravity = { x: tiltGravity.x, y: tiltGravity.y, z: tiltGravity.z };
             world.step();
             const mainPos = bodies[0].translation();
             const orbitPos = bodies[1].translation();
@@ -183,9 +215,13 @@ function animate() {
             orbitSphere.position.set(orbitPos.x, orbitPos.y, orbitPos.z);
         } else {
             // Fallback simple physics + naive sphere-sphere collision
-            const g = -9.81;
-            mainVelocity.y += g * dt;
-            orbitVelocity.y += g * dt;
+            // Fallback uses tiltGravity
+            mainVelocity.x += tiltGravity.x * dt;
+            mainVelocity.y += tiltGravity.y * dt;
+            mainVelocity.z += tiltGravity.z * dt;
+            orbitVelocity.x += tiltGravity.x * dt;
+            orbitVelocity.y += tiltGravity.y * dt;
+            orbitVelocity.z += tiltGravity.z * dt;
 
             // Integrate
             mainSphere.position.addScaledVector(mainVelocity, dt);
@@ -303,6 +339,7 @@ function enablePhysics() {
             bodies = [mainRigidBody, orbitRigidBody];
             // Rapier physics enabled (hybrid)
         }
+        enableTiltControls();
     } catch (error) {
         console.error('Failed to enable physics:', error);
     }
