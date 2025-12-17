@@ -12,24 +12,244 @@ tags: 3d-printing CAD making software
 ---
 
 <style>
-  .flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-button{position:absolute;background:hsla(0,0%,100%,.75);border:none;color:#333}.flickity-button:hover{background:#fff;cursor:pointer}.flickity-button:focus{outline:0;box-shadow:0 0 0 5px #19f}.flickity-button:active{opacity:.6}.flickity-button:disabled{opacity:.3;cursor:auto;pointer-events:none}.flickity-button-icon{fill:currentColor}.flickity-prev-next-button{top:50%;width:44px;height:44px;border-radius:50%;transform:translateY(-50%)}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button .flickity-button-icon{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}
-  * { box-sizing: border-box; }
-
-.carousel {
-    margin-bottom: 4rem;
+  /* Flickity core styles */
+  .flickity-enabled {
+    position: relative;
   }
 
-.carousel img {
+  .flickity-enabled:focus {
+    outline: 0;
+  }
+
+  .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+
+  .flickity-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    user-select: none;
+  }
+
+  .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+
+  .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+
+  /* Navigation buttons - minimal modern style */
+  .flickity-button {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    color: #333;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+  }
+
+  .flickity-button:hover {
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .flickity-button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .flickity-button:active {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .flickity-button:disabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  .flickity-button-icon {
+    fill: currentColor;
+  }
+
+  .carousel .flickity-prev-next-button,
+  .carousel .flickity-prev-next-button.previous,
+  .carousel .flickity-prev-next-button.next {
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .carousel .flickity-prev-next-button svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel .flickity-prev-next-button.previous {
+    left: 20px;
+  }
+
+  .carousel .flickity-prev-next-button.next {
+    right: 20px;
+  }
+
+
+  /* Page dots - refined modern style */
+  .flickity-page-dots {
+    position: absolute;
+    width: 100%;
+    bottom: -35px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .flickity-page-dots .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 6px;
+    background: #333;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .flickity-page-dots .dot:hover {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+    transform: scale(1.3);
+    background: #000;
+  }
+
+  /* Carousel container */
+  .carousel {
+    margin: 3rem 0 5rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Carousel cell styling */
+  .carousel figure {
+    margin: 0 15px;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .carousel a {
     display: block;
-    height: 200px;
-    width: auto;
-}
-
-@media screen and ( min-width: 768px ) {
-  .carousel img {
-    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: #fff;
+    height: 500px;
   }
-}
+
+  .carousel a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel figcaption {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+
+  /* Mobile optimizations */
+  @media screen and (max-width: 767px) {
+    .carousel {
+      padding: 1rem;
+      margin: 2rem -1rem 4rem;
+      border-radius: 0;
+    }
+
+    .carousel figure {
+      margin: 0 10px;
+    }
+
+    .carousel a {
+      height: 350px;
+    }
+
+    .flickity-prev-next-button {
+      width: 40px;
+      height: 40px;
+    }
+
+    .flickity-prev-next-button.previous {
+      left: 10px;
+    }
+
+    .flickity-prev-next-button.next {
+      right: 10px;
+    }
+  }
+
+  /* Tablet and up */
+  @media screen and (min-width: 768px) {
+    .carousel a {
+      height: 500px;
+    }
+  }
+
+  /* Large screens */
+  @media screen and (min-width: 1200px) {
+    .carousel {
+      padding: 3rem;
+    }
+
+    .carousel a {
+      height: 600px;
+    }
+  }
 </style>
 
 A few years ago I was thinking about how to build a polar zonohedron similar to [Rob Bell's (Zomadic) Zomes](http://zomadic.blogspot.com/){:target="_blank"}. I had been to Rob's workshop many times—my brother-in-law had a woodworking shop next door to his and found the shapes and his process for making them fascinating.
@@ -153,4 +373,23 @@ I plan on doing a more in-depth technical breakdown of Modwerk in the future, bu
 <a class="button" href="https://www.modwerk.com" target="_blank">Try It</a>
 </div>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+  Fancybox.bind('[data-fancybox="gallery"]', {
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ["close"]
+      }
+    },
+    Images: {
+      zoom: true
+    },
+    Thumbs: {
+      autoStart: true
+    }
+  });
+</script>
