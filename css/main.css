@@ -291,6 +291,19 @@ canvas {
   cursor: pointer;
 }
 
+.page--about .hero-image-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.page--about .hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  max-height: none;
+}
+
 /* Image Dialog Styles */
 .image-dialog {
   display: none;
