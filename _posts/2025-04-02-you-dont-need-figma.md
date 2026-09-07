@@ -7,7 +7,6 @@ hero: /images/derivv-pro-beta-signup-sketch-1-square-500x500.jpg
 allow_expand_hero: true
 description: You don't need Figma to flush out your ideas.
 slug: you-dont-need-figma
-hide_subscribe: true
 ---
 
 Do you have a side project or are considering one? If so, you don't need to use Figma to flush out your ideas, however, you should have some sort of a design before coding. With a pencil, paper, UI library, and a little imagination you can go from concept to completed project faster than two shakes of a lambs tail.

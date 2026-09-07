@@ -8,7 +8,6 @@ hero: /images/stories/sphere-of-purpose.jpg
 allow_expand_hero: true
 description: One day, a man loses his way while trying to find his purpose.
 date: 03/12/2023
-hide_subscribe: true
 redirect_to: /
 published: false
 ---
