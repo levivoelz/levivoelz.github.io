@@ -28,6 +28,18 @@ let orbitVelocity = new THREE.Vector3(0, 0, 0);
 let tiltGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0);
 let lastTime = null;
 let appliedGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0); // gravity last pushed into Rapier
+// Return-to-orbit animation: a damped spring pulls each ball back to its start
+let returning = false;
+const RETURN_STIFFNESS = 90;
+const RETURN_DAMPING = 2 * Math.sqrt(RETURN_STIFFNESS) * 0.75; // slightly underdamped: a small settle-in
+const MAIN_HOME = new THREE.Vector3(0, 0, 0);
+const ORBIT_HOME = new THREE.Vector3(
+    ORBIT_PATH_RADIUS * Math.cos(ORBIT_START_ANGLE),
+    ORBIT_PATH_RADIUS * Math.sin(ORBIT_START_ANGLE),
+    0.1
+);
+const IDENTITY_QUAT = new THREE.Quaternion();
+const isHomePage = /^\/(index\.html)?$/.test(window.location.pathname);
 let isTouchDevice = false;
 let mobileOrbitActive = false;
 let motionBtn = null;
@@ -276,7 +288,28 @@ function showMotionPermissionButton(onGranted) {
 function animate() {
     animationId = requestAnimationFrame(animate);
 
-    if (physicsEnabled) {
+    if (returning) {
+        const now = performance.now();
+        let dt = lastTime ? (now - lastTime) / 1000 : 0;
+        lastTime = now;
+        dt = Math.min(dt, MAX_DT);
+        const spring = (pos, vel, target) => {
+            // a = k(target - x) - c v ; semi-implicit Euler
+            vel.x += (RETURN_STIFFNESS * (target.x - pos.x) - RETURN_DAMPING * vel.x) * dt;
+            vel.y += (RETURN_STIFFNESS * (target.y - pos.y) - RETURN_DAMPING * vel.y) * dt;
+            vel.z += (RETURN_STIFFNESS * (target.z - pos.z) - RETURN_DAMPING * vel.z) * dt;
+            pos.addScaledVector(vel, dt);
+        };
+        spring(mainSphere.position, mainVelocity, MAIN_HOME);
+        spring(orbitSphere.position, orbitVelocity, ORBIT_HOME);
+        const rotBlend = 1 - Math.exp(-8 * dt);
+        mainSphere.quaternion.slerp(IDENTITY_QUAT, rotBlend);
+        orbitSphere.quaternion.slerp(IDENTITY_QUAT, rotBlend);
+        const settled =
+            mainSphere.position.distanceTo(MAIN_HOME) < 0.02 && mainVelocity.length() < 0.05 &&
+            orbitSphere.position.distanceTo(ORBIT_HOME) < 0.02 && orbitVelocity.length() < 0.05;
+        if (settled) finishReturn();
+    } else if (physicsEnabled) {
         const now = performance.now();
         let dt = lastTime ? (now - lastTime) / 1000 : 0;
         lastTime = now;
@@ -396,9 +429,54 @@ function onMouseMove(event) {
     // Only spin the orbit when hovering small sphere and physics not active
     isHovering = !physicsEnabled && hoveredSmall;
 
-    // Cursor: before physics → pointer on either sphere; after physics → pointer only on big sphere
-    const cursor = physicsEnabled ? (hoveredBig ? 'pointer' : 'default') : ((hoveredSmall || hoveredBig) ? 'pointer' : 'default');
-    canvasEl.style.cursor = cursor;
+    // Cursor: pointer wherever a click does something (see onCanvasClick)
+    let actionable;
+    if (returning) {
+        actionable = false;
+    } else if (physicsEnabled) {
+        actionable = isHomePage ? (hoveredSmall || hoveredBig) : hoveredBig;
+    } else {
+        actionable = hoveredSmall || (hoveredBig && !isHomePage);
+    }
+    canvasEl.style.cursor = actionable ? 'pointer' : 'default';
+}
+
+/// After the drop, a click/tap on either ball (on the homepage) pulls them back to
+/// their orbit positions instead of reloading the page.
+function startReturn() {
+    if (!physicsEnabled || returning) return;
+    // Carry the current velocity into the spring so the motion is continuous
+    if (world && bodies.length >= 2) {
+        const mv = bodies[0].linvel();
+        const ov = bodies[1].linvel();
+        mainVelocity.set(mv.x, mv.y, 0);
+        orbitVelocity.set(ov.x, ov.y, 0);
+        bodies.forEach((b) => world.removeRigidBody(b));
+    }
+    bodies = [];
+    returning = true;
+    lastTime = performance.now();
+}
+
+function finishReturn() {
+    mainSphere.position.copy(MAIN_HOME);
+    orbitSphere.position.copy(ORBIT_HOME);
+    mainSphere.quaternion.identity();
+    orbitSphere.quaternion.identity();
+    mainVelocity.set(0, 0, 0);
+    orbitVelocity.set(0, 0, 0);
+    // Restore the orbit hierarchy: group at origin, small sphere parented to it
+    orbitGroup.rotation.set(0, 0, 0);
+    orbitGroup.add(orbitSphere); // moves it out of the scene root
+    orbitSphere.position.copy(ORBIT_HOME);
+    if (orbitGroup.parent !== scene) scene.add(orbitGroup);
+    tiltGravity.set(0, -BASE_GRAVITY, 0);
+    appliedGravity.copy(tiltGravity);
+    returning = false;
+    physicsEnabled = false;
+    mobileOrbitActive = false;
+    isHovering = false;
+    lastTime = null;
 }
 
 function enablePhysics() {
@@ -494,8 +572,14 @@ function onCanvasClick(event) {
         if (distPx <= 24) hitSmall = true;
     }
 
+    if (returning) return;
+    if (physicsEnabled) {
+        if (isHomePage && (hitSmall || hitBig)) startReturn();
+        else if (hitBig) window.location.href = '/';
+        return;
+    }
     if (hitSmall) {
-        if (isTouchDevice && !physicsEnabled) {
+        if (isTouchDevice) {
             // Toggle orbit on first tap; drop on second tap while orbiting
             if (!mobileOrbitActive) {
                 mobileOrbitActive = true;
@@ -503,7 +587,7 @@ function onCanvasClick(event) {
             }
         }
         enablePhysics();
-    } else if (hitBig) {
+    } else if (hitBig && !isHomePage) {
         window.location.href = '/';
     }
 }
@@ -533,15 +617,19 @@ function onTouchStart(event) {
         if (Math.hypot(dx, dy) <= 24) hitSmall = true;
     }
 
+    if (returning) return;
+    if (physicsEnabled) {
+        if (isHomePage && (hitSmall || hitBig)) startReturn();
+        else if (hitBig) window.location.href = '/';
+        return;
+    }
     if (hitSmall) {
-        if (!physicsEnabled) {
-            if (!mobileOrbitActive) {
-                mobileOrbitActive = true;
-                return;
-            }
+        if (!mobileOrbitActive) {
+            mobileOrbitActive = true;
+            return;
         }
         enablePhysics();
-    } else if (hitBig) {
+    } else if (hitBig && !isHomePage) {
         window.location.href = '/';
     }
 }
