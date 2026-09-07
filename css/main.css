@@ -1,7 +1,5 @@
 @import "normalize.css";
 @import "highlight-trac.css";
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
 
 /* variables */
 :root {
@@ -14,6 +12,21 @@
   --text-color-light: rgb(150, 150, 150);
   --font-body: 'Noto Serif JP', serif;
   --font-accent: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
+  --code-bg: #f5f5f5;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #14181d;
+    --primary-dark: hsla(212, 40%, 72%, 1);
+    --primary-darkest: hsla(212, 45%, 82%, 1);
+    --primary-light: hsl(212 22% 15% / 1);
+    --text-color: rgb(216, 221, 227);
+    --text-color-light: rgb(140, 148, 158);
+    --code-bg: #1c222a;
+    color-scheme: dark;
+  }
 }
 
 html {
@@ -311,6 +324,26 @@ canvas {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
+}
+
+.hero-image--expandable {
+  cursor: pointer;
+}
+
+/* iOS tilt permission button (created by sphere-orbit.js when the tap can't prompt directly) */
+.motion-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font: 600 0.85rem var(--font-accent);
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
@@ -568,4 +601,24 @@ button:active, button:focus {
   .success-failure-buttons {
     display: none !important;
   }
+}
+
+/* Dark mode: code blocks (highlight-trac colors are tuned for light backgrounds) */
+@media (prefers-color-scheme: dark) {
+  pre, code, .highlight {
+    background-color: var(--code-bg);
+    color: var(--text-color);
+  }
+  .highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #7f8a96; }
+  .highlight .gd { color: #f2b8b5; background-color: #4a2326; }
+  .highlight .gi { color: #b9f0c4; background-color: #1f3d28; }
+  /* tokens the light theme paints too dark for a dark background */
+  .highlight .nt { color: #8fb3e6; }
+  .highlight .kt, .highlight .nc { color: #b8c6e6; }
+  .highlight .nf, .highlight .ne, .highlight .gr, .highlight .gt, .highlight .err { color: #f0a3a0; }
+  .highlight .na, .highlight .no, .highlight .nv { color: #7fd1c8; }
+  .highlight .ni { color: #d8a8e0; }
+  .highlight .nn, .highlight .gp, .highlight .nb { color: #a5adb7; }
+  .highlight .err { background-color: transparent; }
+  .image-dialog { background-color: rgba(0, 0, 0, 0.95); }
 }

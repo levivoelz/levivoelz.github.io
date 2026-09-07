@@ -3,7 +3,7 @@
     {% if page.hero %}
       <!-- Show hero image when available -->
       <div class="hero-image-container">
-        <img src="{{ page.hero }}" {% if page.hero_color %} style="background-color: {{ page.hero_color }}" {% endif %} class="hero-image" onclick="openImageDialog(this.src)"/>
+        <img src="{{ page.hero }}" {% if page.hero_color %} style="background-color: {{ page.hero_color }}" {% endif %} class="hero-image{% if page.allow_expand_hero %} hero-image--expandable{% endif %}"{% if page.allow_expand_hero %} onclick="openImageDialog(this.src)"{% endif %}/>
       </div>
     {% else %}
       <!-- Show 3D spheres when no hero image -->

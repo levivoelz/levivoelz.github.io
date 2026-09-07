@@ -1,4 +1,6 @@
 url: https://www.levivoelz.com
+description: Levi Voelz builds software, things, and experiences in Sonoma County, CA.
+default_image: /images/levi_voelz-2026.jpg
 highlighter: rouge
 plugins:
   - jekyll-redirect-from

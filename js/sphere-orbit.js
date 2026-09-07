@@ -79,17 +79,15 @@ function init() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     
-    const pixelRatio = window.devicePixelRatio || 1;
-    renderer.setPixelRatio(pixelRatio);
-    renderer.setSize(330, 300);
+    // Cap at 2x: the old setup multiplied devicePixelRatio by a further 2x, rendering
+    // ~4x the pixels the screen can show (expensive with soft shadows on wide displays).
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     
     const container = canvas.parentElement;
     const rect = container.getBoundingClientRect();
     const w = Math.max(1, rect.width);
     const h = Math.max(1, rect.height);
-    renderer.setSize(w * 2, h * 2);
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
+    renderer.setSize(w, h);
 
     const updateCameraForSize = (width, height) => {
         const aspect = width / Math.max(1, height);
@@ -210,9 +208,7 @@ function init() {
         const r2 = container.getBoundingClientRect();
         const cw = Math.max(1, r2.width);
         const ch = Math.max(1, r2.height);
-        renderer.setSize(cw * 2, ch * 2);
-        canvas.style.width = cw + 'px';
-        canvas.style.height = ch + 'px';
+        renderer.setSize(cw, ch);
         updateCameraForSize(cw, ch);
     };
     window.addEventListener('resize', onResize);
@@ -259,18 +255,9 @@ function showMotionPermissionButton(onGranted) {
         return;
     }
     motionBtn = document.createElement('button');
-    motionBtn.textContent = 'Enable motion';
+    motionBtn.textContent = 'Tilt to roll';
     motionBtn.setAttribute('type', 'button');
-    motionBtn.style.position = 'fixed';
-    motionBtn.style.right = '12px';
-    motionBtn.style.bottom = '12px';
-    motionBtn.style.zIndex = '1000';
-    motionBtn.style.padding = '10px 14px';
-    motionBtn.style.borderRadius = '8px';
-    motionBtn.style.border = '0';
-    motionBtn.style.background = 'rgba(0,0,0,0.7)';
-    motionBtn.style.color = '#fff';
-    motionBtn.style.font = '600 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+    motionBtn.className = 'motion-btn'; // styled in main.css, positioned inside the hero
     motionBtn.addEventListener('click', () => {
         if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
             DeviceOrientationEvent.requestPermission().then((state) => {
@@ -282,7 +269,8 @@ function showMotionPermissionButton(onGranted) {
             onGranted();
         }
     });
-    document.body.appendChild(motionBtn);
+    const host = document.getElementById('circle-orbit-container') || document.body;
+    host.appendChild(motionBtn);
 }
 
 function animate() {
@@ -560,6 +548,8 @@ function onTouchStart(event) {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', async function() {
+    // Only the pages that render the hero canvas need any of this
+    if (!document.getElementById('sphere-canvas')) return;
     // Wait for Three.js to load
     if (typeof THREE !== 'undefined') {
         // If Rapier is present, ensure WASM is initialized before creating the world
@@ -578,7 +568,20 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Detect touch-capable device
         isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         if (isTouchDevice) {
-            canvas.addEventListener('touchstart', onTouchStart, { passive: true });
+            // Act on touchend, not touchstart: iOS only counts touchend/click as a user
+            // gesture, and the tilt permission prompt must be requested inside one.
+            // Ignore touches that moved (scrolls).
+            let touchStartX = 0, touchStartY = 0;
+            canvas.addEventListener('touchstart', (e) => {
+                const t = e.touches[0];
+                if (t) { touchStartX = t.clientX; touchStartY = t.clientY; }
+            }, { passive: true });
+            canvas.addEventListener('touchend', (e) => {
+                const t = e.changedTouches && e.changedTouches[0];
+                if (!t) return;
+                if (Math.hypot(t.clientX - touchStartX, t.clientY - touchStartY) > 10) return;
+                onTouchStart(e);
+            }, { passive: true });
         } else {
             canvas.addEventListener('mousemove', onMouseMove);
             canvas.addEventListener('click', onCanvasClick);

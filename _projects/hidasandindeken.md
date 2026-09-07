@@ -3,7 +3,7 @@ layout: post
 name: Hidasandindeken
 short_description: Maximizing space by combining the functionality of a deck, sandbox and planter.
 title: "Hidasandindeken: Hide your Sandbox in Your Deck"
-featured_image: /images/projects/hidasandindeken-hidden-sandbox-render.png
+featured_image: /images/projects/hidasandindeken-hidden-sandbox-render.jpg
 description: Hidasandindeken — When you are short on space, use your design mind to combine spaces and functionality like hiding your sandbox in your deck
 date: 8/9/2020
 category: Architecture
@@ -17,7 +17,7 @@ As we've been remodeling our house, we've been thinking about a lot of different
 I like short-term projects like this because it allows me to get the creative juices flowing and I get almost immediate satisfaction from seeing what I built and people using it. It also helps to gain perspective on various methodologies applied to different types of projects that I can bring back to programming. With the software you create some requirements/stories and start building without necessarily needing a design first. You could also build a physical object that way, but I've done it, and often you don't get great results, especially if you are building something that hasn't been built before. You end up designing as you go and it's hard for the object to look and feel like a cohesive piece. This project required a design and is much better off because of it. Initially, I had an idea in my head of what it would look like from a visual standpoint, but I didn't know how it would structurally come together, what materials would work, and how it would fit in with the building and fence nearby. I drafted up a plan in SketchUp and was able to see some things I thought would be cool or would work that didn't, and also found a more interesting shape for the deck.
 
 <figure>
-  <a href='/images/projects/hidasandindeken-hidden-sandbox-render.png'><img src='/images/projects/hidasandindeken-hidden-sandbox-render.png' /></a>
+  <a href='/images/projects/hidasandindeken-hidden-sandbox-render.jpg'><img src='/images/projects/hidasandindeken-hidden-sandbox-render.jpg' /></a>
   <figcaption>Hidden Sandbox in Deck Design</figcaption>
 </figure>
 
