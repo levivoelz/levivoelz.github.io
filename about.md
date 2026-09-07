@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Levi Voelz | About Me
-hero: /images/levi_voelz-2024.jpg
+hero: /images/levi_voelz-2026.jpg
 page_class: page--about
 ---
 
