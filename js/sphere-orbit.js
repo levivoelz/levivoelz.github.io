@@ -8,9 +8,15 @@ const SHADOW_MAP_SIZE = 1024;
 const MAX_DT = 0.03;
 const BASE_GRAVITY = 9.81;
 const TILT_LERP = 0.15;
+const WALL_MARGIN = 0.25; // how far past the visible edge the side walls sit (world units)
+const WALL_HALF_THICKNESS = 0.25;
 
 let scene, camera, renderer, mainSphere, orbitSphere, orbitGroup, orbitHitTarget;
 let groundBody = null;
+let leftWallBody = null;
+let rightWallBody = null;
+let wallLeftX = -ORTHO_FRUSTUM - WALL_MARGIN;  // inner face of left wall
+let wallRightX = ORTHO_FRUSTUM + WALL_MARGIN;  // inner face of right wall
 let animationId;
 let isHovering = false;
 let raycaster, mouse;
@@ -21,9 +27,36 @@ let mainVelocity = new THREE.Vector3(0, 0, 0);
 let orbitVelocity = new THREE.Vector3(0, 0, 0);
 let tiltGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0);
 let lastTime = null;
+let appliedGravity = new THREE.Vector3(0, -BASE_GRAVITY, 0); // gravity last pushed into Rapier
 let isTouchDevice = false;
 let mobileOrbitActive = false;
 let motionBtn = null;
+
+// Subtle spotted texture so rotation is visible while the balls roll
+function makeBallTexture() {
+    const cv = document.createElement('canvas');
+    cv.width = 1024;
+    cv.height = 512;
+    const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#7BA7D1'; // Same blue as CSS variable --primary
+    ctx.fillRect(0, 0, cv.width, cv.height);
+    let seed = 7;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    ctx.fillStyle = 'rgba(30, 60, 100, 0.16)';
+    for (let i = 0; i < 40; i++) {
+        const r = 10 + rnd() * 34;
+        // Keep spots off the poles (where equirectangular UVs pinch) and stretch them
+        // horizontally by 1/cos(latitude) so they still read as round on the sphere.
+        const lat = (rnd() - 0.5) * Math.PI * 0.7; // within ±63°
+        const y = (0.5 - lat / Math.PI) * cv.height;
+        ctx.beginPath();
+        ctx.ellipse(rnd() * cv.width, y, r / Math.cos(lat), r, 0, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    const tex = new THREE.CanvasTexture(cv);
+    tex.wrapS = THREE.RepeatWrapping;
+    return tex;
+}
 
 function init() {
     // Create scene
@@ -72,14 +105,24 @@ function init() {
         if (groundBody && typeof groundBody.setTranslation === 'function') {
             groundBody.setTranslation({ x: 0, y: groundY - 0.25, z: 0 }, true);
         }
+        // Side walls sit just outside the visible left/right edges so balls can't roll away
+        wallLeftX = camera.left - WALL_MARGIN;
+        wallRightX = camera.right + WALL_MARGIN;
+        if (leftWallBody && typeof leftWallBody.setTranslation === 'function') {
+            leftWallBody.setTranslation({ x: wallLeftX - WALL_HALF_THICKNESS, y: 0, z: 0 }, true);
+        }
+        if (rightWallBody && typeof rightWallBody.setTranslation === 'function') {
+            rightWallBody.setTranslation({ x: wallRightX + WALL_HALF_THICKNESS, y: 0, z: 0 }, true);
+        }
     };
     updateCameraForSize(w, h);
     renderer.setClearColor(0x000000, 0); // Transparent background
     
     // Create main sphere (20% bigger)
     const mainGeometry = new THREE.SphereGeometry(MAIN_RADIUS, 128, 128);
+    const ballTexture = makeBallTexture();
     const mainMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0x7BA7D1, // Same blue color as CSS variable --primary
+        map: ballTexture, // texture carries the blue; color left white so it isn't darkened
         shininess: 10
     });
     mainSphere = new THREE.Mesh(mainGeometry, mainMaterial);
@@ -94,7 +137,7 @@ function init() {
     // Create smaller orbiting sphere (20% bigger)
     const orbitGeometry = new THREE.SphereGeometry(ORBIT_RADIUS, 64, 64);
     const orbitMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0x7BA7D1, // Same blue color
+        map: ballTexture,
         shininess: 10
     });
     orbitSphere = new THREE.Mesh(orbitGeometry, orbitMaterial);
@@ -139,14 +182,24 @@ function init() {
             world = new RAPIER.World({ x: 0.0, y: -9.81, z: 0.0 });
 
             // Add a fixed ground aligned to bottom of the current camera frustum
-            groundBody = world.createRigidBody(RAPIER.RigidBodyDesc.fixed());
+            // Position is on the body (not the collider) so resize can move it via setTranslation
+            groundBody = world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(0, groundY - 0.25, 0));
             const groundColliderDesc = RAPIER.ColliderDesc.cuboid(50, 0.25, 50)
-                .setTranslation(0, groundY - 0.25, 0)
                 .setRestitution(0.3)
                 .setFriction(0.9);
             world.createCollider(groundColliderDesc, groundBody);
 
-            
+            // Fixed side walls just outside the visible edges
+            const makeWall = (x) => {
+                const body = world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(x, 0, 0));
+                const desc = RAPIER.ColliderDesc.cuboid(WALL_HALF_THICKNESS, 50, 50)
+                    .setRestitution(0.3)
+                    .setFriction(0.9);
+                world.createCollider(desc, body);
+                return body;
+            };
+            leftWallBody = makeWall(wallLeftX - WALL_HALF_THICKNESS);
+            rightWallBody = makeWall(wallRightX + WALL_HALF_THICKNESS);
         } catch (error) {
             console.error('Failed to initialize physics world:', error);
         }
@@ -252,11 +305,20 @@ function animate() {
                 world.gravity.y = tiltGravity.y;
                 world.gravity.z = 0;
             }
+            // Sleeping bodies don't react to gravity changes, so wake them when the tilt moves
+            if (appliedGravity.distanceToSquared(tiltGravity) > 0.01) {
+                bodies.forEach((b) => b.wakeUp());
+            }
+            appliedGravity.copy(tiltGravity);
             world.step();
             const mainPos = bodies[0].translation();
             const orbitPos = bodies[1].translation();
             mainSphere.position.set(mainPos.x, mainPos.y, mainPos.z);
             orbitSphere.position.set(orbitPos.x, orbitPos.y, orbitPos.z);
+            const mainRot = bodies[0].rotation();
+            const orbitRot = bodies[1].rotation();
+            mainSphere.quaternion.set(mainRot.x, mainRot.y, mainRot.z, mainRot.w);
+            orbitSphere.quaternion.set(orbitRot.x, orbitRot.y, orbitRot.z, orbitRot.w);
         } else {
             // Fallback simple physics + naive sphere-sphere collision
             // Fallback uses tiltGravity
@@ -268,6 +330,9 @@ function animate() {
             // Integrate
             mainSphere.position.addScaledVector(mainVelocity, dt);
             orbitSphere.position.addScaledVector(orbitVelocity, dt);
+            // Approximate rolling: moving +x spins clockwise about z
+            mainSphere.rotation.z -= (mainVelocity.x * dt) / 3.0;
+            orbitSphere.rotation.z -= (orbitVelocity.x * dt) / 0.48;
 
         // Ground collision (bottom of canvas)
         if (mainSphere.position.y <= groundY + 3.0) {
@@ -278,6 +343,19 @@ function animate() {
             orbitSphere.position.y = groundY + 0.48;
                 orbitVelocity.y *= -0.5;
             }
+
+            // Side wall collision (just outside left/right edges)
+            const clampToWalls = (pos, vel, r) => {
+                if (pos.x - r < wallLeftX) {
+                    pos.x = wallLeftX + r;
+                    if (vel.x < 0) vel.x *= -0.5;
+                } else if (pos.x + r > wallRightX) {
+                    pos.x = wallRightX - r;
+                    if (vel.x > 0) vel.x *= -0.5;
+                }
+            };
+            clampToWalls(mainSphere.position, mainVelocity, 3.0);
+            clampToWalls(orbitSphere.position, orbitVelocity, 0.48);
 
             // Sphere-sphere collision resolution (elastic-ish)
             const rMain = 3.0;
