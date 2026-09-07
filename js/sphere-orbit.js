@@ -39,6 +39,10 @@ const ORBIT_HOME = new THREE.Vector3(
     0.1
 );
 const IDENTITY_QUAT = new THREE.Quaternion();
+const RETURN_MAX_MS = 3000;
+const RETURN_SUBSTEPS = 6;      // finer physics steps during the return keep contacts crisp
+const RETURN_MAX_ACCEL = 250;   // cap the spring pull so it can't shove one ball into the other
+let returnStartedAt = 0;
 const isHomePage = /^\/(index\.html)?$/.test(window.location.pathname);
 let isTouchDevice = false;
 let mobileOrbitActive = false;
@@ -285,6 +289,33 @@ function showMotionPermissionButton(onGranted) {
     host.appendChild(motionBtn);
 }
 
+// Fallback (no Rapier) sphere-sphere collision: separate and apply an impulse
+function resolveSphereContactFallback() {
+    const rMain = 3.0;
+    const rOrbit = 0.48;
+    const delta = new THREE.Vector3().subVectors(orbitSphere.position, mainSphere.position);
+    delta.z = 0; // keep the fallback collision in the screen plane
+    const dist = delta.length();
+    const minDist = rMain + rOrbit;
+    if (dist > 0 && dist < minDist) {
+        const n = delta.multiplyScalar(1 / dist); // collision normal
+        const penetration = minDist - dist;
+        // Separate
+        mainSphere.position.addScaledVector(n, -penetration * 0.6);
+        orbitSphere.position.addScaledVector(n, penetration * 0.4);
+        // Relative velocity along normal
+        const relVel = new THREE.Vector3().subVectors(orbitVelocity, mainVelocity);
+        const relAlongN = relVel.dot(n);
+        if (relAlongN < 0) {
+            const e = 0.2; // restitution (heavy)
+            const j = -(1 + e) * relAlongN;
+            // Assume main sphere heavier
+            mainVelocity.addScaledVector(n, -j * 0.2);
+            orbitVelocity.addScaledVector(n, j * 0.8);
+        }
+    }
+}
+
 function animate() {
     animationId = requestAnimationFrame(animate);
 
@@ -293,22 +324,58 @@ function animate() {
         let dt = lastTime ? (now - lastTime) / 1000 : 0;
         lastTime = now;
         dt = Math.min(dt, MAX_DT);
-        const spring = (pos, vel, target) => {
-            // a = k(target - x) - c v ; semi-implicit Euler
-            vel.x += (RETURN_STIFFNESS * (target.x - pos.x) - RETURN_DAMPING * vel.x) * dt;
-            vel.y += (RETURN_STIFFNESS * (target.y - pos.y) - RETURN_DAMPING * vel.y) * dt;
-            vel.z += (RETURN_STIFFNESS * (target.z - pos.z) - RETURN_DAMPING * vel.z) * dt;
-            pos.addScaledVector(vel, dt);
-        };
-        spring(mainSphere.position, mainVelocity, MAIN_HOME);
-        spring(orbitSphere.position, orbitVelocity, ORBIT_HOME);
+        let settled;
+        if (world && bodies.length >= 2) {
+            // Spring as a force on the Rapier bodies (scaled by mass so both balls
+            // accelerate alike) — Rapier keeps resolving ball/ball, floor and wall
+            // contacts, so the balls push past each other instead of overlapping.
+            const applySpring = (body, target) => {
+                const p = body.translation();
+                const v = body.linvel();
+                const m = body.mass();
+                let ax = RETURN_STIFFNESS * (target.x - p.x) - RETURN_DAMPING * v.x;
+                let ay = RETURN_STIFFNESS * (target.y - p.y) - RETURN_DAMPING * v.y;
+                const a = Math.hypot(ax, ay);
+                if (a > RETURN_MAX_ACCEL) { ax *= RETURN_MAX_ACCEL / a; ay *= RETURN_MAX_ACCEL / a; }
+                body.wakeUp();
+                body.resetForces(true);
+                body.addForce({ x: m * ax, y: m * ay, z: 0 }, true);
+            };
+            for (let i = 0; i < RETURN_SUBSTEPS; i++) {
+                applySpring(bodies[0], MAIN_HOME);
+                applySpring(bodies[1], ORBIT_HOME);
+                world.step();
+            }
+            const mp = bodies[0].translation();
+            const op = bodies[1].translation();
+            mainSphere.position.set(mp.x, mp.y, mp.z);
+            orbitSphere.position.set(op.x, op.y, op.z);
+            const mv = bodies[0].linvel();
+            const ov = bodies[1].linvel();
+            settled =
+                Math.hypot(mp.x - MAIN_HOME.x, mp.y - MAIN_HOME.y) < 0.03 && Math.hypot(mv.x, mv.y) < 0.05 &&
+                Math.hypot(op.x - ORBIT_HOME.x, op.y - ORBIT_HOME.y) < 0.03 && Math.hypot(ov.x, ov.y) < 0.05;
+        } else {
+            const spring = (pos, vel, target) => {
+                // a = k(target - x) - c v ; semi-implicit Euler
+                vel.x += (RETURN_STIFFNESS * (target.x - pos.x) - RETURN_DAMPING * vel.x) * dt;
+                vel.y += (RETURN_STIFFNESS * (target.y - pos.y) - RETURN_DAMPING * vel.y) * dt;
+                vel.z += (RETURN_STIFFNESS * (target.z - pos.z) - RETURN_DAMPING * vel.z) * dt;
+                pos.addScaledVector(vel, dt);
+            };
+            spring(mainSphere.position, mainVelocity, MAIN_HOME);
+            spring(orbitSphere.position, orbitVelocity, ORBIT_HOME);
+            resolveSphereContactFallback();
+            settled =
+                mainSphere.position.distanceTo(MAIN_HOME) < 0.02 && mainVelocity.length() < 0.05 &&
+                orbitSphere.position.distanceTo(ORBIT_HOME) < 0.02 && orbitVelocity.length() < 0.05;
+        }
+        // Rotation is visual only here: ease back to neutral regardless of contacts
         const rotBlend = 1 - Math.exp(-8 * dt);
         mainSphere.quaternion.slerp(IDENTITY_QUAT, rotBlend);
         orbitSphere.quaternion.slerp(IDENTITY_QUAT, rotBlend);
-        const settled =
-            mainSphere.position.distanceTo(MAIN_HOME) < 0.02 && mainVelocity.length() < 0.05 &&
-            orbitSphere.position.distanceTo(ORBIT_HOME) < 0.02 && orbitVelocity.length() < 0.05;
-        if (settled) finishReturn();
+        // Safety net: never stay stuck in the return state
+        if (settled || performance.now() - returnStartedAt > RETURN_MAX_MS) finishReturn();
     } else if (physicsEnabled) {
         const now = performance.now();
         let dt = lastTime ? (now - lastTime) / 1000 : 0;
@@ -378,30 +445,7 @@ function animate() {
             clampToWalls(mainSphere.position, mainVelocity, 3.0);
             clampToWalls(orbitSphere.position, orbitVelocity, 0.48);
 
-            // Sphere-sphere collision resolution (elastic-ish)
-            const rMain = 3.0;
-            const rOrbit = 0.48;
-            const delta = new THREE.Vector3().subVectors(orbitSphere.position, mainSphere.position);
-            delta.z = 0; // keep the fallback collision in the screen plane
-            const dist = delta.length();
-            const minDist = rMain + rOrbit;
-            if (dist > 0 && dist < minDist) {
-                const n = delta.multiplyScalar(1 / dist); // collision normal
-                const penetration = minDist - dist;
-                // Separate
-                mainSphere.position.addScaledVector(n, -penetration * 0.6);
-                orbitSphere.position.addScaledVector(n, penetration * 0.4);
-                // Relative velocity along normal
-                const relVel = new THREE.Vector3().subVectors(orbitVelocity, mainVelocity);
-                const relAlongN = relVel.dot(n);
-                if (relAlongN < 0) {
-            const e = 0.2; // restitution (heavy)
-                    const j = -(1 + e) * relAlongN;
-                    // Assume main sphere heavier
-                    mainVelocity.addScaledVector(n, -j * 0.2);
-                    orbitVelocity.addScaledVector(n, j * 0.8);
-                }
-            }
+            resolveSphereContactFallback();
         }
     } else {
         const shouldOrbit = isTouchDevice ? mobileOrbitActive : isHovering;
@@ -445,20 +489,29 @@ function onMouseMove(event) {
 /// their orbit positions instead of reloading the page.
 function startReturn() {
     if (!physicsEnabled || returning) return;
-    // Carry the current velocity into the spring so the motion is continuous
     if (world && bodies.length >= 2) {
-        const mv = bodies[0].linvel();
-        const ov = bodies[1].linvel();
-        mainVelocity.set(mv.x, mv.y, 0);
-        orbitVelocity.set(ov.x, ov.y, 0);
-        bodies.forEach((b) => world.removeRigidBody(b));
+        // Keep the bodies (so contacts keep resolving) but let the spring alone drive
+        // them: no gravity/tilt, no spin.
+        bodies.forEach((b) => {
+            b.setGravityScale(0, true);
+            b.lockRotations(true, true);
+            b.setAngvel({ x: 0, y: 0, z: 0 }, true);
+            b.wakeUp();
+        });
+        world.timestep = 1 / (60 * RETURN_SUBSTEPS);
     }
-    bodies = [];
+    // Fallback path carries the current velocity into the spring
     returning = true;
-    lastTime = performance.now();
+    returnStartedAt = performance.now();
+    lastTime = returnStartedAt;
 }
 
 function finishReturn() {
+    if (world && bodies.length) {
+        bodies.forEach((b) => world.removeRigidBody(b));
+    }
+    if (world) world.timestep = 1 / 60;
+    bodies = [];
     mainSphere.position.copy(MAIN_HOME);
     orbitSphere.position.copy(ORBIT_HOME);
     mainSphere.quaternion.identity();
