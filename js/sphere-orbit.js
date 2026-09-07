@@ -42,9 +42,9 @@ function makeBallTexture() {
     ctx.fillRect(0, 0, cv.width, cv.height);
     let seed = 7;
     const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-    ctx.fillStyle = 'rgba(30, 60, 100, 0.16)';
+    ctx.fillStyle = 'rgba(30, 60, 100, 0.08)';
     for (let i = 0; i < 40; i++) {
-        const r = 10 + rnd() * 34;
+        const r = 8 + rnd() * 26;
         // Keep spots off the poles (where equirectangular UVs pinch) and stretch them
         // horizontally by 1/cos(latitude) so they still read as round on the sphere.
         const lat = (rnd() - 0.5) * Math.PI * 0.7; // within ±63°
