@@ -361,6 +361,7 @@ function animate() {
             const rMain = 3.0;
             const rOrbit = 0.48;
             const delta = new THREE.Vector3().subVectors(orbitSphere.position, mainSphere.position);
+            delta.z = 0; // keep the fallback collision in the screen plane
             const dist = delta.length();
             const minDist = rMain + rOrbit;
             if (dist > 0 && dist < minDist) {
@@ -454,8 +455,13 @@ function enablePhysics() {
                 mainColliderDesc.setFrictionCombineRule(RAPIER.CoefficientCombineRule.Min);
                 orbitColliderDesc.setFrictionCombineRule(RAPIER.CoefficientCombineRule.Min);
             }
-            const mainRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setCcdEnabled(true));
-            const orbitRigidBody = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setCcdEnabled(true));
+            // Lock z translation: the camera is orthographic looking down -z with a near plane at
+            // z≈4.9, so any depth drift from collisions would push a ball out of view.
+            const dynamicDesc = () => RAPIER.RigidBodyDesc.dynamic()
+                .setCcdEnabled(true)
+                .enabledTranslations(true, true, false);
+            const mainRigidBody = world.createRigidBody(dynamicDesc());
+            const orbitRigidBody = world.createRigidBody(dynamicDesc());
             mainRigidBody.setTranslation({ x: mainWorldPos.x, y: mainWorldPos.y, z: mainWorldPos.z }, true);
             orbitRigidBody.setTranslation({ x: orbitWorldPos.x, y: orbitWorldPos.y, z: orbitWorldPos.z }, true);
             mainRigidBody.setLinvel({ x: mainVelocity.x, y: mainVelocity.y, z: mainVelocity.z }, true);
