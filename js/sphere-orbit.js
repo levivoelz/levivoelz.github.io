@@ -142,7 +142,7 @@ function init() {
             groundBody = world.createRigidBody(RAPIER.RigidBodyDesc.fixed());
             const groundColliderDesc = RAPIER.ColliderDesc.cuboid(50, 0.25, 50)
                 .setTranslation(0, groundY - 0.25, 0)
-                .setRestitution(0.02)
+                .setRestitution(0.3)
                 .setFriction(0.9);
             world.createCollider(groundColliderDesc, groundBody);
 
@@ -365,11 +365,11 @@ function enablePhysics() {
         // If Rapier is available, also set up real physics bodies (handles ball-ball collisions)
         if (typeof RAPIER !== 'undefined' && world) {
             const mainColliderDesc = RAPIER.ColliderDesc.ball(MAIN_RADIUS)
-                .setRestitution(0.08)
+                .setRestitution(0.4)
                 .setFriction(0.3)
                 .setDensity(1.0);
             const orbitColliderDesc = RAPIER.ColliderDesc.ball(ORBIT_RADIUS)
-                .setRestitution(0.1)
+                .setRestitution(0.45)
                 .setFriction(0.3)
                 .setDensity(1.0);
             if (RAPIER.CoefficientCombineRule && mainColliderDesc.setFrictionCombineRule) {
