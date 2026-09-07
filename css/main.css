@@ -257,6 +257,29 @@ canvas {
   justify-content: center;
 }
 
+/* Image heroes stay inside the content column. The header lives outside .wrapper so the
+   homepage canvas can go full-bleed, so mirror the wrapper's width rules here. */
+.hero:not(.hero--full) {
+  max-width: 40rem;
+  margin: 6rem auto 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .hero:not(.hero--full) {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero:not(.hero--full) {
+    width: 90%;
+  }
+}
+
+.page--about .hero:not(.hero--full) {
+  margin: 0 auto; /* about photo has its own padding */
+}
+
 /* Full-bleed hero when there is no hero image (canvas mode) */
 .hero.hero--full {
   width: 100vw;
